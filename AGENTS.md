@@ -44,12 +44,16 @@ Once the notation specification is sufficiently stable:
 - Prefer SVG as the primary rendering representation.
 - Produce PDF from the vector rendering pipeline.
 - Keep parsing, semantic score representation, layout, and rendering as separate layers.
-- Accept MuseScore as the authoring source, but prefer MusicXML as the semantic interchange format rather than coupling the renderer to MuseScore's internal format.
+- Import native MuseScore files directly. Do not use MusicXML for import or require the user to export from MuseScore. Keep native-format parsing isolated from the renderer through the ACN score model.
 - Define a clean ACN intermediate score model so additional importers can be added later.
+- Save editable scores as readable, indented `.acn.json` with an explicit format version; SVG and PDF are generated outputs.
+- Support an agent-driven semantic editor for pitches, beats, lyrics, and layout preferences. See `docs/ARCHITECTURE.md` for proposed in-memory model and SVG display behavior.
 
 ## Initial scope
 
 Target one monophonic vocal part first. Do not expand the project to full-score SATB rendering, accompaniment, or arbitrary instrumental notation until the single-line choral use case works.
+
+Each selected part or individual voice has a separate ACN score. Allow selecting a voice from a shared MuseScore staff; do not combine Tenor 1 and Tenor 2 on one ACN staff.
 
 ## Reference integrity
 

@@ -12,10 +12,7 @@ Build a toolchain that can eventually support this workflow:
 MuseScore score (.mscz)
         │
         ▼
-MuseScore export / conversion
-        │
-        ▼
-MusicXML
+Native MuseScore importer
         │
         ▼
 ACN internal score model
@@ -27,9 +24,13 @@ ACN layout + SVG renderer
         └── PDF output
 ```
 
-The application may accept `.mscz` as a user-facing input, but the design should avoid depending on MuseScore's private/internal file representation when MusicXML can provide the semantic score data we need.
+The user selects a native MuseScore file and the part or voice to import. ACN reads the native format directly; no MuseScore export step or MusicXML conversion is used. Each selected part or voice becomes a separate ACN score.
+
+The planned editor will let transcribers describe changes to an AI agent in terms of pitches, beats, lyrics, and other musical concepts. Edits will update an editable ACN project model and regenerate the SVG preview. SVG is the visual output; the saved project retains the musical meaning needed for continued editing. See `docs/ARCHITECTURE.md` for the editor direction and remaining design questions.
 
 ## Current phase
+
+Editable scores are saved as readable, indented **`.acn.json`** files with an explicit format version. The detailed document schema remains under design.
 
 **Phase 1: specify the notation before implementing the renderer.**
 

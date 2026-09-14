@@ -20,9 +20,11 @@ This file records decisions already made so future work does not repeatedly reop
 
 **Reason:** MuseScore already solves score entry and provides the semantic musical information the ACN generator needs.
 
-## D-004 — Prefer MusicXML as the semantic boundary
+## D-004 — Import native MuseScore files directly
 
-**Decision:** The app may accept `.mscz` as a convenient user-facing input, but the core importer should preferentially consume MusicXML rather than MuseScore's internal format.
+**Decision:** Import the native MuseScore format directly. Do not require the user to export from MuseScore, and do not use MusicXML as an import intermediate.
+
+**Status:** Supersedes the earlier MusicXML import recommendation at the user's explicit direction. Native parsing remains isolated behind the normalized ACN model.
 
 ## D-005 — Use a normalized ACN score model
 
@@ -40,6 +42,26 @@ This file records decisions already made so future work does not repeatedly reop
 
 **Decision:** Solve soprano/alto/tenor/bass part rendering one line at a time before attempting a combined SATB score or instrumental notation.
 
+**Clarification:** The user selects a MuseScore source file and a part to import. Each part has its own ACN score. Multiple parts on the same staff are unsupported; Tenor 1 and Tenor 2 must have separate scores. If these are encoded as voices within a shared source staff, the user can select either voice for its separate ACN score.
+
 ## D-008 — Confirmed ACN sound/silence rule
 
 **Decision:** Black dots represent sung sound; white dots represent rests/silence.
+
+## D-009 — Semantic editing with an AI agent
+
+**Decision:** Build an editor that lets the transcriber work with pitches, beats, lyrics, and other musical concepts. The intended interaction is to tell an AI agent what change is desired.
+
+**Reason:** Transcribers need to edit the music and notation without manipulating individual SVG elements.
+
+**Consequence:** SVG remains the rendering/output format. The application needs a persistent editable ACN project model from which it regenerates the score. Editing includes musical changes after import, extending the earlier layout-override concept. MuseScore remains the preferred source authoring tool.
+
+**Status:** Product direction confirmed; agent implementation, detailed document schema, and editing workflow details remain to be designed. Persistence format is established in D-010. Specification-first development still applies.
+
+## D-010 — Persist editable scores as JSON
+
+**Decision:** Save each editable ACN score as readable, indented JSON using the **`.acn.json`** extension. Include an explicit format version.
+
+**Reason:** JSON suits the nested musical content and layout settings of an application-managed score document.
+
+**Scope:** This is ACN's native persistence format. MuseScore files are imported directly; SVG and PDF remain generated outputs. The detailed JSON schema and in-memory representation remain to be designed.

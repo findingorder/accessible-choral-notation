@@ -37,7 +37,7 @@ Do not assign meaning to any observed element unless it is explicitly confirmed 
 4. **Horizontal position represents musical time** at the conceptual level.
 5. ACN replaces traditional clef-based pitch decoding with a stable pitch-reference system.
 
-The exact rules for dot count, gray bars, colored pitch lines, spacing, ties, tuplets, lyric placement, and many other details remain to be documented with the user.
+The specification now includes additional confirmed rules for chromatic lines/spaces and colors, pitch naming, full/half beat dots, sustaining capsules and break indicators, rest placement, lyrics, and measure layout. Read `docs/ACN-SPEC.md` for the current rules and explicitly unresolved questions; the list above is only a core summary.
 
 ## Product concept
 
@@ -46,27 +46,29 @@ Desired eventual user workflow:
 ```text
 Open/select MuseScore score
         ↓
-Choose vocal part
+Choose vocal part or individual voice
         ↓
 Generate Accessible Choral Notation
         ↓
 Preview
         ↓
+Describe semantic edits to an AI agent and review the regenerated score
+        ↓
+Save the editable ACN project
+        ↓
 Export PDF
 ```
 
-An eventual interactive editor could support small layout overrides (for example dragging a lyric or annotation) without modifying the imported musical semantics.
+The editor must support semantic changes to pitches, beats, lyrics, and other musical concepts after import. The intended interaction is to tell an AI agent what change is desired. SVG remains generated output; an editable project model retains musical meaning and transcription choices. See `docs/ARCHITECTURE.md` for proposed command validation, undo, and layout preference handling.
 
 ## Technical direction
 
 The current proposed pipeline is:
 
 ```text
-.mscz (optional user-facing source)
+Native MuseScore source
         ↓
-MuseScore conversion/export
-        ↓
-MusicXML
+Native MuseScore importer
         ↓
 ACN normalized score model
         ↓
@@ -77,7 +79,9 @@ SVG scene/rendering
 preview + PDF
 ```
 
-The rationale is to keep ACN independent of MuseScore's internal file representation and to make the renderer reusable with other notation sources later.
+Direct native import is required: no user export step and no MusicXML intermediate. The importer isolates MuseScore file structures from the normalized ACN model and renderer. Individual voices within a shared source staff can be selected for separate ACN scores.
+
+Persistence is confirmed as readable, indented `.acn.json` with an explicit format version. The detailed schema remains open. The proposed editor loads that file into a semantic object model, derives layout, and displays SVG elements directly in the browser without requiring an HTML canvas. Semantic edits regenerate the affected display; saving preserves editable data, while SVG/PDF exports preserve the rendered score. See `docs/ARCHITECTURE.md` for the in-memory lifecycle and all five user-supplied editor examples.
 
 ## Immediate task
 
@@ -101,11 +105,4 @@ For each rule, seek enough precision that two independent implementers would dra
 
 ## Recommended next conversation with the user
 
-Start with the pitch grid. Use the reference score as evidence, but ask rather than infer. Suggested first questions:
-
-- What exact pitch interval does each horizontal row represent?
-- What do the red, blue, and black/gray horizontal lines mean?
-- How are sharps/flats represented?
-- Why are particular C rows labeled, and when should the left-side pitch legend be shown?
-
-Then update `docs/ACN-SPEC.md` with the answers before moving on.
+Continue one question at a time from the unresolved items in `docs/ACN-SPEC.md`; the core pitch-grid and naming questions have been answered. Hairpin placement and grouping for music "in 3" are explicitly deferred for experimentation. Semantic editor architecture is now part of the product direction, but implementation still follows sufficient notation specification.
