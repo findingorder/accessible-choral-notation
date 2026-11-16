@@ -1,0 +1,24 @@
+{
+  "name": "accessible-choral-notation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build --silent && node --test tests/*.test.mjs",
+    "start": "npm run build --silent && node dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/pdfkit": "^0.17.7",
+    "@types/svg-to-pdfkit": "^0.1.5",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "pdfkit": "^0.20.2",
+    "svg-to-pdfkit": "^0.1.8"
+  }
+}

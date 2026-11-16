@@ -16,7 +16,7 @@ Use `reference/But Thanks Be to God.pdf` as the current visual reference impleme
 
 ## Current priority
 
-The project is in **specification-first mode**. Do not rush into application code. The immediate job is to help the user make the notation grammar explicit and internally consistent.
+The user has authorized a **batch-first rendering prototype**, starting with a page of blank tenor staffs and a pitch index, with no input file or web UI. Continue clarifying notation as needed for each small increment; keep provisional geometry distinct from confirmed notation rules. See README and docs/PROJECT-HANDOFF.md for the current implementation.
 
 When examining the reference PDF:
 

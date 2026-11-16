@@ -37,7 +37,7 @@ Do not assign meaning to any observed element unless it is explicitly confirmed 
 4. **Horizontal position represents musical time** at the conceptual level.
 5. ACN replaces traditional clef-based pitch decoding with a stable pitch-reference system.
 
-The specification now includes additional confirmed rules for chromatic lines/spaces and colors, pitch naming, full/half beat dots, sustaining capsules and break indicators, rest placement, lyrics, and measure layout. Read `docs/ACN-SPEC.md` for the current rules and explicitly unresolved questions; the list above is only a core summary.
+The specification now includes additional confirmed rules for chromatic lines/spaces and colors, pitch naming, full/half beat dots, capsules, rest placement, lyrics, and measure layout. Distinguish conventional measure bars from white rest-group dividers (measures 37 and 29) and dark gray word-boundary lines inside single-pitch capsules (measure 56). The earlier generic break-indicator rule is withdrawn. Transcriptions should attempt to match source measure numbers and rehearsal letters so singers can follow the director's instructions. Read `docs/ACN-SPEC.md` for the current rules and explicitly unresolved questions; the list above is only a core summary.
 
 ## Product concept
 
@@ -83,26 +83,12 @@ Direct native import is required: no user export step and no MusicXML intermedia
 
 Persistence is confirmed as readable, indented `.acn.json` with an explicit format version. The detailed schema remains open. The proposed editor loads that file into a semantic object model, derives layout, and displays SVG elements directly in the browser without requiring an HTML canvas. Semantic edits regenerate the affected display; saving preserves editable data, while SVG/PDF exports preserve the rendered score. See `docs/ARCHITECTURE.md` for the in-memory lifecycle and all five user-supplied editor examples.
 
-## Immediate task
+## Current implementation milestone
 
-Do **not** start by building the application.
+The user authorized proceeding with a batch-first Node.js + TypeScript prototype. The first task is a page of blank tenor staffs with a pitch index at the beginning; it needs no input file and no web UI.
 
-Work with the user to complete `docs/ACN-SPEC.md`.
+Implemented: `npm start -- --blank` produces `output/blank-tenor.svg`, with five C3–G+4 staffs on US Letter paper and one pitch index. Each staff defaults to four equal-width blank measures, numbered 1, 5, 9, 13, and 17 above the first measure of each staff. `layout.json` now supplies editable page and typography settings; select another file with `npm start -- --blank --layout path/to/layout.json`. The command overwrites SVG output plus a single multipage PDF (`output/blank-tenor.pdf`). PDF rendering uses vector SVG content directly, with embedded installed font matches. PNG generation has been removed at the user’s request. `pages` controls page count; `pitchIndexPages` selects every/even/odd pages (default odd). The current user layout has four pages. Page 1 retains the base filename; later pages add `-page-N`, with continuous measure numbering. Pitch mapping, settings validation, layout, SVG serialization, and file writing are separate modules. `npm test` checks the pitch mapping and page layout. All geometry and exact colors are provisional review defaults; see README for commands and configuration locations.
 
-Proceed component by component, asking precise questions and updating the spec after each answer. A good order is:
+Next: review this blank-page output with the user before expanding rendering. The later batch pipeline is native MuseScore import → editable `.acn.json` → SVG. Importers, persistence schema, and musical-event rendering are not implemented. MIDI was discussed as a possible later importer; support is not committed. Browser UI and agent editing remain later milestones.
 
-1. pitch grid and pitch naming;
-2. rhythm/dot/bar semantics;
-3. rests;
-4. ties and sustained notes;
-5. tuplets and other rhythmic exceptions;
-6. lyrics and melismas;
-7. measure widths and system layout;
-8. dynamics/rehearsal/tempo markings;
-9. page metadata and publication elements.
-
-For each rule, seek enough precision that two independent implementers would draw the same result.
-
-## Recommended next conversation with the user
-
-Continue one question at a time from the unresolved items in `docs/ACN-SPEC.md`; the core pitch-grid and naming questions have been answered. Hairpin placement and grouping for music "in 3" are explicitly deferred for experimentation. Semantic editor architecture is now part of the product direction, but implementation still follows sufficient notation specification.
+Continue resolving notation questions when they affect the next increment rather than blocking the prototype on every edge case. Grouping for music “in 3” and other unresolved rules remain open in `docs/ACN-SPEC.md`.

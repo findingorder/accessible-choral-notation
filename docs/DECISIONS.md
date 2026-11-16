@@ -65,3 +65,9 @@ This file records decisions already made so future work does not repeatedly reop
 **Reason:** JSON suits the nested musical content and layout settings of an application-managed score document.
 
 **Scope:** This is ACN's native persistence format. MuseScore files are imported directly; SVG and PDF remain generated outputs. The detailed JSON schema and in-memory representation remain to be designed.
+
+## D-011 — Begin with a standalone batch renderer
+
+**Decision:** Proceed with Node.js + TypeScript and SVG in a command-line batch process, without a web UI. The first increment generates a page of blank tenor staffs with a pitch index at the beginning and requires no input file.
+
+**Scope:** Start with provisional, documented presentation defaults and refine them through visual review. Native MuseScore import, `.acn.json` persistence, and separate rendering of saved documents are subsequent increments. MIDI remains a possible future importer, not an implemented or committed format. The agent-driven editor remains a later product direction.

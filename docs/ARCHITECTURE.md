@@ -1,6 +1,8 @@
 # Proposed Architecture
 
-**Status:** Initial design direction; implementation has not started.
+**Status:** Batch-first implementation has begun with the standalone blank-staff SVG generator. Import, persistence, musical-event layout, and editor designs below remain proposed.
+
+The first milestone requires no input file or web UI: `npm start -- --blank` generates a blank tenor page. The later batch pipeline separates import to `.acn.json` from rendering that document to SVG. See README for the current modules and commands.
 
 ## 1. Architectural goal
 
@@ -174,7 +176,7 @@ The renderer should be as "dumb" as practical: given positioned scene objects, i
 
 PDF should be generated from the same vector scene used for preview so the preview and printable result do not diverge.
 
-Exact tooling is intentionally undecided until implementation starts.
+The batch renderer now creates one multipage PDF with PDFKit and svg-to-pdfkit directly from the generated SVG pages. Geometry is converted from 96 SVG units per inch to 72 PDF points per inch. Fontconfig resolves installed fonts for embedding; standard Times/Helvetica fonts are fallbacks when Fontconfig is unavailable.
 
 ## 8. Semantic editor and AI agent
 
@@ -191,7 +193,7 @@ These are desired editor interactions, not requests to modify the reference scor
 | User request | Target and proposed effect | Details to resolve |
 | --- | --- | --- |
 | "Make measure 72 Adagio" | Add or update an Adagio tempo/expression marking at the start of measure 72, using traditional styling above the staff. | Whether this also affects future playback, any numeric tempo, and the duration of its effect. Do not invent a BPM value. |
-| "In measure 68, make the lyrics closer to the notes." | Reduce the gap between lyrics and their corresponding capsules in measure 68, preserving white backgrounds and legibility. | Default adjustment amount and collision constraints. |
+| "In measure 68, make the lyrics closer to the notes." | Reduce the gap between lyrics and their corresponding capsules in measure 68, preserving translucent white rectangular backgrounds and legibility. | Default adjustment amount and collision constraints. |
 | "Make measure 34 wider (narrower)." | Adjust measure 34's layout width and recompute its contents' positions. | Adjustment amount, minimum width, and whether neighboring measures redistribute or system breaks change. |
 | "Scale the entire score bigger (smaller)." | Apply a score-wide presentation scale to staff spacing, capsules, dots, text, and related dimensions. | Whether the page size stays fixed and the score reflows, or the physical page scales with it; distinguish output scale from preview zoom. |
 | "On the line beginning at measure 32, change the staff range to be from the A before C3 to the F+ above Middle C." | Set the displayed range of that system to **A2 through F+4**, without transposing its musical pitches. | Treatment of notes outside the range and how the override follows measures if later layout changes the system break. |
@@ -202,14 +204,14 @@ For relative requests such as "closer" or "wider," a proposed interaction is a m
 
 ### Proposed design — details to validate
 
-- Give the agent structured editing commands over the project model, such as changing a pitch, replacing a lyric, adding a break indicator, or setting the ACN beat unit.
+- Give the agent structured editing commands over the project model, such as changing a pitch, replacing a lyric, or setting the ACN beat unit.
 - Identify musical objects persistently so a request can target a measure, beat, lyric, or selected passage even after layout changes.
 - Validate edits for timing consistency and notation rules, then regenerate layout and SVG from the updated model.
 - Show the resulting score and a concise description of the changes, with undo/redo. Ask a focused question when the requested target or musical meaning is ambiguous.
 - Store musical edits, transcription settings, and layout preferences separately within the editable project. A layout request such as widening a measure should not change its musical duration.
 - Preserve the imported source and track subsequent edits. How to reconcile edits when a revised source score is imported remains an open design question.
 
-The agent interface, command schema, detailed saved-document schema, and first editor milestone remain to be designed. JSON persistence is confirmed. These proposals do not resolve outstanding notation questions or start implementation.
+The agent interface, command schema, detailed saved-document schema, and first editor milestone remain to be designed. JSON persistence is confirmed. These proposals do not resolve outstanding notation questions or authorize implementing the editor in the current blank-page milestone.
 
 ## 9. First vertical slice
 
