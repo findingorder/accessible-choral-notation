@@ -7,10 +7,10 @@ import { spawnSync } from 'node:child_process';
 import { defaultLayout, parseLayout } from '../dist/settings.js';
 
 test('layout file is valid, omitted settings use defaults, and invalid settings are rejected', async () => {
-  parseLayout(JSON.parse(await readFile('layout.json', 'utf8')));
+  parseLayout(JSON.parse(await readFile('default-layout.json', 'utf8')));
   assert.deepEqual(parseLayout({}), defaultLayout);
   for (const value of [null, [], { systems: 1.5 }, { systems: 0 }, { width: 100 },
-    { systems: 20 }, { systemStep: 10 }, { serifFont: '' }, { typo: 1 }, { pages: 0 }, { pages: 1.5 }, { pitchIndexPages: 'never' }]) {
+    { systems: 20 }, { systemStep: 10 }, { serifFont: '' }, { typo: 1 }, { pages: 0 }, { pages: 1.5 }, { pitchIndexPages: 'never' }, { musicMeasuresPerSystem: 0 }, { musicMeasuresPerSystem: 2.5 }, { musicMeasuresPerSystem: 'five' }]) {
     assert.throws(() => parseLayout(value));
   }
 });
@@ -19,11 +19,13 @@ test('CLI reads custom layout, preserves output on bad JSON, and overwrites both
   const dir = await mkdtemp(join(tmpdir(), 'acn-layout-'));
   try {
     const config = join(dir, 'custom layout.json');
-    const svg = join(dir, 'blank.svg');
+    const output = join(dir, 'blank.svg');
+    const svg = join(dir, 'blank-page-1.svg');
     const pdf = join(dir, 'blank.pdf');
-    const run = (short = false) => spawnSync(process.execPath, ['dist/cli.js', ...(short ? ['-b', '-l', config, '-o', svg] : ['--blank', '--layout', config, '--output', svg])], { encoding: 'utf8' });
+    const run = (short = false) => spawnSync(process.execPath, ['dist/cli.js', ...(short ? ['-b', '-l', config, '-o', output] : ['--blank', '--layout', config, '--output', output])], { encoding: 'utf8' });
     await writeFile(config, JSON.stringify({ systems: 2, measuresPerSystem: 3, serifFont: 'Georgia, serif', measureNumberGap: 8 }));
     assert.equal(run().status, 0);
+    assert.ok(!(await readdir(dir)).includes('blank.svg'));
     const result = await readFile(svg, 'utf8');
     assert.equal(run(true).status, 0);
     assert.equal(await readFile(svg, 'utf8'), result);
@@ -74,7 +76,7 @@ test('multiple-page CLI writes the configured pages with odd-page indexes', asyn
     assert.match(pdf, /\/MediaBox \[0 0 612 792\]/);
     assert.doesNotMatch(pdf, /\/Subtype \/Image\b/);
     for (let page = 1; page <= 4; page++) {
-      const base = join(dir, page === 1 ? 'score' : `score-page-${page}`);
+      const base = join(dir, `score-page-${page}`);
       const svg = await readFile(base + '.svg', 'utf8');
       assert.equal(svg.includes('>Middle C</text>'), page % 2 === 1);
       assert.ok(svg.includes(`>${(page - 1) * 20 + 1}</text>`));

@@ -71,3 +71,35 @@ This file records decisions already made so future work does not repeatedly reop
 **Decision:** Proceed with Node.js + TypeScript and SVG in a command-line batch process, without a web UI. The first increment generates a page of blank tenor staffs with a pitch index at the beginning and requires no input file.
 
 **Scope:** Start with provisional, documented presentation defaults and refine them through visual review. Native MuseScore import, `.acn.json` persistence, and separate rendering of saved documents are subsequent increments. MIDI remains a possible future importer, not an implemented or committed format. The agent-driven editor remains a later product direction.
+
+## D-012 — Shared defaults and partial score layouts
+
+**Decision:** Rename `layout.json` to **`default-layout.json`**. A score must have a neighboring **`{name}.acn-layout.json`** containing all four title fields plus the layout settings that override those defaults. `--layout` applies additional overrides after that required sibling. See D-016 for title storage; this supersedes the original optional-companion and metadata-fallback behavior.
+
+## D-013 — Music determines its own page count
+
+**Decision:** The `pages` option controls blank generation only. When rendering music, ignore it and generate exactly the pages needed for the content, with no extra blank systems on the last page. Retain SVG page images and a combined vector PDF; do not generate PNG output.
+
+## D-014 — Generalize engraving feedback
+
+**Decision:** Implement review requirements as common notation/layout rules for any score. Specific measures identify examples and regression cases, not exceptions to encode in score data or renderer branches.
+
+**Consequence:** Word-relative lyric height, pair centering, and compact two-dot spacing are derived automatically. The working Tallis score no longer contains per-lyric alignment or clearance overrides. Repeat expansion and musical transcription choices remain semantic score edits.
+
+## D-015 — Score-wide layout overrides only
+
+**Decision:** The only presentation overrides are partial, score-wide overrides of `default-layout.json`, stored in `{name}.acn-layout.json` (for example `if-ye-love-me-tenor.acn-layout.json`). No per-lyric, measure, or system layout overrides belong in the semantic score.
+
+**Consequence:** Remove the provisional lyric `alignment` and `capsuleGap` fields and reject them when reading saved scores. The renderer derives individual placements from common rules. This supersedes earlier proposals for local layout preferences in the editor.
+
+## D-016 — Required score layouts own the titles
+
+**Decision:** Every saved score has a companion `{name}.acn-layout.json`. Store `leftTitle`, `centerTitle`, `rightTitle`, and `centerSubtitle` there, using empty strings for omitted fields. Do not store displayed title/composer fields in `.acn.json` or derive titles from that file during rendering.
+
+**Consequence:** Import creates the companion from native source headers and the selected part, preserving an existing companion on reimport. Other settings remain partial score-wide overrides of shared defaults. Rendering requires the companion even when `--layout` supplies additional overrides. Part identity and copyright remain semantic metadata. Older saved title/composer fields must be migrated; the working Tallis score is migrated.
+
+## D-017 — Prime rehearsal letters in unfolded repeats
+
+**Decision:** Append a single quote to rehearsal letters repeated because a repeat has been unfolded. Keep the original occurrence unchanged.
+
+**Consequence:** Copied measures retain semantic `repeatOf` provenance referring to an earlier ACN measure. The common renderer uses that provenance to decorate rehearsal letters without modifying their saved text or inferring repeats from duplicate labels, event IDs, or piece-specific measure numbers.

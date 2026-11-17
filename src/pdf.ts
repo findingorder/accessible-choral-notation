@@ -1,3 +1,5 @@
+import { bundledFontPath } from './font-assets.js';
+import { weightedFamily } from './font-families.js';
 import PDFDocument from 'pdfkit';
 import svgToPdf from 'svg-to-pdfkit';
 import { execFileSync } from 'node:child_process';
@@ -10,9 +12,11 @@ export interface PdfPage {
 
 // Fontconfig resolves installed font families for embedding in the PDF.
 // On systems without Fontconfig, use PDF's standard serif/sans-serif fonts.
-function fontResolver(): (family: string, bold: boolean, italic: boolean) => string {
+export function fontResolver(): (family: string, bold: boolean, italic: boolean) => string {
   const cache = new Map<string, string>();
   return (family, bold, italic) => {
+    const bundled = !italic && bundledFontPath(bold && !family.startsWith('ACN Roboto') ? weightedFamily(family, 700) : family);
+    if (bundled) return bundled;
     const key = `${family}:weight=${bold ? 'bold' : 'regular'}:slant=${italic ? 'italic' : 'roman'}`;
     const cached = cache.get(key);
     if (cached) return cached;

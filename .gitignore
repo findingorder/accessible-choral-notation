@@ -21,4 +21,7 @@ Thumbs.db
 # Temporary renderer/export output
 .tmp/
 tmp/
-output/
+output/*
+# Preserve editable scores and their required presentation settings.
+!output/*.acn.json
+!output/*.acn-layout.json

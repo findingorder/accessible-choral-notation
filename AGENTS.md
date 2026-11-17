@@ -16,7 +16,7 @@ Use `reference/But Thanks Be to God.pdf` as the current visual reference impleme
 
 ## Current priority
 
-The user has authorized a **batch-first rendering prototype**, starting with a page of blank tenor staffs and a pitch index, with no input file or web UI. Continue clarifying notation as needed for each small increment; keep provisional geometry distinct from confirmed notation rules. See README and docs/PROJECT-HANDOFF.md for the current implementation.
+The user has authorized a **batch-first rendering prototype**, starting with blank tenor staffs and a pitch index, native MuseScore 3 import of the Tallis tenor part into `.acn.json`, and musical SVG/PDF rendering. These are now implemented; review and refine the musical output before expanding scope. Shared defaults live in `default-layout.json`, with partial `{name}.acn-layout.json` overrides. Music pagination ignores the blank-page count. There is no web UI. Continue clarifying notation as needed for each small increment; keep provisional geometry distinct from confirmed notation rules. See README and docs/PROJECT-HANDOFF.md for the current implementation.
 
 When examining the reference PDF:
 
@@ -61,4 +61,8 @@ Do not edit or overwrite files in `reference/` unless the user explicitly reques
 
 ## Working style
 
+Implement notation and layout feedback as common rules applicable to any score. Use named measures as regression examples, not renderer conditions or per-piece layout overrides. The only presentation overrides are score-wide partial overrides of `default-layout.json`, stored in `{name}.acn-layout.json`; do not add lyric-, measure-, or system-specific layout fields to `.acn.json`.
+
 Keep documentation current as decisions are made. If implementation begins, favor small testable increments and reference-score regression tests over broad feature work.
+
+Each saved score requires a companion `{name}.acn-layout.json` holding all four title fields plus any score-wide settings overrides. Do not store title/composer text in `.acn.json` or infer displayed headers from music metadata during rendering.

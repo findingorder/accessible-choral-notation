@@ -1,8 +1,8 @@
 # Proposed Architecture
 
-**Status:** Batch-first implementation has begun with the standalone blank-staff SVG generator. Import, persistence, musical-event layout, and editor designs below remain proposed.
+**Status:** The batch pipeline now imports native MuseScore 3 into preliminary version 0.1 `.acn.json` and renders saved music or blank staffs to SVG pages and a vector PDF. The agent editor and the broader designs below remain proposed.
 
-The first milestone requires no input file or web UI: `npm start -- --blank` generates a blank tenor page. The later batch pipeline separates import to `.acn.json` from rendering that document to SVG. See README for the current modules and commands.
+The first milestone requires no input file or web UI: `npm start -- --blank` generates a blank tenor page. The batch pipeline separates import to `.acn.json` from rendering that document to SVG. See README for the current modules and commands.
 
 ## 1. Architectural goal
 
@@ -43,7 +43,7 @@ When a source encodes distinct vocal lines as multiple voices within one part/st
 
 Keep native MuseScore parsing in a dedicated importer that translates the selected part or voice into the normalized ACN model. The renderer works with that model, independent of source-file structures.
 
-Supported MuseScore versions, native file variants, and handling of unsupported source constructs remain to be specified and verified against native fixtures.
+The first implementation in `src/musescore.ts` supports the MuseScore 3 subset exercised by the Tallis reference file. It reads the `.mscz` container manifest to find native XML, or reads `.mscx` directly; it never converts through MusicXML. Top-level parts and staves are selected explicitly, without traversing nested extracted scores. See README for supported constructs and rejection behavior. Relative spanner positions follow MuseScore 3’s additive measure/fraction offsets, verified against [the upstream location implementation](https://github.com/musescore/MuseScore/blob/v3.6.2/libmscore/location.cpp).
 
 ## 3. Normalized score model
 
@@ -51,7 +51,9 @@ Do not allow native MuseScore parser structures to leak directly into rendering 
 
 Create a compact internal model whose concepts match what ACN needs.
 
-Illustrative shape only:
+The actual preliminary import model is in `src/score.ts`; it is independent of XML/parser types. It uses `{numerator, denominator}` whole-note fractions for onsets and durations, one selected part/voice, source-derived deterministic event IDs, explicit tie/slur links, and normalized repeat-ending positions. Repeat endings retain written measure positions on import. A saved score can instead contain explicitly duplicated measures in performance order; optional `sourceNumber` preserves printed source numbers while `number` remains unique and increasing. Copied events need unique IDs and remapped span endpoints. Copied measures record `repeatOf`, the earlier ACN measure number, independently of display numbering. Rehearsal letters on these measures render with a trailing single quote; source direction text remains intact. The saved file includes a source SHA-256 hash, version metadata, and an unset ACN beat unit pending a transcriber choice. Stable identity through later edits/reimport and a public JSON Schema remain future work.
+
+Earlier illustrative shape only (not the implemented schema):
 
 ```ts
 interface AcnScore {
@@ -101,7 +103,7 @@ Each saved ACN score is a JSON document for one selected part or voice. JSON, re
 
 - normalized musical content for that part, including subsequent semantic edits;
 - transcription choices such as the ACN beat unit and staff range;
-- layout preferences and overrides at score, system, and measure scope;
+- musical content and transcription choices; presentation settings live separately in score-wide `.acn-layout.json` files;
 - source provenance identifying the MuseScore file and selected part, with stable identifiers where available;
 - a format version for future migration.
 
@@ -157,6 +159,14 @@ Responsibilities should include:
 
 Layout should produce an intermediate scene description rather than drawing directly while calculating.
 
+### Implemented first music layout
+
+`src/music-layout.ts` validates the monophonic tenor score, derives dot/capsule and lyric groups, computes minimum measure widths from rhythm and measured text, packs measures into systems, and paginates automatically. Minimum measure widths include compound-barline clearance. Surplus line width is distributed by musical duration, then spread over the intervals between dots without scaling fixed text and capsule padding. `pages` affects blank generation only. The final page has no surplus empty systems. `src/layout.ts` accepts measured system plans so the same staff frame serves blank and musical rendering. Scene shapes retain source event IDs, exposed as SVG data attributes.
+
+Text measurement is an injected callback. The CLI supplies PDFKit measurements through `src/text-metrics.ts`, resolving the same bundled Roboto weight or installed font as vector PDF export. `src/font-families.ts` selects explicit weight aliases, while `src/font-assets.ts` loads bundled faces and supplies embedded SVG font CSS to the pure serializer. Musical time stays in the semantic model; spacing changes only derived coordinates.
+
+`src/layout-settings.ts` merges `default-layout.json` with a required sibling `{name}.acn-layout.json`, followed by any explicit `--layout` override. These files are the only presentation override mechanism and hold score-wide options only. Per-lyric, measure, and system overrides are not supported. Saved lyric fields are limited to verse, text, and syllabic. All four music header fields are stored in the companion, with no metadata fallback. Import initializes them from source title/composer/part and preserves existing companions. The semantic score retains part identity and copyright but no title/composer fields. Runtime validation rejects unsupported music before writing outputs. The prototype heuristics and remaining limitations are documented in ACN-SPEC and README.
+
 ## 6. Rendering layer
 
 Prefer **SVG** as the primary rendering target.
@@ -188,7 +198,7 @@ MuseScore remains the preferred source authoring tool. The ACN editor supports s
 
 ### User-supplied editor examples
 
-These are desired editor interactions, not requests to modify the reference score. Interpretations below are proposed behavior; unresolved details remain open.
+These are historical editor examples, not requests to modify the reference score. The later score-wide-only override decision supersedes the local layout preferences in this table; do not implement per-measure or per-system overrides. Interpretations below are proposed behavior; unresolved details remain open.
 
 | User request | Target and proposed effect | Details to resolve |
 | --- | --- | --- |
@@ -198,7 +208,7 @@ These are desired editor interactions, not requests to modify the reference scor
 | "Scale the entire score bigger (smaller)." | Apply a score-wide presentation scale to staff spacing, capsules, dots, text, and related dimensions. | Whether the page size stays fixed and the score reflows, or the physical page scales with it; distinguish output scale from preview zoom. |
 | "On the line beginning at measure 32, change the staff range to be from the A before C3 to the F+ above Middle C." | Set the displayed range of that system to **A2 through F+4**, without transposing its musical pitches. | Treatment of notes outside the range and how the override follows measures if later layout changes the system break. |
 
-The examples require measure-level, system-level, and score-wide editing scopes. They also require the agent to interpret relative pitch descriptions in ACN naming and to distinguish semantic changes from presentation changes.
+Musical edits may target individual events; presentation overrides are score-wide only. They also require the agent to interpret relative pitch descriptions in ACN naming and to distinguish semantic changes from presentation changes.
 
 For relative requests such as "closer" or "wider," a proposed interaction is a modest visible adjustment with undo and the ability to say "more" or "less." Exact increments and reflow behavior remain to be designed.
 
@@ -211,7 +221,7 @@ For relative requests such as "closer" or "wider," a proposed interaction is a m
 - Store musical edits, transcription settings, and layout preferences separately within the editable project. A layout request such as widening a measure should not change its musical duration.
 - Preserve the imported source and track subsequent edits. How to reconcile edits when a revised source score is imported remains an open design question.
 
-The agent interface, command schema, detailed saved-document schema, and first editor milestone remain to be designed. JSON persistence is confirmed. These proposals do not resolve outstanding notation questions or authorize implementing the editor in the current blank-page milestone.
+The agent interface, command schema, detailed saved-document schema, and first editor milestone remain to be designed. JSON persistence is confirmed. These proposals do not resolve outstanding notation questions or authorize implementing the editor as part of the current batch-rendering milestone.
 
 ## 9. First vertical slice
 

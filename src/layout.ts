@@ -1,11 +1,13 @@
 import { defaultLayout, type LayoutSettings } from './settings.js';
 import { lineColor, octave, pitchName, tenorRange } from './pitch.js';
 
-export type Shape =
+export type Shape = (
   | { kind: 'line'; x1: number; y1: number; x2: number; y2: number; color: string; width: number }
-  | { kind: 'rect'; x: number; y: number; width: number; height: number; fill: string; radius?: number; stroke?: string; strokeWidth?: number }
-  | { kind: 'ellipse'; x: number; y: number; rx: number; ry: number }
-  | { kind: 'text'; x: number; y: number; text: string; size: number; fontFamily?: string; anchor?: 'start' | 'middle' | 'end' };
+  | { kind: 'rect'; x: number; y: number; width: number; height: number; fill: string; opacity?: number; radius?: number; stroke?: string; strokeWidth?: number }
+  | { kind: 'ellipse'; x: number; y: number; rx: number; ry: number; fill?: string; stroke?: string }
+  | { kind: 'text'; x: number; y: number; text: string; size: number; fontFamily?: string; anchor?: 'start' | 'middle' | 'end'; italic?: boolean; bold?: boolean; fontWeight?: number }
+  | { kind: 'path'; d: string; fill: string }
+) & { role?: string; eventId?: string; measureNumber?: number };
 
 export interface PageScene {
   width: number;
@@ -14,11 +16,15 @@ export interface PageScene {
   fontFamily: string;
   pageNumber: number;
   hasPitchIndex: boolean;
+  title?: string;
+  description?: string;
 }
 
 export const blankPageDefaults = defaultLayout;
 
-export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 1): PageScene {
+export interface SystemPlan { measures: { number: number; width: number }[] }
+
+export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 1, plans?: SystemPlan[]): PageScene {
   if (!Number.isInteger(pageNumber) || pageNumber < 1 || pageNumber > p.pages) throw new Error('Page number is outside the configured page range.');
   const hasPitchIndex = p.pitchIndexPages === 'every' ||
     (p.pitchIndexPages === 'odd' ? pageNumber % 2 === 1 : pageNumber % 2 === 0);
@@ -38,7 +44,7 @@ export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 
     if (p.centerSubtitle) shapes.push({ kind: 'text', text: p.centerSubtitle, x: p.width / 2, y: titleY + 18, size: 16, fontFamily: p.serifFont });
   }
   const staffHeight = (tenorRange.high - tenorRange.low) * p.semitoneStep;
-  for (let system = 0; system < p.systems; system++) {
+  for (let system = 0; system < (plans?.length ?? p.systems); system++) {
     const top = pageTop + system * p.systemStep;
     if (system === 0 && hasPitchIndex) {
       shapes.push({ kind: 'rect', x: p.margin, y: top, width: p.guideWidth, height: staffHeight, fill: '#bfbfbf' });
@@ -50,11 +56,13 @@ export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 
     }
     const musicLeft = p.margin + (system === 0 && hasPitchIndex ? p.guideWidth : 0);
     const measureWidth = (p.width - p.margin - musicLeft) / p.measuresPerSystem;
-    for (let boundary = 0; boundary <= p.measuresPerSystem; boundary++) {
-      const x = musicLeft + boundary * measureWidth;
-      shapes.push({ kind: 'line', x1: x, y1: top, x2: x, y2: top + staffHeight, color: '#000000', width: p.barLineWidth });
+    const measures = plans?.[system].measures ?? Array.from({ length: p.measuresPerSystem }, (_, i) => ({ number: ((pageNumber - 1) * p.systems + system) * p.measuresPerSystem + i + 1, width: measureWidth }));
+    let boundaryX = musicLeft;
+    for (let boundary = 0; boundary <= measures.length; boundary++) {
+      shapes.push({ kind: 'line', x1: boundaryX, y1: top, x2: boundaryX, y2: top + staffHeight, color: '#000000', width: p.barLineWidth, role: 'barline' });
+      if (boundary < measures.length) boundaryX += measures[boundary].width;
     }
-    shapes.push({ kind: 'text', x: musicLeft + p.measureNumberInset, y: top - p.measureNumberGap, text: String(((pageNumber - 1) * p.systems + system) * p.measuresPerSystem + 1), size: p.measureNumberSize, fontFamily: p.serifFont });
+    shapes.push({ kind: 'text', x: musicLeft + p.measureNumberInset, y: top - p.measureNumberGap, text: String(measures[0].number), size: p.measureNumberSize, fontFamily: p.serifFont, role: 'measure-number' });
     if (system !== 0 || !hasPitchIndex) continue;
     shapes.push({ kind: 'line', x1: p.margin, y1: top, x2: p.margin, y2: top + staffHeight, color: '#000000', width: p.barLineWidth });
     // Two staggered columns keep neighboring semitone labels distinct.

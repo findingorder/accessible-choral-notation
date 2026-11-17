@@ -47,15 +47,21 @@ This is a fundamental semantic distinction and should remain visually immediate.
 #### Confirmed
 
 - A horizontal gray capsule encloses one or more sequential notes at the same pitch.
+- Capsules centered on pitch spaces reach the adjacent horizontal pitch lines with no white gap along their straight upper and lower edges.
 - The capsule ends before the pitch changes. A new pitch starts a new capsule.
 - Black dots indicate sung sound; white dots indicate rests.
 - Long rest sequences use vertical white lines to divide the capsule into beat groups, as described in section 4.
 - Capsules may span across barlines; a measure boundary does not by itself require a new capsule.
+- When a barline separates syllables of the same word within one capsule, center it between the adjacent dots so their distances from the barline are equal (Tallis measures 15–16, “for”/“ev”).
+- Two-dot sung capsules crossing an ordinary barline on the same system should be compact when their lyrics permit. Avoid adding excess spacing from the adjoining measures; preserve the syllable gap, lyric/hyphen clearance, and centered barline. This is a general rule, illustrated by Tallis measures 15–16 and 28–29. The prototype tightens these pairs after system justification, leaving longer text the space it needs.
 - When a capsule continues at the same pitch onto a new system (staff line), its outgoing segment extends all the way to the right edge of the measure at the end of the current system, with **square corners** at that edge.
 - The incoming segment starts at the left edge of the first measure on the next system, also with **square corners** at that edge, and continues at the same pitch.
 - Individual beat dots do not by themselves indicate a new articulation; a sustained note may contain multiple beat dots.
 - Vertical lines must be distinguished by function: **measure bars** work as in traditional notation, **white internal dividers** group rest beats, and **dark gray internal lines** mark lyric word boundaries. The earlier generic break-indicator rule is withdrawn; do not interpret every vertical line as a measure bar or assign it an articulation or breath meaning.
 - When a single-pitch capsule contains two lyric words, a **dark gray vertical line inside the capsule** marks where the word break occurs. Reference example: PDF page 3, **measure 56**, between “thanks” and “be”.
+- Leave extra space on both sides of a gray word divider, as between “love” and “me” in Tallis measure 2. The renderer's provisional `wordDividerPadding` default adds 4 SVG units per side before system justification; this adds no musical time.
+- When a word boundary coincides with a measure boundary, the barline serves as the word separator: omit the additional gray divider and its extra padding. Example: “and”/“I” across Tallis measures 5–6. The same-pitch capsule remains connected through the barline.
+- Adjacent centered words should have comparable readable spacing, as “keep”/“my” in Tallis measure 3 compared with “love”/“me” in measure 2. When reserving room within a capsule, use the neighboring half-word widths and count divider clearance only once.
 - A **gap between sung dots within a single-pitch capsule** can indicate a boundary between syllables of the same word. This gap is **not a rest**. Reference example: PDF page 4, **measure 73**, between “Je” and “sus”. **Provisional sizing rule:** leave the space that one dot would occupy between the surrounding two dots, as though one dot position were omitted. This visual gap does not add a beat or rest.
 - White dots retain their confirmed meaning of rest/silence; a capsule does not imply singing through them.
 - When singing resumes at the same pitch after a rest within a capsule, it continues in that same capsule. One capsule can therefore contain sung sound, a rest, and more sung sound at the same pitch.
@@ -163,6 +169,8 @@ The general pairing rule remains unresolved. Unpaired half-dot orientation at ca
 
 - ACN uses an example capsule instead of a numeric time signature.
 - The example capsule appears below the gray note guide and shows the number of beats per measure.
+- The time-signature example spans the width of the pitch index: its vertical end bars align exactly with the left and right edges of the index. The gray capsule is inset from both bars, leaving visible white space at each end (provisional inset: 4 SVG units).
+- Its dots are centered as a group with slightly tighter spacing, without narrowing the capsule (provisional dot span: 90% of the available span after end padding).
 - Reference example: PDF page 2, beneath the note guide for the first system.
 
 Full dots represent whole beats using the transcriber's chosen beat unit. The remaining details of the example capsule and the treatment of meter changes remain to be specified.
@@ -212,14 +220,23 @@ The reference notation integrates lyrics tightly with the sung events.
 ### Confirmed
 
 - Lyrics appear close below their corresponding pitch capsules.
+- **Starting spacing:** one pitch space below the sung dots/capsule is the default before applying word alignment, continuation, and readability decisions. It is not limited to Tallis measures 22–23. The current renderer measures this clearance from the capsule bottom to the top of the lyric text box: `lyricGap: 14` SVG units, one pitch-line space at `semitoneStep: 7`. Later placement decisions may move lyrics farther down.
 - All lyrics have **translucent white rectangular backgrounds** for legibility, allowing horizontal pitch lines to remain **faintly visible behind them**. This corrects the earlier opaque-background description. Exact opacity remains to be specified.
-- Lyrics generally share a common vertical baseline within a measure.
+- Words may share a baseline for readability, but a measure boundary does not by itself group unrelated words vertically. Determine the starting height from each word’s own notes; a lower neighboring word must not pull a higher word away from its capsule (Tallis “ev’n” in measures 19 and 32).
+- All syllables of the same word must share one vertical baseline, including their hyphens and underscore extensions. Keep it below the lowest relevant dots, including across measures; across systems/pages retain the same height relative to the staff. Tallis examples: “for–ev–er” in measures 15–16 and 18–19. Other words may remain closer to their own dots.
+- In Tallis measures 22–23, place lyrics close to their own capsules, about one pitch space below; a low note elsewhere in the measure must not pull all of these lyrics downward. Apply the same placement to their unfolded copies in measures 35–36.
 - The lyric baseline may change within a measure when the pitch changes substantially, keeping lyrics close below the corresponding capsules. A single baseline throughout a measure is not mandatory.
 - **Placement principle:** make lyrics as close to the dots as reasonably possible while keeping them easy to read. Avoid excessive vertical jumping. Choosing when to keep a shared baseline and when to move it is a **transcriber judgment call**, not a confirmed fixed pitch-change threshold.
 - A shared lyric baseline may extend across multiple measures below the lowest note in the passage. Reference example: PDF page 3, **measures 64–67**, where lyrics remain at the same vertical level. In contrast, PDF page 4, **measure 69**, moves lyrics vertically to keep them near their dots. Both are intentional applications of the placement principle.
 - Dots may be spaced farther apart to make room for lyric words. Reference example: PDF page 2, **measure 26**, “thanks be to”. This is a layout adjustment, not a change in musical duration.
-- When one syllable spans a sequence of different pitches, its text **starts under the first dot in the sequence**. Choose a vertical position that keeps the lyric **below all dots in that sequence**, and use **spaced hyphens (`- - - -`) for the remainder of the horizontal distance**.
-- If that sequence continues onto the next system, the new system begins with continuing hyphens until the next syllable, at the **same vertical level relative to the staff**. Exact clearance, hyphen spacing, endpoint alignment, behavior when the staff range changes between systems, and continuation across page breaks remain to be specified.
+- When one word or syllable occupies a **two-dot capsule**, center it beneath the pair (Tallis measure 22, “truth,” and its repeated measure 35). This also applies to each two-dot word/syllable group within a shared capsule: Tallis measure 26’s “truth” and “that” each center beneath their own pair. Single-dot syllables keep their individual anchors.
+- Otherwise, each lyric syllable is **centered under its first dot**, as clarified by “If” and “ye” in measure 1 of *If Ye Love Me*. This supersedes the earlier capsule-edge alignment. When a syllable spans a sequence of pitches, center its text under the first dot of that sequence. Choose a vertical position that keeps the lyric **below all dots in that sequence**, and use **uninterrupted underscores for the remainder of the horizontal distance**. The underscore begins immediately at the end of the lyric text, with no intervening space. This supersedes the earlier spaced-hyphen rule for long syllables.
+- Apply alignment and compact two-dot spacing as common rules, without score-specific event IDs or saved corrections. Automatic two-dot grouping gives “love” pair centering, leaves the longer “me” continuation at its first dot, and centers the two-dot “mand” and outgoing “ments” segments. These choices are derived by the renderer; per-lyric layout overrides are not supported.
+- Omit very short continuation underscores, such as the one after “love” in Tallis measure 2. The provisional renderer threshold is `lyricContinuationMinLength: 28` SVG units, applied to the available extension before clipping at a capsule edge; qualifying extensions still begin immediately after the text and are retained if capsule-edge clipping shortens them.
+- Exception: retain a trailing underscore when the syllable continues onto the next system, even if the available segment is short. Example: “ments” in Tallis measure 4 signals continuation into measure 5 on the next line.
+- When a syllable ends with its sung capsule, cap its continuation underscore at that capsule’s trailing edge, including before a pitch change (Tallis measure 10, “give”).
+- When that continuation ends before a rest, its underscore must not extend past the trailing edge of the sung capsule. In Tallis measure 5, the incoming “ments” continuation ends at its sung capsule, before the separate rest capsule.
+- If that sequence continues onto the next system, the new system begins with a continuous underscore until the next syllable, at the **same vertical level relative to the staff**. At a system break, the outgoing underscore reaches the right barline and the incoming underscore starts at the left barline, with no white gap (Tallis measures 4–5). Other clearance, underscore thickness, behavior when the staff range changes between systems, and continuation across page breaks remain to be specified.
 - When two lyric words occur within one single-pitch capsule, a dark gray vertical line in that capsule indicates the word boundary (PDF page 3, measure 56: “thanks” / “be”).
 - For different syllables of the same word at one pitch, a gap between sung dots indicates the syllable boundary without indicating a rest (PDF page 4, measure 73: “Je” / “sus”). Provisionally, the gap occupies one omitted dot position between the surrounding dots, as described in section 2.4. Its interaction with the overall time-spacing algorithm remains to be specified.
 
@@ -236,10 +253,10 @@ The reference notation integrates lyrics tightly with the sung events.
 ### To specify
 
 1. Exact anchoring of a lyric syllable to its note/event.
-2. Default gap below capsules and renderer heuristics for balancing proximity with stable, readable baselines, including across measures. Baseline changes are a transcriber judgment call; no fixed pitch-change threshold is confirmed. How should the editor expose overrides for this judgment?
+2. Default gap below capsules and renderer heuristics for balancing proximity with stable, readable baselines, including across measures. Baseline changes are a transcriber judgment call; no fixed pitch-change threshold is confirmed. What general rules and score-wide settings should express this judgment?
 3. Translucent white-background opacity and padding, and collision-avoidance rules when pitches descend into lyric space.
 4. Hyphen rules for multi-syllable words.
-5. Exact clearance, hyphen spacing and endpoints for a syllable spanning multiple pitches, behavior when the staff range changes between systems, and continuation across page breaks. Starting under the first dot, remaining below the entire sequence, and extending with spaced hyphens onto the next system at the same vertical level are confirmed.
+5. Exact clearance, underscore thickness and endpoints for a syllable spanning multiple pitches, behavior when the staff range changes between systems, and continuation across page breaks. Centering the lyric text under its first dot, remaining below the entire sequence, and extending with uninterrupted underscores onto the next system at the same vertical level are confirmed.
 6. Rules for elision, apostrophes, punctuation, and repeated words.
 7. How much horizontal spacing to add for lyric readability, and how that adjustment affects neighboring dots and measure width. Expanding dot spacing to accommodate words is confirmed.
 
@@ -265,6 +282,7 @@ The reference notation integrates lyrics tightly with the sung events.
 - Measure bars are used as in traditional music notation.
 - When transcribing a traditional score, attempt to match its measure numbers and rehearsal letters so singers can follow the director's rehearsal instructions using the same references. Handling source-numbering exceptions remains to be specified.
 - Measures may vary in width according to the density of beats and lyrics they contain.
+- Leave extra space between a starting measure barline and the first new capsule. Capsules continuing across a barline remain connected. The gap after the final capsule should be comparable to the gap before the first capsule (Tallis measure 1: after “ye” and before “If”). The prototype uses `measureStartPadding` and `measureEndPadding`, both 12 SVG units by default.
 - Barlines are always **black**.
 - Different barline types from traditional notation are supported. The exact supported types and their rendering details remain to be enumerated.
 
@@ -303,6 +321,7 @@ The reference score preserves familiar conventional markings including rehearsal
 - Rehearsal markers from the score used by the conductor may optionally be included in the ACN part.
 - They appear as **large letters** or **circled numbers**, matching the rehearsal identifiers in the conductor's score.
 - They are placed **above and near the beginning of the corresponding measures**.
+- When a rehearsal letter is repeated by unfolding a repeat, append a **single quote** (prime), for example `C'`. The original occurrence retains its original letter. Copied measures carry semantic `repeatOf` provenance; the renderer adds the prime without changing the saved direction text. Reusing a letter elsewhere does not by itself indicate an unfolded repeat.
 
 ### Working principle
 
@@ -324,9 +343,11 @@ The reference PDF includes title/composer/part information, copyright/licensing 
 
 The first renderer should distinguish score-semantic output from optional publication furniture.
 
+### Confirmed title storage
+
+- Import initializes center title from the source title, right title from the composer, and center subtitle from the selected part; left title starts empty. All four fields live in the required companion `.acn-layout.json`, and only that layout supplies the displayed headers.
 ### To decide
 
-- Which title/composer/part fields are imported automatically.
 - Whether legal/licensing text is template-based.
 - Whether the pitch legend/comparison diagram is generated automatically or maintained as a static publication element.
 
@@ -360,3 +381,27 @@ For each rule we add, capture:
 5. **Reference example** — a page/measure from a known score when possible.
 
 The specification is ready to drive implementation only when the core pitch, rhythm, rest, lyric, and measure rules can be applied without relying on the creator's visual intuition.
+
+
+## 11. Current prototype choices — provisional, for review
+
+The Tallis tenor renderer implements confirmed rules with the following **implementation heuristics**, not additional normative notation rules:
+
+- Whole/half-beat durations expand to full dots followed by a half dot when needed. Adjacent half dots pair in chronological order, including across pitch changes; the wider pairing rule remains unresolved.
+- Consecutive same-pitch notes share a capsule, including ties. No new articulation symbol is inferred. Ordinary barlines do not break capsules. Repeat starts/ends and starts of alternate endings terminate capsules to avoid suggesting continuation across playback jumps. Page breaks currently use the same square-ended continuation as system breaks.
+- One omitted dot position is reserved at a same-pitch syllable change. Word boundaries get dark gray dividers when they occur within a system; a new system starts without a redundant boundary divider. Widths expand for measured lyric text. Music measures are packed greedily by their required width, without a four-measure limit or compression below the dot/lyric minimum widths. `musicMeasuresPerSystem` defaults to `"auto"`; a positive whole number imposes a maximum. `measuresPerSystem` controls blank scores only.
+- Horizontal justification first reserves minimum widths for dots, lyrics, capsule padding, and barlines. Remaining line width is shared among measures in proportion to musical duration, rather than their text-driven minimum widths. Within a measure, extra width stretches musical intervals between the first and last dots; it does not multiply the fixed lyric/capsule clearances. Single-dot measures center their content in the extra width. Two-dot capsules crossing barlines still compact afterward when lyrics permit.
+- End padding is measured from the innermost stroke of a final, double, or repeat barline, so compound barlines do not consume the capsule’s end clearance. These rules give held-note measures room without disproportionate word spacing in neighboring measures (review example: measures 36–39).
+- Lyrics begin one pitch space below the lowest capsule in their own sung sequence. Syllables belonging to the same word then share the lowest required baseline, including continuations across systems/pages. Unrelated words do not inherit another word’s height. Vertical pagination uses these final lyric positions. Notes without new lyric text continue the previous syllable until a rest, new syllable, or repeat boundary. General phrase-level smoothing beyond word alignment remains a transcriber judgment; no fixed threshold for it has been established.
+- Capsule height 14 (matching the two-semitone distance between adjacent lines), dot radius 3.8, capsule end padding 10 (from the full-dot edge), beat spacing 18, lyric size 14, lyric font weight 500 (Roboto Medium, using a real intermediate weight), lyric gap 14 (one pitch-line space at the default staff spacing), and lyric background opacity 0.85 are editable defaults in SVG units. Baseline, padding, and lyric-extension placement algorithms remain provisional. Sustained syllables use continuous vector underscore lines with translucent white backgrounds; ordinary syllable separators use a single hyphen.
+- Capsules are painted over pitch lines; black measure bars are painted over capsules. Conventional two-pass repeat bars, double/final bars, and numbered ending brackets use provisional geometry. Final barlines match the reference PDF’s ending on page 4: a thin stroke followed by a stroke six times as thick, with stroke centers nine thin-stroke widths apart. The thick stroke’s outer edge aligns with the staff end. These proportions scale with `barLineWidth`; at the default 0.8, the thick stroke is 4.8 SVG units and center spacing is 7.2. The reference’s vector strokes measure 0.5 and 3 PDF points with 4.5 points between centers. Textual dynamics have opaque square backgrounds; tempo/expression and rehearsal text go above the staff. General collision avoidance for dense combinations of directions/endings remains future work.
+- The beat-example capsule repeats with each displayed pitch index. This renderer requires a constant meter, 1–16 whole ACN beats per measure, and event durations/onsets in whole or half beats. It rejects unsupported subdivisions, changing meter, multiple lyric verses, and pitches outside C3–G+4. An entirely silent score needs a rest-position rule and is not rendered yet.
+- Output page count is derived from the music, as requested by the user. `pages` applies only to blank scores. Staff count and spacing remain configurable, with only needed systems drawn on the last page.
+
+Every saved score requires `{name}.acn-layout.json`, containing all four title fields plus any score-wide partial overrides of `default-layout.json`. Displayed titles are not stored in the music JSON. Per-lyric `alignment` and `capsuleGap` fields have been removed and are rejected on input. There are no measure/system layout exceptions in `.acn.json`. Examples in this specification are regression cases, not conditions in the renderer.
+
+Hairpins, beat-count annotations, and automatic source system-break handling are not yet implemented. These limitations do not change the confirmed notation rules above.
+
+### Tallis repeat transcription
+
+The user requested writing out the repeat rather than displaying repeat signs. The working Tallis score follows source measures 1–26, then 14–25, then the second ending at 27: 39 measures in performance order. Number the unfolded measures consecutively 1–39: the second pass starts at 27, and the final second-ending measure is 39. This supersedes the initial duplicated source-number display. Rehearsal letters are retained. This is a piece-specific transcription choice, not a change to the native importer’s repeat preservation.

@@ -1,0 +1,3590 @@
+{
+  "formatVersion": "0.1",
+  "metadata": {
+    "copyright": "CM 21/02/2015"
+  },
+  "source": {
+    "file": "If Ye Love Me - Tallis - Original.mscz",
+    "sha256": "fe067e8835b46785f97ace47d97a766beb1c5bb16a5296d3bb15ea340dc53c38",
+    "format": "MuseScore",
+    "version": "3.01",
+    "programVersion": "3.5.0",
+    "archiveEntry": "temp_8929.mscx"
+  },
+  "part": {
+    "id": "3",
+    "name": "Tenor",
+    "staffId": "3",
+    "voice": 1,
+    "measures": [
+      {
+        "number": 1,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m1-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "If",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m1-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ye",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 2,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m2-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "love",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m2-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "me,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 3,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m3-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m3-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "keep",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m3-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "my",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m3-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "com",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 4,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m4-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "mand",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m4-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ments",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 5,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m5-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m5-e2",
+            "kind": "rest",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": []
+          },
+          {
+            "id": "s3-v1-m5-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "and",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "rehearsal",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "text": "A"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 6,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m6-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "I",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m6-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "will",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m6-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "pray",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m6-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 7,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 7,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m7-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Fa",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m7-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ther,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 8,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m8-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m8-e2",
+            "kind": "rest",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": []
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 9,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m9-e1",
+            "kind": "rest",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": []
+          },
+          {
+            "id": "s3-v1-m9-e2",
+            "kind": "rest",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": []
+          },
+          {
+            "id": "s3-v1-m9-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "and",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "rehearsal",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "text": "B"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 10,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m10-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "he",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m10-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "shall",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m10-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "give",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 11,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m11-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "you",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m11-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "a",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m11-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "no",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 12,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m12-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m12-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m12-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ther",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m12-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "com",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m12-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 7,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "fort",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 13,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m13-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "er,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m13-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "that",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 14,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m14-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "he",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m14-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "may",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "rehearsal",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "C"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 15,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m15-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "bide",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m15-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "with",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m15-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "you",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m15-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "for",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 16,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m16-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m16-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m16-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "er,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m16-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "that",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 17,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m17-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "he",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m17-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "may",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m17-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "bide",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m17-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "with",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 18,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m18-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "you",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m18-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "for",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m18-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 59,
+              "name": "B",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 19,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m19-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "er,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m19-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev'n",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 67,
+              "name": "G",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m19-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 20,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m20-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 67,
+              "name": "G",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m20-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m20-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m20-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "rehearsal",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "D"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 21,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m21-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 22,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m22-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m22-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m22-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev'n",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 23,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m23-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m23-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m23-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m23-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 24,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m24-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m24-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m24-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m24-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 25,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m25-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m25-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m25-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m25-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 26,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m26-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m26-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "that",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 27,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m14-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "he",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m14-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "may",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "rehearsal",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "C"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 14
+      },
+      {
+        "number": 28,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m15-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "bide",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m15-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "with",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m15-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "you",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m15-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "for",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 15
+      },
+      {
+        "number": 29,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m16-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m16-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m16-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "er,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m16-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "that",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 16
+      },
+      {
+        "number": 30,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m17-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "he",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m17-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "may",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m17-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "bide",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m17-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "with",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 17
+      },
+      {
+        "number": 31,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m18-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "you",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m18-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "for",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m18-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 59,
+              "name": "B",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 18
+      },
+      {
+        "number": 32,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m19-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "er,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m19-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev'n",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 67,
+              "name": "G",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m19-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 19
+      },
+      {
+        "number": 33,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m20-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 67,
+              "name": "G",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m20-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m20-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m20-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "rehearsal",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "D"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 20
+      },
+      {
+        "number": 34,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m21-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 21
+      },
+      {
+        "number": 35,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m22-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m22-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m22-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ev'n",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 22
+      },
+      {
+        "number": 36,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m23-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m23-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m23-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m23-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 23
+      },
+      {
+        "number": 37,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m24-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m24-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m24-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "s3-v1-m24-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 24
+      },
+      {
+        "number": 38,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m25-e1-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth,",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m25-e2-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "the",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m25-e3-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sp'rit",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "s3-v1-m25-e4-pass2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "of",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal",
+        "repeatOf": 25
+      },
+      {
+        "number": 39,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "s3-v1-m27-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "truth.",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "end"
+      }
+    ],
+    "spans": [
+      {
+        "kind": "tie",
+        "from": "s3-v1-m2-e2",
+        "to": "s3-v1-m3-e1"
+      },
+      {
+        "kind": "tie",
+        "from": "s3-v1-m4-e2",
+        "to": "s3-v1-m5-e1"
+      },
+      {
+        "kind": "tie",
+        "from": "s3-v1-m7-e2",
+        "to": "s3-v1-m8-e1"
+      },
+      {
+        "kind": "slur",
+        "from": "s3-v1-m11-e3",
+        "to": "s3-v1-m12-e1"
+      },
+      {
+        "kind": "slur",
+        "from": "s3-v1-m16-e1",
+        "to": "s3-v1-m16-e2"
+      },
+      {
+        "kind": "tie",
+        "from": "s3-v1-m22-e3",
+        "to": "s3-v1-m23-e1"
+      },
+      {
+        "kind": "slur",
+        "from": "s3-v1-m16-e1-pass2",
+        "to": "s3-v1-m16-e2-pass2"
+      },
+      {
+        "kind": "tie",
+        "from": "s3-v1-m22-e3-pass2",
+        "to": "s3-v1-m23-e1-pass2"
+      }
+    ]
+  },
+  "repeatEndings": [],
+  "transcription": {
+    "beatUnit": {
+      "numerator": 1,
+      "denominator": 4
+    },
+    "staffRange": {
+      "low": 48,
+      "high": 68
+    }
+  },
+  "importNotes": [
+    "Source engraving, playback settings, and embedded extracted parts are not imported.",
+    "Transcriber edit: wrote out the two-pass repeat in performance order: source measures 1–26, 14–25, then 27 (second ending). The unfolded score is numbered consecutively 1–39; the second pass starts at 27. Repeated event IDs end in -pass2."
+  ]
+}
