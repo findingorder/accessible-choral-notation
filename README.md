@@ -42,7 +42,7 @@ Known core rules so far:
 
 - Vertical position represents pitch.
 - Horizontal position represents musical time.
-- Black dots represent sung sound.
+- Sung dots are black by default, or pitch-colored when that note color mode is selected.
 - White dots represent rests/silence.
 - The notation uses stable pitch rows and visible pitch-reference landmarks rather than traditional clefs.
 - Conventional information such as lyrics, measure numbers, rehearsal marks, dynamics, and tempo/expression text can remain recognizable rather than being reinvented.
@@ -135,6 +135,14 @@ The supplied layout generates four US Letter pages with five blank C3–G+4 staf
 Every SVG filename includes its page number: `blank-tenor-page-1.svg`, `blank-tenor-page-2.svg`, etc. `--output output/custom.svg` selects the base name, producing `custom-page-1.svg`, subsequent numbered SVGs, and `custom.pdf`. Existing generated pages are overwritten; reducing the page count does not remove older extra-page files.
 
 Presentation settings use SVG units (96 units = one inch). Unknown keys, invalid types, and page layouts that do not fit are rejected before output is written. Shared defaults and partial overrides are described above.
+
+`lineColorMode` selects `"standard"` (default, current colors), `"monochrome"` (red and blue staff lines become black; gray lines stay gray), or `"pitch-based"` (replacement colors for the black, red, and blue staff lines). The pitch-based palette is C `#B22222`, E `#008000`, and G+ `#0000FF`, repeated in every octave; gray lines retain their current color. The setting applies to both blank and musical scores, including lines through the pitch index. Set it in `default-layout.json` or in a score's companion layout.
+
+`noteColorMode` independently selects `"monochrome"` (default: black sung dots) or `"pitch-based"` (sung dots use the confirmed chromatic palette in `docs/ACN-SPEC.md`). Full and half dots use the same pitch color in every octave. Rests remain white. Capsules use a lighter gray (`#d9d9d9`) in Pitch-based note mode for better contrast; Monochrome retains `#bfbfbf`. Internal word dividers also lighten to `#999999` in Pitch-based mode, versus `#666666` in Monochrome. Lyrics, measure bars, repeat dots, and time-signature example dots retain their existing colors. Set this in shared defaults or the score's companion layout; selecting colored lines does not automatically color notes.
+
+When Pitch-based notes are combined with Monochrome lines, E and G+ staff lines use medium gray (`#999999`) instead of black, while C lines stay black. Standard and Pitch-based line palettes keep their assigned colors; light-gray lines and other notation are unchanged.
+
+In Pitch-based note mode, each pitch-label oval in the pitch index uses its pitch color with white lettering. The C3 and Middle C boxes use the C color and white lettering too. Monochrome note mode retains white label backgrounds and dark text; the gray index panel and its geometry are unchanged.
 
 The text fields `leftTitle`, `centerTitle`, and `rightTitle` share a header row, aligned to the left margin, page center, and right margin. `centerSubtitle` appears centered below that row. They use the serif font; empty strings omit them. Keep each field to a short single line; automatic wrapping and collision handling are not yet implemented.
 

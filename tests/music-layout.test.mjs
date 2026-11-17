@@ -447,3 +447,49 @@ test('CLI renders saved music without its source, writes only SVG and vector PDF
     assert.equal(await readFile(join(dir, 'piece.pdf'), 'latin1'), pdf);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
+
+test('music uses the selected staff palette without changing engraving or lyric underscores', () => {
+  const standard = draw();
+  const monochrome = draw(score, { ...settings, lineColorMode: 'monochrome' });
+  assert.deepEqual(monochrome, standard.map(page => ({
+    ...page,
+    shapes: page.shapes.map(s => s.kind === 'line' && ['#e53935', '#4589cf'].includes(s.color)
+      ? { ...s, color: '#202020' } : s),
+  })));
+  const colors = { '#202020': '#B22222', '#e53935': '#008000', '#4589cf': '#0000FF' };
+  const pitchBased = draw(score, { ...settings, lineColorMode: 'pitch-based' });
+  assert.deepEqual(pitchBased, standard.map(page => ({
+    ...page,
+    shapes: page.shapes.map(s => s.kind === 'line' && !s.role && s.y1 === s.y2 && colors[s.color]
+      ? { ...s, color: colors[s.color] } : s),
+  })));
+});
+
+test('pitch-colored notes use the exact palette for full and half dots while rests remain white', () => {
+  const palette = ['#B22222', '#FF8000', '#CCA400', '#89BC21', '#008000', '#008B8B',
+    '#20B2AA', '#6495ED', '#0000FF', '#7F00FF', '#BA55D3', '#FF1493'];
+  const s = small(Array.from({ length: 21 }, (_, i) => [[1.5, 48 + i], [0.5, null], [2, 48 + i]]));
+  const pitches = new Map(s.part.measures.flatMap(m => m.events).filter(e => e.kind === 'note').map(e => [e.id, e.pitch.midi]));
+  for (const lineColorMode of ['standard', 'monochrome', 'pitch-based']) {
+    const options = { ...settings, lineColorMode };
+    const softenLine = shape => lineColorMode === 'monochrome' && shape.kind === 'line' && !shape.role && shape.y1 === shape.y2 &&
+      [0, 4, 12, 16].includes(((shape.y1 - options.top) % options.systemStep) / options.semitoneStep)
+      ? { ...shape, color: '#999999' } : shape;
+    const mono = draw(s, options);
+    const colored = draw(s, { ...options, noteColorMode: 'pitch-based' });
+    const withoutIndex = pages => pages.map(page => ({ ...page, shapes: page.shapes.filter(shape => !shape.role?.startsWith('pitch-index-')) }));
+    assert.deepEqual(withoutIndex(colored), withoutIndex(mono.map(page => ({
+      ...page,
+      description: page.description.replace('Black dots', 'Pitch-colored dots'),
+      shapes: page.shapes.map(shape => shape.role?.startsWith('sung-')
+        ? { ...shape, fill: palette[pitches.get(shape.eventId) % 12] }
+        : shape.role?.startsWith('capsule') || shape.role === 'beat-example' ? { ...shape, fill: '#d9d9d9' } : softenLine(shape)),
+    }))));
+    for (const shape of shapes(colored).filter(shape => shape.role?.startsWith('rest-') && isDot(shape))) assert.equal(shape.fill, '#ffffff');
+    assert.ok(shapes(colored).some(shape => shape.role?.startsWith('sung-half-')));
+    assert.ok(shapes(colored).some(shape => shape.role?.startsWith('rest-half-')));
+    assert.ok(shapes(colored).filter(shape => shape.role === 'example-dot').every(shape => shape.fill === '#000000'));
+    const svg = colored.map(page => renderSvg(page)).join('');
+    for (const color of palette) assert.ok(svg.includes(`fill="${color}"`), color);
+  }
+});

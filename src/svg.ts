@@ -10,7 +10,7 @@ function renderShapeBody(s: Shape): string {
     case 'line': return `<line x1="${s.x1}" y1="${s.y1}" x2="${s.x2}" y2="${s.y2}" stroke="${escapeXml(s.color)}" stroke-width="${s.width}"/>`;
     case 'rect': return `<rect x="${s.x}" y="${s.y}" width="${s.width}" height="${s.height}" fill="${escapeXml(s.fill)}"${s.opacity === undefined ? '' : ` fill-opacity="${s.opacity}"`}${s.radius === undefined ? '' : ` rx="${s.radius}"`}${s.stroke === undefined ? '' : ` stroke="${escapeXml(s.stroke)}" stroke-width="${s.strokeWidth ?? 1}"`}/>`;
     case 'ellipse': return `<ellipse cx="${s.x}" cy="${s.y}" rx="${s.rx}" ry="${s.ry}" fill="${escapeXml(s.fill ?? 'white')}" stroke="${escapeXml(s.stroke ?? '#666666')}" stroke-width="0.7"/>`;
-    case 'text': return `<text x="${s.x}" y="${s.y + s.size * 0.35}" font-size="${s.size}" text-anchor="${s.anchor ?? 'middle'}"${s.italic ? ' font-style="italic"' : ''}${s.bold ? ' font-weight="bold"' : ''}${s.fontWeight === undefined ? '' : ` font-weight="${s.fontWeight}"`}${s.fontFamily === undefined ? '' : ` font-family="${escapeXml(s.fontFamily)}"`}>${escapeXml(s.text)}</text>`;
+    case 'text': return `<text x="${s.x}" y="${s.y + s.size * 0.35}" font-size="${s.size}" text-anchor="${s.anchor ?? 'middle'}"${s.fill === undefined ? '' : ` fill="${escapeXml(s.fill)}"`}${s.italic ? ' font-style="italic"' : ''}${s.bold ? ' font-weight="bold"' : ''}${s.fontWeight === undefined ? '' : ` font-weight="${s.fontWeight}"`}${s.fontFamily === undefined ? '' : ` font-family="${escapeXml(s.fontFamily)}"`}>${escapeXml(s.text)}</text>`;
   }
 }
 

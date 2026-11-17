@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { layoutBlankPage, blankPageDefaults } from '../dist/layout.js';
-import { lineColor, pitchName } from '../dist/pitch.js';
+import { lineColor, noteColor, pitchName } from '../dist/pitch.js';
 import { renderSvg } from '../dist/svg.js';
 
 test('chromatic pitch names and landmark colors repeat each octave', () => {
@@ -81,4 +81,56 @@ test('titles only appear on the first page with extra header space', () => {
   }
   assert.equal(Math.min(...first.shapes.filter(s => s.kind === 'line').map(s => s.y1)), settings.firstPageTop);
   assert.equal(Math.min(...second.shapes.filter(s => s.kind === 'line').map(s => s.y1)), settings.top);
+});
+
+test('monochrome changes only red and blue staff lines, including inside the pitch index', () => {
+  const standard = layoutBlankPage();
+  const monochrome = layoutBlankPage({ ...blankPageDefaults, lineColorMode: 'monochrome' });
+  assert.deepEqual(monochrome, {
+    ...standard,
+    shapes: standard.shapes.map(s => s.kind === 'line' && ['#e53935', '#4589cf'].includes(s.color)
+      ? { ...s, color: '#202020' } : s),
+  });
+  assert.doesNotMatch(renderSvg(monochrome), /#e53935|#4589cf/);
+  assert.match(renderSvg(monochrome), /#d4d4d4/);
+});
+
+test('pitch-based colors repeat by pitch class and preserve gray lines and spaces', () => {
+  const palette = ['#B22222', undefined, '#d4d4d4', undefined, '#008000', undefined,
+    '#d4d4d4', undefined, '#0000FF', undefined, '#d4d4d4', undefined];
+  for (let pitch = 36; pitch < 84; pitch++) assert.equal(lineColor(pitch, 'pitch-based'), palette[pitch % 12]);
+  const standard = layoutBlankPage();
+  const colors = { '#202020': '#B22222', '#e53935': '#008000', '#4589cf': '#0000FF' };
+  const page = layoutBlankPage({ ...blankPageDefaults, lineColorMode: 'pitch-based' });
+  assert.deepEqual(page, { ...standard, shapes: standard.shapes.map(s =>
+    s.kind === 'line' && s.y1 === s.y2 && colors[s.color] ? { ...s, color: colors[s.color] } : s) });
+  const svg = renderSvg(page);
+  for (const color of Object.values(colors)) assert.ok(svg.includes(`stroke="${color}"`));
+});
+
+test('pitch-based note mode colors index labels by pitch and keeps lettering white', () => {
+  for (const lineColorMode of ['standard', 'monochrome', 'pitch-based']) {
+    const options = { ...blankPageDefaults, pages: 2, lineColorMode };
+    const softenLine = shape => lineColorMode === 'monochrome' && shape.kind === 'line' && shape.y1 === shape.y2 &&
+      [0, 4, 12, 16].includes(((shape.y1 - options.top) % options.systemStep) / options.semitoneStep)
+      ? { ...shape, color: '#999999' } : shape;
+    const mono = layoutBlankPage(options);
+    const colored = layoutBlankPage({ ...options, noteColorMode: 'pitch-based' });
+    assert.deepEqual(colored, {
+      ...mono,
+      shapes: mono.shapes.map(shape => {
+        if (!shape.role?.startsWith('pitch-index-')) return softenLine(shape);
+        if (shape.role === 'pitch-index-label') return { ...shape, fill: '#ffffff' };
+        const centerY = shape.kind === 'rect' ? shape.y + shape.height / 2 : shape.y;
+        const pitch = 68 - (centerY - options.top) / options.semitoneStep;
+        return { ...shape, fill: noteColor(pitch, 'pitch-based') };
+      }),
+    });
+    assert.equal(colored.shapes.filter(shape => shape.role === 'pitch-index-label').length, 23);
+    const svg = renderSvg(colored);
+    assert.match(svg, /fill="#ffffff"[^>]*>G\+<\/text>/);
+    assert.match(svg, /fill="#B22222"/);
+    const second = layoutBlankPage(options, 2);
+    assert.deepEqual(layoutBlankPage({ ...options, noteColorMode: 'pitch-based' }, 2), { ...second, shapes: second.shapes.map(softenLine) });
+  }
 });

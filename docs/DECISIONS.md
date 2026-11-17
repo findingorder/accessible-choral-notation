@@ -103,3 +103,19 @@ This file records decisions already made so future work does not repeatedly reop
 **Decision:** Append a single quote to rehearsal letters repeated because a repeat has been unfolded. Keep the original occurrence unchanged.
 
 **Consequence:** Copied measures retain semantic `repeatOf` provenance referring to an earlier ACN measure. The common renderer uses that provenance to decorate rehearsal letters without modifying their saved text or inferring repeats from duplicate labels, event IDs, or piece-specific measure numbers.
+
+## D-018 — Three staff-line color modes
+
+**Decision:** Add score-wide `lineColorMode`: `standard` preserves current colors; `monochrome` changes red and blue lines to black; `pitch-based` uses the user-supplied colors C `#B22222`, E `#008000`, and G+ `#0000FF` in every octave. Gray lines retain their current color.
+
+**Status:** All three modes are implemented. Standard remains the default.
+
+## D-019 — Independent note color modes
+
+**Decision:** Add `noteColorMode` with `monochrome` (default, current black sung dots) and `pitch-based` (the exact twelve hex colors supplied by the user, listed in ACN-SPEC). This is a score-wide option independent of `lineColorMode`.
+
+**Consequence:** Color full and half sung dots by pitch class in every octave. Rest dots remain white. Capsules use a lighter gray in Pitch-based note mode for better contrast (`#d9d9d9`; Monochrome retains `#bfbfbf`). Internal word dividers likewise lighten to `#999999` in Pitch-based note mode (Monochrome: `#666666`). Other notation retains its current colors, including the black dots of unpitched beat examples. Use the supplied hex values rather than substituting CSS color-name values.
+
+## D-020 — Keep C prominent with colored notes and monochrome lines
+
+**Decision:** In Pitch-based note mode, horizontal staff lines that would otherwise be black become dark gray, except C lines, which stay black. With Monochrome lines this changes E and G+ to `#999999`; the Standard and Pitch-based line palettes keep their assigned colors. Bar lines, lyric continuations, and light-gray staff lines retain their existing colors.

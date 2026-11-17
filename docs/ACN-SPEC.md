@@ -37,7 +37,7 @@ Horizontal spacing may expand to accommodate lyrics; dot positions are therefore
 
 ### 2.3 Sound and silence — confirmed
 
-- **Black dots are sung.**
+- **Sung dots are black in the default Monochrome note mode, or pitch-colored in Pitch-based note mode.**
 - **White dots are rests.**
 
 This is a fundamental semantic distinction and should remain visually immediate.
@@ -49,7 +49,7 @@ This is a fundamental semantic distinction and should remain visually immediate.
 - A horizontal gray capsule encloses one or more sequential notes at the same pitch.
 - Capsules centered on pitch spaces reach the adjacent horizontal pitch lines with no white gap along their straight upper and lower edges.
 - The capsule ends before the pitch changes. A new pitch starts a new capsule.
-- Black dots indicate sung sound; white dots indicate rests.
+- Sung dots indicate sound; white dots indicate rests. Sung dots are black by default; optional pitch colors are specified below.
 - Long rest sequences use vertical white lines to divide the capsule into beat groups, as described in section 4.
 - Capsules may span across barlines; a measure boundary does not by itself require a new capsule.
 - When a barline separates syllables of the same word within one capsule, center it between the adjacent dots so their distances from the barline are equal (Tallis measures 15–16, “for”/“ev”).
@@ -93,9 +93,9 @@ The reference score displays a continuous vertical pitch region with horizontal 
   - **Lines:** C, D, E, F+, G+, A+.
 - All chromatic pitches have their own positions; no accidental symbols are needed to alter a note's pitch.
 - The same line/space pattern repeats in every octave: each pitch class retains its relative position within the octave's pattern, while higher octaves appear higher vertically.
-- C ("do") is always located on a **black horizontal staff line**, in every octave.
-- E is always located on a **red horizontal staff line**, in every octave.
-- G+ is always located on a **blue horizontal staff line**, in every octave.
+- In **Standard** color mode, C ("do") is located on a **black horizontal staff line**, in every octave.
+- In Standard mode, E is located on a **red horizontal staff line**, in every octave.
+- In Standard mode, G+ is located on a **blue horizontal staff line**, in every octave.
 - All other horizontal staff lines are **gray**.
 - The black, red, and blue lines divide each 12-tone chromatic octave into three regular, predictable groups of four successive pitches:
   - **Black C line:** C, C+, D, D+.
@@ -104,6 +104,36 @@ The reference score displays a continuous vertical pitch region with horizontal 
 - Each colored landmark line begins its four-pitch group; after the blue group, the pattern repeats at the next octave's black C line.
 - The default tenor staff range is **C3 through G+4**, inclusive. Middle C is C4; G+4 is the next chromatic pitch above G4. Octave numbers here identify the range endpoints; exact guide-label formatting remains to be specified.
 - The staff range can vary for different voices. Other voice defaults have not yet been specified.
+
+### Line color modes — confirmed
+
+- **Standard:** use the current line colors described above (default).
+- **Monochrome:** change red and blue staff lines to black; retain the gray lines.
+- **Pitch-based:** use C `#B22222`, E `#008000`, and G+ `#0000FF` in every octave, replacing the Standard black, red, and blue line colors respectively. Gray lines remain gray.
+- The score-wide `lineColorMode` setting applies throughout the score and pitch index without changing pitch positions or other notation.
+
+### Note color modes — confirmed
+
+`noteColorMode` is independent of `lineColorMode` and applies score-wide. **Monochrome** is the default and retains black sung dots. **Pitch-based** applies the user's exact palette to full and half sung dots, repeating by pitch class in every octave. Rests remain white. Capsules use a lighter gray in Pitch-based note mode for better contrast (current rendering value `#d9d9d9`, versus `#bfbfbf` in Monochrome). Internal word dividers also lighten in Pitch-based note mode (current value `#999999`, versus `#666666` in Monochrome). Other notation retains its existing colors; time-signature beat-example dots have no pitch and remain black. Earlier black-dot examples describe Monochrome mode.
+
+| ACN pitch | Color |
+| --- | --- |
+| C | `#B22222` |
+| C+ | `#FF8000` |
+| D | `#CCA400` |
+| D+ | `#89BC21` |
+| E | `#008000` |
+| F | `#008B8B` |
+| F+ | `#20B2AA` |
+| G | `#6495ED` |
+| G+ | `#0000FF` |
+| A | `#7F00FF` |
+| A+ | `#BA55D3` |
+| B | `#FF1493` |
+
+When Pitch-based notes are combined with Monochrome lines, E and G+ staff lines use medium gray (`#999999`) instead of black, while C lines stay black. Standard and Pitch-based line palettes keep their assigned colors; light-gray lines and other notation are unchanged.
+
+In Pitch-based note mode, each pitch-label oval in the pitch index uses its pitch color with white lettering. The C3 and Middle C boxes use the C color and white lettering too. Monochrome note mode retains white label backgrounds and dark text; the gray index panel and its geometry are unchanged.
 
 ### Pitch naming — confirmed
 
@@ -132,7 +162,7 @@ The reference score displays a continuous vertical pitch region with horizontal 
 2. What is the physical spacing between adjacent semitone positions?
 3. What exact color values should be used for the black, red, blue, and gray staff lines?
 4. What thickness should the staff lines have?
-5. Are staff-line colors and thicknesses fixed or configurable?
+5. Color modes and the Pitch-based palette are confirmed above; color-mode selection and staff-line thickness are configurable.
 6. Which C pitches receive explicit labels such as `C3`, `Middle C`, etc.?
 7. May the note guide also appear on later systems, and how is facing-page versus standalone-page layout selected?
 8. Does the pitch map transpose visually for transposing music, or always show sounding/concert pitch?

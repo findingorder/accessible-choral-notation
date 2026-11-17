@@ -31,7 +31,7 @@ Do not assign meaning to any observed element unless it is explicitly confirmed 
 
 ## Confirmed notation rules so far
 
-1. **Black dots are sung.**
+1. **Sung dots are black by default, with optional pitch-based colors.**
 2. **White dots are rests.**
 3. **Vertical position represents pitch.**
 4. **Horizontal position represents musical time** at the conceptual level.
@@ -116,3 +116,15 @@ Implementation requirements from the user must become common rules applicable to
 Presentation overrides are permitted only at score-wide scope, in a sibling `{name}.acn-layout.json` inheriting `default-layout.json` (or an explicitly selected file with the same settings schema). No per-lyric, measure, or system overrides belong in `.acn.json`. The required working-score file is `output/if-ye-love-me-tenor.acn-layout.json`; it holds the four title fields and inherits all other settings.
 
 Horizontal spacing now reserves the inner extent of compound barlines and distributes surplus line width by measure duration. Within each measure, only musical intervals stretch; measured text and capsule padding remain fixed. This reduces excess spacing in text-heavy measures and gives held-note measures more room. In the reviewed output, the last measure grows from about 126 to 142 SVG units while retaining 12 units between its capsule and the inner final-bar stroke. These are common rules, not measure-specific settings. Both output pages were visually checked; all 34 tests pass.
+
+### Line color modes
+
+`lineColorMode` is a score-wide layout option, defaulting to `standard`. `monochrome` changes red/blue staff lines to the existing black while preserving gray lines and all geometry. Both blank and musical rendering use it, including the pitch index. `pitch-based` uses the confirmed palette C `#B22222`, E `#008000`, and G+ `#0000FF` in every octave, keeping gray lines unchanged. All three modes are implemented.
+
+### Note color modes
+
+`noteColorMode` defaults to `monochrome`, with `pitch-based` available independently of line colors. The exact twelve-color palette supplied in the user's image is recorded in ACN-SPEC and `src/pitch.ts`. It applies to full and half sung dots by pitch class in every octave; rest dots stay white. In this mode, all capsules (including the time-signature example) use lighter gray `#d9d9d9` for contrast, while Monochrome retains `#bfbfbf`. Internal word dividers lighten to `#999999` in Pitch-based note mode; Monochrome retains `#666666`. Accessible SVG descriptions reflect the selected note mode. Shared defaults and existing score settings retain monochrome notes unless explicitly overridden.
+
+When Pitch-based notes are combined with Monochrome lines, E and G+ staff lines use medium gray (`#999999`) instead of black, while C lines stay black. Standard and Pitch-based line palettes keep their assigned colors; light-gray lines and other notation are unchanged.
+
+In Pitch-based note mode, each pitch-label oval in the pitch index uses its pitch color with white lettering. The C3 and Middle C boxes use the C color and white lettering too. Monochrome note mode retains white label backgrounds and dark text; the gray index panel and its geometry are unchanged.

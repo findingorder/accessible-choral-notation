@@ -28,7 +28,7 @@ When examining the reference PDF:
 
 ## Known rules
 
-- Black dots are sung.
+- Sung dots are black by default; optional Pitch-based note mode uses the confirmed palette.
 - White dots are rests.
 - Vertical position represents pitch.
 - Horizontal position represents musical time.

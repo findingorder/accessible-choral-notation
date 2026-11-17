@@ -9,8 +9,11 @@ import { defaultLayout, parseLayout } from '../dist/settings.js';
 test('layout file is valid, omitted settings use defaults, and invalid settings are rejected', async () => {
   parseLayout(JSON.parse(await readFile('default-layout.json', 'utf8')));
   assert.deepEqual(parseLayout({}), defaultLayout);
+  assert.equal(defaultLayout.noteColorMode, 'monochrome');
+  for (const mode of ['monochrome', 'pitch-based']) assert.equal(parseLayout({ noteColorMode: mode }).noteColorMode, mode);
+  for (const mode of ['standard', 'monochrome', 'pitch-based']) assert.equal(parseLayout({ lineColorMode: mode }).lineColorMode, mode);
   for (const value of [null, [], { systems: 1.5 }, { systems: 0 }, { width: 100 },
-    { systems: 20 }, { systemStep: 10 }, { serifFont: '' }, { typo: 1 }, { pages: 0 }, { pages: 1.5 }, { pitchIndexPages: 'never' }, { musicMeasuresPerSystem: 0 }, { musicMeasuresPerSystem: 2.5 }, { musicMeasuresPerSystem: 'five' }]) {
+    { systems: 20 }, { systemStep: 10 }, { serifFont: '' }, { typo: 1 }, { pages: 0 }, { pages: 1.5 }, { pitchIndexPages: 'never' }, { musicMeasuresPerSystem: 0 }, { musicMeasuresPerSystem: 2.5 }, { musicMeasuresPerSystem: 'five' }, { lineColorMode: 'invalid' }, { lineColorMode: 1 }, { noteColorMode: 'standard' }, { noteColorMode: 1 }, { noteColorMode: null }]) {
     assert.throws(() => parseLayout(value));
   }
 });

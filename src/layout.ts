@@ -1,11 +1,11 @@
 import { defaultLayout, type LayoutSettings } from './settings.js';
-import { lineColor, octave, pitchName, tenorRange } from './pitch.js';
+import { lineColor, noteColor, octave, pitchName, tenorRange } from './pitch.js';
 
 export type Shape = (
   | { kind: 'line'; x1: number; y1: number; x2: number; y2: number; color: string; width: number }
   | { kind: 'rect'; x: number; y: number; width: number; height: number; fill: string; opacity?: number; radius?: number; stroke?: string; strokeWidth?: number }
   | { kind: 'ellipse'; x: number; y: number; rx: number; ry: number; fill?: string; stroke?: string }
-  | { kind: 'text'; x: number; y: number; text: string; size: number; fontFamily?: string; anchor?: 'start' | 'middle' | 'end'; italic?: boolean; bold?: boolean; fontWeight?: number }
+  | { kind: 'text'; x: number; y: number; text: string; size: number; fontFamily?: string; anchor?: 'start' | 'middle' | 'end'; italic?: boolean; bold?: boolean; fontWeight?: number; fill?: string }
   | { kind: 'path'; d: string; fill: string }
 ) & { role?: string; eventId?: string; measureNumber?: number };
 
@@ -51,7 +51,7 @@ export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 
     }
     for (let pitch = tenorRange.low; pitch <= tenorRange.high; pitch++) {
       const y = top + (tenorRange.high - pitch) * p.semitoneStep;
-      const color = lineColor(pitch);
+      const color = lineColor(pitch, p.lineColorMode, p.noteColorMode);
       if (color) shapes.push({ kind: 'line', x1: p.margin, y1: y, x2: p.width - p.margin, y2: y, color, width: p.staffLineWidth });
     }
     const musicLeft = p.margin + (system === 0 && hasPitchIndex ? p.guideWidth : 0);
@@ -69,15 +69,18 @@ export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 
     for (let pitch = tenorRange.low; pitch <= tenorRange.high; pitch++) {
       const y = top + (tenorRange.high - pitch) * p.semitoneStep;
       const x = p.margin + (pitch % 2 === 0 ? 82 : 108);
-      shapes.push({ kind: 'ellipse', x, y, rx: 10, ry: 6.3 });
-      shapes.push({ kind: 'text', x, y, text: pitchName(pitch), size: p.pitchLabelSize });
+      const colored = p.noteColorMode === 'pitch-based';
+      const background = colored ? noteColor(pitch, p.noteColorMode) : '#ffffff';
+      const foreground = colored ? '#ffffff' : '#202020';
+      shapes.push({ kind: 'ellipse', x, y, rx: 10, ry: 6.3, fill: background, role: 'pitch-index-background' });
+      shapes.push({ kind: 'text', x, y, text: pitchName(pitch), size: p.pitchLabelSize, fill: foreground, role: 'pitch-index-label' });
       if (pitch % 12 === 0) {
         const isMiddleC = pitch === 60;
         const labelWidth = isMiddleC ? 44 : 24;
         const labelLeft = p.margin + 6;
-        shapes.push({ kind: 'rect', x: labelLeft, y: y - 6, width: labelWidth, height: 12, fill: '#ffffff',
-          radius: 3, stroke: '#000000', strokeWidth: 0.6 });
-        shapes.push({ kind: 'text', x: labelLeft + labelWidth / 2, y, text: isMiddleC ? 'Middle C' : `C${octave(pitch)}`, size: p.pitchLabelSize });
+        shapes.push({ kind: 'rect', x: labelLeft, y: y - 6, width: labelWidth, height: 12, fill: background,
+          radius: 3, stroke: '#000000', strokeWidth: 0.6, role: 'pitch-index-background' });
+        shapes.push({ kind: 'text', x: labelLeft + labelWidth / 2, y, text: isMiddleC ? 'Middle C' : `C${octave(pitch)}`, size: p.pitchLabelSize, fill: foreground, role: 'pitch-index-label' });
       }
     }
   }

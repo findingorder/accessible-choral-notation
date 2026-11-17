@@ -1,6 +1,8 @@
 {
-  "leftTitle": "",
-  "centerTitle": "If Ye Love Me",
-  "rightTitle": "Thomas Tallis (vers 1505-1585)",
-  "centerSubtitle": "Tenor"
+  "leftTitle": "John 14:15-17",
+  "centerTitle": "IF YE LOVE ME",
+  "rightTitle": "Thomas Tallis (c. 1505-1585)",
+  "centerSubtitle": "Tenor",
+  "lineColorMode": "monochrome",
+  "noteColorMode": "pitch-based"
 }

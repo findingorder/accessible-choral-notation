@@ -1,5 +1,9 @@
+import type { LineColorMode, NoteColorMode } from './pitch.js';
+
 // Lengths are SVG units: 96 units = one inch. These are presentation defaults.
 export const defaultLayout = {
+  lineColorMode: 'standard' as LineColorMode,
+  noteColorMode: 'monochrome' as NoteColorMode,
   pages: 1, pitchIndexPages: 'odd' as 'every' | 'even' | 'odd',
   leftTitle: '', centerTitle: '', rightTitle: '', centerSubtitle: '',
   width: 816, height: 1056, margin: 48, top: 64, firstPageTop: 88,
@@ -30,6 +34,14 @@ export function parseLayout(value: unknown, defaults: LayoutSettings = defaultLa
     } else if (key === 'musicMeasuresPerSystem') {
       if (item !== 'auto' && !(typeof item === 'number' && Number.isSafeInteger(item) && item > 0)) {
         throw new Error('Layout setting musicMeasuresPerSystem must be auto or a positive whole number.');
+      }
+    } else if (key === 'noteColorMode') {
+      if (!['monochrome', 'pitch-based'].includes(item as string)) {
+        throw new Error('Layout setting noteColorMode must be monochrome or pitch-based.');
+      }
+    } else if (key === 'lineColorMode') {
+      if (!['standard', 'monochrome', 'pitch-based'].includes(item as string)) {
+        throw new Error('Layout setting lineColorMode must be standard, monochrome, or pitch-based.');
       }
     } else if (key === 'pitchIndexPages') {
       if (!['every', 'even', 'odd'].includes(item as string)) {

@@ -1,3 +1,4 @@
+import { noteColor } from './pitch.js';
 import { weightedFamily } from './font-families.js';
 import { layoutBlankPage, type PageScene, type Shape, type SystemPlan } from './layout.js';
 import type { LayoutSettings } from './settings.js';
@@ -47,6 +48,8 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   if (score.part.measures.some(m => m.meter.numerator !== meter.numerator || m.meter.denominator !== meter.denominator)) throw new Error('Meter changes are not yet supported by music rendering.');
   const staffHeight = 20 * p.semitoneStep;
   const capsuleInset = Math.max(p.capsuleHeight / 2, p.dotRadius + p.capsuleEndPadding);
+  const capsuleFill = p.noteColorMode === 'pitch-based' ? '#d9d9d9' : '#bfbfbf';
+  const wordDividerColor = p.noteColorMode === 'pitch-based' ? '#999999' : '#666666';
   if (p.systems > 1 && p.systemStep < staffHeight + 36) throw new Error('Music needs more space between systems for lyrics and markings. Increase systemStep or reduce systems/semitoneStep.');
   const flat: EventLayout[] = [];
   const measures = score.part.measures.map(source => {
@@ -275,7 +278,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     const scene = layoutBlankPage({ ...p, pages: pageCount }, n, plans);
     scene.title = [p.centerTitle, p.centerSubtitle].filter(Boolean).join(' — ') || 'Accessible Choral Notation';
     const pageFirst = onPage[0].measures[0].source, pageLast = onPage.at(-1)!.measures.at(-1)!.source;
-    scene.description = `Accessible Choral Notation, ${score.part.name}, measures ${pageFirst.sourceNumber ?? pageFirst.number}–${pageLast.sourceNumber ?? pageLast.number}. Black dots are sung; white dots are rests. Full dots are whole beats and semicircles half beats. ${beatsPerMeasure} ACN beats per measure. Pitch increases vertically from C3 to G+4.`;
+    scene.description = `Accessible Choral Notation, ${score.part.name}, measures ${pageFirst.sourceNumber ?? pageFirst.number}–${pageLast.sourceNumber ?? pageLast.number}. ${p.noteColorMode === 'pitch-based' ? 'Pitch-colored' : 'Black'} dots are sung; white dots are rests. Full dots are whole beats and semicircles half beats. ${beatsPerMeasure} ACN beats per measure. Pitch increases vertically from C3 to G+4.`;
     // Bars are painted after the capsules so measure boundaries remain visible.
     scene.shapes = scene.shapes.filter(s => s.role !== 'barline');
     pages.push(scene);
@@ -289,17 +292,17 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       const first = events[0], last = events.at(-1)!, openLeft = first !== g[0], openRight = last !== g.at(-1);
       const left = openLeft ? system.left : first.dots[0].x - capsuleInset;
       const right = openRight ? system.right : last.dots.at(-1)!.x + capsuleInset;
-      shapes(system).push({ kind: 'path', d: capsule(left, right, y(first), p.capsuleHeight, openLeft, openRight), fill: '#bfbfbf', role: `capsule${openLeft ? '-continued-left' : ''}${openRight ? '-continued-right' : ''}`, eventId: first.event.id });
+      shapes(system).push({ kind: 'path', d: capsule(left, right, y(first), p.capsuleHeight, openLeft, openRight), fill: capsuleFill, role: `capsule${openLeft ? '-continued-left' : ''}${openRight ? '-continued-right' : ''}`, eventId: first.event.id });
     }
     for (let i = 1; i < g.length; i++) {
       const e = g[i], previous = g[i - 1], lyric = e.event.lyrics[0];
       if (!lyric || previous.event.kind !== 'note' || e.measure !== previous.measure || !['single', 'begin'].includes(lyric.syllabic)) continue;
       const x = (e.dots[0].x + previous.dots.at(-1)!.x) / 2;
-      shapes(e.measure.system).push(line(x, y(e) - p.capsuleHeight / 2, x, y(e) + p.capsuleHeight / 2, '#666666', 1.4, 'word-divider'));
+      shapes(e.measure.system).push(line(x, y(e) - p.capsuleHeight / 2, x, y(e) + p.capsuleHeight / 2, wordDividerColor, 1.4, 'word-divider'));
     }
   }
   for (const e of flat) {
-    const target = shapes(e.measure.system), fill = e.event.kind === 'note' ? '#000000' : '#ffffff';
+    const target = shapes(e.measure.system), fill = e.event.kind === 'note' ? noteColor(e.pitch, p.noteColorMode) : '#ffffff';
     for (const dot of e.dots) target.push(dot.half ?
       { kind: 'path', d: halfDot(dot.x, y(e), p.dotRadius, dot.edge!), fill, role: `${e.event.kind === 'note' ? 'sung' : 'rest'}-half-${dot.edge}`, eventId: e.event.id } :
       circle(dot.x, y(e), p.dotRadius, fill, e.event.kind === 'note' ? 'sung-dot' : 'rest-dot', e.event.id));
@@ -417,7 +420,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       if (dotSpan <= 0) throw new Error('Capsule end padding is too large for the pitch-index beat example. Increase guideWidth.');
       const compactSpan = dotSpan * 0.9;
       const step = compactSpan / Math.max(1, beatsPerMeasure - 1);
-      target.push({ kind: 'path', d: capsule(left + barGap, right - barGap, y, p.capsuleHeight, false, false), fill: '#bfbfbf', role: 'beat-example' });
+      target.push({ kind: 'path', d: capsule(left + barGap, right - barGap, y, p.capsuleHeight, false, false), fill: capsuleFill, role: 'beat-example' });
       target.push(line(left, y - 9, left, y + 9), line(right, y - 9, right, y + 9));
       for (let i = 0; i < beatsPerMeasure; i++) {
         const x = beatsPerMeasure === 1 ? (left + right) / 2 : (left + right - compactSpan) / 2 + step * i;
