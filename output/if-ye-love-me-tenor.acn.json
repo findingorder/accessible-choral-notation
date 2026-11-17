@@ -1039,7 +1039,8 @@
               "midi": 53,
               "name": "F",
               "octave": 3
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m13-e2",
@@ -1333,7 +1334,8 @@
               "midi": 55,
               "name": "G",
               "octave": 3
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m16-e4",
@@ -1600,7 +1602,8 @@
               "midi": 60,
               "name": "C",
               "octave": 4
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m19-e2",
@@ -1737,7 +1740,8 @@
               "midi": 64,
               "name": "E",
               "octave": 4
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m20-e4",
@@ -1876,7 +1880,8 @@
               "midi": 62,
               "name": "D",
               "octave": 4
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m22-e3",
@@ -2161,7 +2166,8 @@
               "midi": 57,
               "name": "A",
               "octave": 3
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m25-e2",
@@ -2570,7 +2576,8 @@
               "midi": 55,
               "name": "G",
               "octave": 3
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m16-e4-pass2",
@@ -2840,7 +2847,8 @@
               "midi": 60,
               "name": "C",
               "octave": 4
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m19-e2-pass2",
@@ -2978,7 +2986,8 @@
               "midi": 64,
               "name": "E",
               "octave": 4
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m20-e4-pass2",
@@ -3119,7 +3128,8 @@
               "midi": 62,
               "name": "D",
               "octave": 4
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m22-e3-pass2",
@@ -3293,7 +3303,8 @@
               "midi": 57,
               "name": "A",
               "octave": 3
-            }
+            },
+            "breathAfter": true
           },
           {
             "id": "s3-v1-m24-e2-pass2",
@@ -3521,7 +3532,8 @@
               "midi": 60,
               "name": "C",
               "octave": 4
-            }
+            },
+            "fermata": true
           }
         ],
         "directions": [],

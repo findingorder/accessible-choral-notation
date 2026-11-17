@@ -33,6 +33,8 @@ export function parseScore(value: unknown): AcnScore {
     for (const e of m.events) {
       requireValue(e && ['note', 'rest'].includes(e.kind) && typeof e.id === 'string' && e.id && !ids.has(e.id), `measure ${m.number} event identity`);
       ids.add(e.id);
+      requireValue(e.breathAfter === undefined || (e.kind === 'note' && typeof e.breathAfter === 'boolean'), `event ${e.id}: breathAfter must be a boolean on a sung note`);
+      requireValue(e.fermata === undefined || (e.kind === 'note' && typeof e.fermata === 'boolean'), `event ${e.id}: fermata must be a boolean on a sung note`);
       fraction(e.onset, `event ${e.id} onset`);
       fraction(e.duration, `event ${e.id} duration`, true);
       requireValue(equalTime(e.onset, cursor), `event ${e.id} overlaps or leaves a gap`);

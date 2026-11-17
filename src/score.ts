@@ -23,6 +23,10 @@ export interface Lyric {
 export interface ScoreEvent {
   id: string;
   kind: 'note' | 'rest';
+  /** A breath after this sung event, without changing its musical duration. */
+  breathAfter?: boolean;
+  /** A hold, displayed above the capsule containing this sung event. */
+  fermata?: boolean;
   onset: Rational;
   duration: Rational;
   pitch?: { midi: number; name: string; octave: number };

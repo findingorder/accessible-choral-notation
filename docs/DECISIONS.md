@@ -119,3 +119,15 @@ This file records decisions already made so future work does not repeatedly reop
 ## D-020 — Keep C prominent with colored notes and monochrome lines
 
 **Decision:** In Pitch-based note mode, horizontal staff lines that would otherwise be black become dark gray, except C lines, which stay black. With Monochrome lines this changes E and G+ to `#999999`; the Standard and Pitch-based line palettes keep their assigned colors. Bar lines, lyric continuations, and light-gray staff lines retain their existing colors.
+
+## D-021 — Breath marks after capsules
+
+**Decision:** Breath marks are large black commas placed to the right of the capsule after which the breath is indicated.
+
+**Consequence:** Store `breathAfter: true` on the sung event. The common renderer ends the capsule and reserves space for the mark without changing durations, adding a timed rest, or changing lyric punctuation. The first requested annotation is after “er,” in measure 13 of the working score. Exact size and clearance are rendering choices for review.
+
+## D-022 — Fermatas above capsules
+
+**Decision:** Draw a large fermata above its capsule, centered horizontally on the capsule.
+
+**Consequence:** Store a semantic `fermata` flag on the sung event. Derive position from capsule geometry using common rules, without changing musical time or adding score-specific renderer conditions.

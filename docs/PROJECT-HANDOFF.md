@@ -128,3 +128,11 @@ Horizontal spacing now reserves the inner extent of compound barlines and distri
 When Pitch-based notes are combined with Monochrome lines, E and G+ staff lines use medium gray (`#999999`) instead of black, while C lines stay black. Standard and Pitch-based line palettes keep their assigned colors; light-gray lines and other notation are unchanged.
 
 In Pitch-based note mode, each pitch-label oval in the pitch index uses its pitch color with white lettering. The C3 and Middle C boxes use the C color and white lettering too. Monochrome note mode retains white label backgrounds and dark text; the gray index panel and its geometry are unchanged.
+
+### Breath marks
+
+Breaths render as large black commas to the right of the preceding capsule in either note color mode. Sung events can set `breathAfter: true`; this is musical content, not a layout override. The renderer ends the capsule and reserves horizontal space without inserting rest duration. The working score has 11 breaths transcribed from `docs/examples/If Ye Love Me - Tallis - Tenor.pdf`: after “er,” in ACN measures 13, 16, 19, 29, and 32; after “truth” in 20, 22, 25, 33, 35, and 37. The PDF shows different last-breath positions on the two passes: source measure 25 on the first pass (ACN 25), but source measure 24 on the second (ACN 37). Do not automatically copy that first-pass mark to ACN 38 or add one to ACN 24. Native MuseScore breath import remains future work.
+
+### Fermata rendering
+
+The final “truth.” (measure 39) now has `fermata: true`. The common renderer centers a large black vector arch and dot above the containing capsule segment, with translucent white backing. Saved-score validation accepts the optional boolean on sung notes. Native MuseScore fermata import remains future work.

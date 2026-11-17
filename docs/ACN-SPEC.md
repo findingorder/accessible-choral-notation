@@ -346,6 +346,12 @@ The reference score preserves familiar conventional markings including rehearsal
 - Hairpins have a **white, borderless background**. **Tentative direction:** use translucency like the lyric backgrounds, allowing horizontal pitch lines to remain faintly visible. Translucency for hairpins is not yet a final decision; the earlier claim that their backgrounds fully mask staff lines is withdrawn.
 - This resolves the previously deferred choice of hairpin placement. Exact vertical clearance, horizontal endpoints, background opacity, dimensions and padding, collision handling, and treatment across system/page breaks remain to be specified.
 
+### Breath marks — confirmed
+
+A breath mark is a **large black comma to the right of the capsule** after which the breath is indicated. It remains black in either note color mode. The semantic event flag `breathAfter: true` marks the sung event after which to breathe; it does not insert a timed rest or change the lyric's punctuation. A breath ends its capsule, even when the next note has the same pitch. Layout reserves horizontal room for the comma before the next capsule or barline, keeping it with the preceding capsule at system/page breaks. Current size (three times capsule height) and clearance (4 SVG units) are provisional rendering choices.
+
+The working Tallis score has a breath after “er,” in measure 13.
+
 ### Rehearsal markers — confirmed
 
 - Rehearsal markers from the score used by the conductor may optionally be included in the ACN part.
@@ -435,3 +441,7 @@ Hairpins, beat-count annotations, and automatic source system-break handling are
 ### Tallis repeat transcription
 
 The user requested writing out the repeat rather than displaying repeat signs. The working Tallis score follows source measures 1–26, then 14–25, then the second ending at 27: 39 measures in performance order. Number the unfolded measures consecutively 1–39: the second pass starts at 27, and the final second-ending measure is 39. This supersedes the initial duplicated source-number display. Rehearsal letters are retained. This is a piece-specific transcription choice, not a change to the native importer’s repeat preservation.
+
+### Fermatas — confirmed
+
+A large fermata appears above the capsule it applies to, centered horizontally on that capsule. Store `fermata: true` on the sung event; the hold does not change its notated duration. For a capsule continuing across systems, the mark belongs to the segment containing the annotated event. The renderer draws one black vector arch and dot per marked capsule segment, independent of note color mode. Current size (two capsule heights wide), clearance (7 SVG units), and translucent white backing are provisional rendering choices. The final “truth.” in the working score carries this marking. Native MuseScore fermata import remains future work.

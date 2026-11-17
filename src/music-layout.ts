@@ -50,6 +50,9 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   const capsuleInset = Math.max(p.capsuleHeight / 2, p.dotRadius + p.capsuleEndPadding);
   const capsuleFill = p.noteColorMode === 'pitch-based' ? '#d9d9d9' : '#bfbfbf';
   const wordDividerColor = p.noteColorMode === 'pitch-based' ? '#999999' : '#666666';
+  const breathSize = 3 * p.capsuleHeight, breathGap = 4;
+  const breathWidth = measureText(',', breathSize, p.serifFont);
+  const breathSpace = breathWidth + 2 * breathGap;
   if (p.systems > 1 && p.systemStep < staffHeight + 36) throw new Error('Music needs more space between systems for lyrics and markings. Increase systemStep or reduce systems/semitoneStep.');
   const flat: EventLayout[] = [];
   const measures = score.part.measures.map(source => {
@@ -68,8 +71,8 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   });
   const firstNote = flat.find(e => e.event.kind === 'note');
   if (!firstNote) throw new Error('An all-rest score needs an explicit rest-placement rule; this renderer requires a sung note.');
-  // Repeat boundaries terminate visual groups; ordinary measure boundaries do not.
-  const barriers = flat.map((e, i) => i === 0 || (e.measure !== flat[i - 1].measure &&
+  // Breaths and repeat boundaries terminate capsules; ordinary barlines do not.
+  const barriers = flat.map((e, i) => i === 0 || !!flat[i - 1].event.breathAfter || (e.measure !== flat[i - 1].measure &&
     (e.measure.source.startRepeat || flat[i - 1].measure.source.repeatCount !== undefined ||
      score.repeatEndings.some(v => v.from.measure === e.measure.source.number))));
   const internalRest = new Set<EventLayout>();
@@ -131,7 +134,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     if (e.group === next.group || e.measure !== next.measure) continue;
     const step = dotStep(e);
     const trailing = e.width - (e.dots.length - 1) * step;
-    e.trailingSpace = Math.max(0, 2 * capsuleInset + 4 - trailing - next.gap);
+    e.trailingSpace = Math.max(0, 2 * capsuleInset + 4 + (e.event.breathAfter ? breathSpace : 0) - trailing - next.gap);
     e.width += e.trailingSpace;
   }
   for (let i = 0; i < flat.length; i++) {
@@ -184,6 +187,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     m.startPadding = Math.max(startsCapsule ? Math.max(pad, capsuleInset + p.measureStartPadding) : pad, lyricInset(first) + 2);
     const endsCapsule = groups[last.group].at(-1) === last;
     m.endPadding = Math.max(endsCapsule ? capsuleInset + p.measureEndPadding : pad, lyricInset(last) + 2);
+    if (last.event.breathAfter) m.endPadding += breathSpace;
     // Measure end clearance from the innermost stroke of a compound barline,
     // not the outer staff edge; the bar must not consume capsule padding.
     const endBarInset = m.source.repeatCount ? 5 + p.barLineWidth / 2
@@ -293,6 +297,20 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       const left = openLeft ? system.left : first.dots[0].x - capsuleInset;
       const right = openRight ? system.right : last.dots.at(-1)!.x + capsuleInset;
       shapes(system).push({ kind: 'path', d: capsule(left, right, y(first), p.capsuleHeight, openLeft, openRight), fill: capsuleFill, role: `capsule${openLeft ? '-continued-left' : ''}${openRight ? '-continued-right' : ''}`, eventId: first.event.id });
+      const held = events.find(e => e.event.fermata);
+      if (held) {
+        // Center on the actual capsule segment, including continued ends.
+        // A filled arch avoids dependence on music-font glyph availability.
+        const x = (left + right) / 2, radius = p.capsuleHeight;
+        const bottom = y(first) - p.capsuleHeight / 2 - 7;
+        const target = shapes(system), eventId = held.event.id;
+        target.push({ kind: 'rect', x: x - radius - 2, y: bottom - radius - 2,
+          width: 2 * radius + 4, height: radius + 4, fill: '#ffffff',
+          opacity: p.lyricBackgroundOpacity, role: 'fermata-background', eventId });
+        target.push({ kind: 'path', d: `M ${x - radius} ${bottom} A ${radius} ${radius} 0 0 1 ${x + radius} ${bottom} L ${x + radius * 0.93} ${bottom} A ${radius * 0.93} ${radius * 0.76} 0 0 0 ${x - radius * 0.93} ${bottom} Z`,
+          fill: '#000000', role: 'fermata-arch', eventId });
+        target.push(circle(x, bottom - radius * 0.2, radius * 0.2, '#000000', 'fermata-dot', eventId));
+      }
     }
     for (let i = 1; i < g.length; i++) {
       const e = g[i], previous = g[i - 1], lyric = e.event.lyrics[0];
@@ -306,6 +324,11 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     for (const dot of e.dots) target.push(dot.half ?
       { kind: 'path', d: halfDot(dot.x, y(e), p.dotRadius, dot.edge!), fill, role: `${e.event.kind === 'note' ? 'sung' : 'rest'}-half-${dot.edge}`, eventId: e.event.id } :
       circle(dot.x, y(e), p.dotRadius, fill, e.event.kind === 'note' ? 'sung-dot' : 'rest-dot', e.event.id));
+    if (e.event.breathAfter) {
+      target.push({ kind: 'text', text: ',', x: e.dots.at(-1)!.x + capsuleInset + breathGap,
+        y: y(e) - breathSize * 0.35, size: breathSize, fontFamily: p.serifFont,
+        anchor: 'start', fill: '#000000', role: 'breath-mark', eventId: e.event.id });
+    }
   }
   // White rest dividers align to measure beat groups, never to capsule-relative counts.
   if (beatsPerMeasure % 4 === 0) for (const m of measures) {

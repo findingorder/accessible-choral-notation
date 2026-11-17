@@ -493,3 +493,72 @@ test('pitch-colored notes use the exact palette for full and half dots while res
     for (const color of palette) assert.ok(svg.includes(`fill="${color}"`), color);
   }
 });
+
+test('breaths end capsules, reserve space, and stay with their preceding notes across system breaks', () => {
+  const s = small([[[2, 60, 'sing'], [2, 60, 'again']], [[4, 62, 'next']]]);
+  const events = s.part.measures.flatMap(m => m.events);
+  events[0].breathAfter = true;
+  events[1].breathAfter = true;
+  const original = JSON.stringify(s);
+  for (const noteColorMode of ['monochrome', 'pitch-based']) {
+    const p = { ...settings, noteColorMode, musicMeasuresPerSystem: 1, systems: 1 };
+    const pages = draw(s, p);
+    const marks = pages[0].shapes.filter(shape => shape.role === 'breath-mark');
+    assert.equal(marks.length, 2);
+    assert.ok(!pages[1].shapes.some(shape => shape.role === 'breath-mark'));
+    assert.equal(pages[0].shapes.filter(shape => shape.role === 'capsule').length, 2, 'same pitch separates at the breath');
+    for (const mark of marks) {
+      const dots = pages[0].shapes.filter(shape => isDot(shape) && shape.eventId === mark.eventId);
+      const inset = Math.max(p.capsuleHeight / 2, p.dotRadius + p.capsuleEndPadding);
+      assert.equal(mark.text, ',');
+      assert.equal(mark.fill, '#000000');
+      assert.ok(mark.size > p.lyricSize);
+      assert.ok(mark.x > dots.at(-1).x + inset);
+      const right = mark.x + measureText(mark.text, mark.size, mark.fontFamily);
+      assert.ok(right < p.width - p.margin, 'comma fits before the end barline');
+      if (mark.eventId === events[0].id) {
+        const next = pages[0].shapes.find(shape => isDot(shape) && shape.eventId === events[1].id);
+        assert.ok(right < next.x - inset, 'comma clears the next capsule');
+      }
+    }
+  }
+  assert.equal(JSON.stringify(s), original, 'breaths do not change timing or lyrics');
+  events[0].breathAfter = 'yes';
+  assert.throws(() => draw(s), /breathAfter/);
+  const rest = small([[[1, 60], [3, null]]]);
+  rest.part.measures[0].events[1].breathAfter = true;
+  assert.throws(() => draw(rest), /breathAfter/);
+});
+
+test('fermatas center over the containing capsule and follow its marked system segment', () => {
+  const s = small([[[2, 60, 'hold'], [2, 60]], [[4, 60, 'on']]]);
+  const held = s.part.measures[0].events[1];
+  held.fermata = true;
+  const original = JSON.stringify(s);
+  for (const noteColorMode of ['monochrome', 'pitch-based']) {
+    for (const musicMeasuresPerSystem of [1, 2]) {
+      const p = { ...settings, noteColorMode, musicMeasuresPerSystem, systems: 1 };
+      const pages = draw(s, p), all = shapes(pages);
+      const dot = all.find(shape => shape.role === 'fermata-dot');
+      const arch = all.filter(shape => shape.role === 'fermata-arch');
+      assert.equal(arch.length, 1);
+      assert.equal(arch[0].eventId, held.id);
+      assert.equal(arch[0].fill, '#000000');
+      assert.equal(dot.fill, '#000000');
+      const notes = pages[0].shapes.filter(isDot);
+      const inset = Math.max(p.capsuleHeight / 2, p.dotRadius + p.capsuleEndPadding);
+      const left = notes[0].x - inset;
+      const right = musicMeasuresPerSystem === 1 ? p.width - p.margin : notes.at(-1).x + inset;
+      assert.ok(Math.abs(dot.x - (left + right) / 2) < 1e-8, 'centers over full capsule, not just held event');
+      assert.ok(dot.y + dot.ry < notes[0].y - p.capsuleHeight / 2, 'symbol clears capsule');
+      assert.ok(!pages[1]?.shapes.some(shape => shape.role === 'fermata-dot'), 'does not repeat on unmarked continuation');
+      assert.ok(renderSvg(pages[0]).includes('data-role="fermata-arch"'));
+    }
+  }
+  assert.equal(JSON.stringify(s), original, 'hold does not change duration or source');
+  held.fermata = 'yes';
+  assert.throws(() => draw(s), /fermata/);
+  const rest = small([[[1, 60], [3, null]]]);
+  rest.part.measures[0].events[1].fermata = true;
+  assert.throws(() => draw(rest), /fermata/);
+});
