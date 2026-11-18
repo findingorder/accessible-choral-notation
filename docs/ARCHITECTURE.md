@@ -247,3 +247,13 @@ Later tests should include:
 - SVG snapshot tests where useful;
 - reference-render regression tests for selected measures from the Handel example;
 - manual visual inspection for typography/collision cases that are difficult to assert mechanically.
+
+## 11. Assisted PDF transcription and divided voices
+
+The saved source discriminator accepts `PDF` as well as `MuseScore`; source application version is optional. This records provenance, not a new automatic importer.
+
+A selected part may have `additionalVoices`, each with a positive unique `voice` number, `name`, `measures`, and `spans`. The primary voice retains the existing `part.voice`, `part.measures`, and `part.spans` representation. Validation checks each independent monophonic timeline, cross-voice event-ID uniqueness, and matching measure numbers, durations, and meters. This permits different simultaneous rhythms without treating chords as sequential notes. Existing single-voice documents remain valid.
+
+The user now wants divided Tenors displayed simultaneously on the same pitch grid. This supersedes the initial separate-score policy for this use case. Shared-grid layout gathers minimum spacing constraints from every voice and solves a common beat ruler before pagination. Each voice uses identical measure widths and system breaks. Coincident shapes merge, independently sustained capsules remain, and matching lyrics use a shared baseline below both voices. Changing meters render as dotted capsules below their first measures, with vertical clearance included in system positioning and pagination.
+
+Hairpins are optional per-voice semantic spans with crescendo/diminuendo kind and rational `ScorePosition` endpoints. Their timing remains independent of layout. The renderer intersects each span with systems, computes its highest covered pitch, and derives wedge opening from elapsed musical time. White backing and line primitives are shared by SVG/PDF; native hairpin import is still pending.

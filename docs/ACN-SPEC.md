@@ -120,7 +120,7 @@ The reference score displays a continuous vertical pitch region with horizontal 
 | --- | --- |
 | C | `#B22222` |
 | C+ | `#FF8000` |
-| D | `#CCA400` |
+| D | `#A38300` |
 | D+ | `#89BC21` |
 | E | `#008000` |
 | F | `#008B8B` |
@@ -203,7 +203,7 @@ The general pairing rule remains unresolved. Unpaired half-dot orientation at ca
 - Its dots are centered as a group with slightly tighter spacing, without narrowing the capsule (provisional dot span: 90% of the available span after end padding).
 - Reference example: PDF page 2, beneath the note guide for the first system.
 
-Full dots represent whole beats using the transcriber's chosen beat unit. The remaining details of the example capsule and the treatment of meter changes remain to be specified.
+Full dots represent whole beats using the transcriber's chosen beat unit. At every time-signature change, place a new dotted time-signature capsule below the first measure with the new signature. Count dots from the meter, not the actual duration of an incomplete measure. Thus Rachmaninov starts with four dots below the first-page pitch index, then six dots below measure 20 and four below measure 26. Change markers are centered below their measures, clear of lyrics; extra vertical space is reserved when needed. Later pitch-index examples use the meter active at that index.
 
 ### Optional beat-count labels — confirmed
 
@@ -226,7 +226,7 @@ Full dots represent whole beats using the transcriber's chosen beat unit. The re
 1. How is the transcriber's chosen beat unit recorded, and may it change within a score?
 2. How are full and half dots spaced, and does their spacing change with rhythmic context?
 3. How are durations combining whole and half beats represented?
-4. How are source-score ties and repeated notes represented and distinguished within capsules?
+4. Resolved for arcs: source ties and slurs use traditional curved marks, always above the notes.
 5. How are syncopations represented?
 6. How are tuplets represented?
 7. What are the exact alignment and vertical offset for optional beat-count labels?
@@ -234,7 +234,7 @@ Full dots represent whole beats using the transcriber's chosen beat unit. The re
 9. When do adjacent gray shapes touch, overlap, or remain separated?
 10. How are pickup measures and incomplete measures handled?
 11. What grouping or other details, beyond the beat dots, are required in the example time-signature capsule?
-12. Is the time-signature capsule repeated whenever the note guide appears, and how are meter changes displayed?
+12. Resolved: time-signature capsules accompany pitch indexes; each meter change is additionally marked beneath its first measure.
 13. Which half beats are paired? Unpaired orientation at capsule beginnings and ends, when alone, and inside a capsule with full dots on both sides, and facing-pair orientation across a pitch change, are confirmed above.
 14. How are beat subdivisions other than halves represented?
 15. How should rest grouping work for scores "in 3" and other meters?
@@ -336,15 +336,17 @@ The reference score preserves familiar conventional markings including rehearsal
 
 - A textual dynamic marking appears **directly above the dot where it takes effect**. It has a **white, borderless square background** that separates it from the horizontal staff lines; those lines do not show through the background. Reference example: PDF page 2, **measure 25**, the forte (`f`) marking. This supersedes the earlier rule placing all textual dynamics above the top staff line.
 - Other text markings, including tempo and expression text such as **`rit.` and `Adagio`**, appear **above the top line of the staff**. Hairpins follow the separate placement rule below.
-- They retain the styling used in traditional music notation.
+- Textual dynamics (`p`, `f`, `ff`, etc.) use bold italic serif type, retaining traditional dynamic styling.
 - Lyrics follow the separate placement rules in section 5.
+
+Opening metronome tempo appears above the first-page pitch index: a capsule of black dots representing the tempo unit in ACN beats, followed by `= BPM`. It replaces the equivalent textual metronome marking. For example, a quarter-note tempo with eighth-note ACN beats uses two dots. Store `metronome: {unit: {numerator, denominator}, bpm}` on the tempo direction; this is semantic music data.
 
 ### Hairpin dynamics — confirmed placement
 
-- Hairpin dynamic markings appear **above the group of dots they apply to**.
+- Hairpin dynamic markings appear **above the group of dots they apply to**. A hairpin connecting two dynamic markings on the same system sits horizontally between them, aligned with their vertical centers and separated from their letters by a small gap. Keep this row above the arcs.
 - When the affected dots have different pitches, the hairpin is placed vertically **above the highest pitch in the covered span**.
 - Hairpins have a **white, borderless background**. **Tentative direction:** use translucency like the lyric backgrounds, allowing horizontal pitch lines to remain faintly visible. Translucency for hairpins is not yet a final decision; the earlier claim that their backgrounds fully mask staff lines is withdrawn.
-- This resolves the previously deferred choice of hairpin placement. Exact vertical clearance, horizontal endpoints, background opacity, dimensions and padding, collision handling, and treatment across system/page breaks remain to be specified.
+- Implemented prototype: semantic crescendo/diminuendo spans use exact measure/onset endpoints. Draw a black wedge above the highest pitch in the entire span; its opening continues proportionally across system/page breaks. Translucent white backing currently uses `lyricBackgroundOpacity`. Wedges move above overlapping dynamic/fermata backgrounds. Exact clearance, dimensions, and background opacity are rendering choices for review. Native MuseScore hairpin import remains future work.
 
 ### Breath marks — confirmed
 
@@ -424,19 +426,19 @@ The specification is ready to drive implementation only when the core pitch, rhy
 The Tallis tenor renderer implements confirmed rules with the following **implementation heuristics**, not additional normative notation rules:
 
 - Whole/half-beat durations expand to full dots followed by a half dot when needed. Adjacent half dots pair in chronological order, including across pitch changes; the wider pairing rule remains unresolved.
-- Consecutive same-pitch notes share a capsule, including ties. No new articulation symbol is inferred. Ordinary barlines do not break capsules. Repeat starts/ends and starts of alternate endings terminate capsules to avoid suggesting continuation across playback jumps. Page breaks currently use the same square-ended continuation as system breaks.
+- Consecutive same-pitch notes share a capsule, including ties. Explicit source ties and slurs are drawn as traditional arcs above the notes. Ordinary barlines do not break capsules. Repeat starts/ends and starts of alternate endings terminate capsules to avoid suggesting continuation across playback jumps. Page breaks currently use the same square-ended continuation as system breaks.
 - One omitted dot position is reserved at a same-pitch syllable change. Word boundaries get dark gray dividers when they occur within a system; a new system starts without a redundant boundary divider. Widths expand for measured lyric text. Music measures are packed greedily by their required width, without a four-measure limit or compression below the dot/lyric minimum widths. `musicMeasuresPerSystem` defaults to `"auto"`; a positive whole number imposes a maximum. `measuresPerSystem` controls blank scores only.
 - Horizontal justification first reserves minimum widths for dots, lyrics, capsule padding, and barlines. Remaining line width is shared among measures in proportion to musical duration, rather than their text-driven minimum widths. Within a measure, extra width stretches musical intervals between the first and last dots; it does not multiply the fixed lyric/capsule clearances. Single-dot measures center their content in the extra width. Two-dot capsules crossing barlines still compact afterward when lyrics permit.
 - End padding is measured from the innermost stroke of a final, double, or repeat barline, so compound barlines do not consume the capsule’s end clearance. These rules give held-note measures room without disproportionate word spacing in neighboring measures (review example: measures 36–39).
 - Lyrics begin one pitch space below the lowest capsule in their own sung sequence. Syllables belonging to the same word then share the lowest required baseline, including continuations across systems/pages. Unrelated words do not inherit another word’s height. Vertical pagination uses these final lyric positions. Notes without new lyric text continue the previous syllable until a rest, new syllable, or repeat boundary. General phrase-level smoothing beyond word alignment remains a transcriber judgment; no fixed threshold for it has been established.
 - Capsule height 14 (matching the two-semitone distance between adjacent lines), dot radius 3.8, capsule end padding 10 (from the full-dot edge), beat spacing 18, lyric size 14, lyric font weight 500 (Roboto Medium, using a real intermediate weight), lyric gap 14 (one pitch-line space at the default staff spacing), and lyric background opacity 0.85 are editable defaults in SVG units. Baseline, padding, and lyric-extension placement algorithms remain provisional. Sustained syllables use continuous vector underscore lines with translucent white backgrounds; ordinary syllable separators use a single hyphen.
 - Capsules are painted over pitch lines; black measure bars are painted over capsules. Conventional two-pass repeat bars, double/final bars, and numbered ending brackets use provisional geometry. Final barlines match the reference PDF’s ending on page 4: a thin stroke followed by a stroke six times as thick, with stroke centers nine thin-stroke widths apart. The thick stroke’s outer edge aligns with the staff end. These proportions scale with `barLineWidth`; at the default 0.8, the thick stroke is 4.8 SVG units and center spacing is 7.2. The reference’s vector strokes measure 0.5 and 3 PDF points with 4.5 points between centers. Textual dynamics have opaque square backgrounds; tempo/expression and rehearsal text go above the staff. General collision avoidance for dense combinations of directions/endings remains future work.
-- The beat-example capsule repeats with each displayed pitch index. This renderer requires a constant meter, 1–16 whole ACN beats per measure, and event durations/onsets in whole or half beats. It rejects unsupported subdivisions, changing meter, multiple lyric verses, and pitches outside C3–G+4. An entirely silent score needs a rest-position rule and is not rendered yet.
+- The beat-example capsule repeats with each displayed pitch index. This renderer supports changing meters with 1–16 whole ACN beats per measure, and event durations/onsets in whole or half beats. It rejects unsupported subdivisions, multiple lyric verses, and pitches outside C3–G+4. An entirely silent score needs a rest-position rule and is not rendered yet.
 - Output page count is derived from the music, as requested by the user. `pages` applies only to blank scores. Staff count and spacing remain configurable, with only needed systems drawn on the last page.
 
 Every saved score requires `{name}.acn-layout.json`, containing all four title fields plus any score-wide partial overrides of `default-layout.json`. Displayed titles are not stored in the music JSON. Per-lyric `alignment` and `capsuleGap` fields have been removed and are rejected on input. There are no measure/system layout exceptions in `.acn.json`. Examples in this specification are regression cases, not conditions in the renderer.
 
-Hairpins, beat-count annotations, and automatic source system-break handling are not yet implemented. These limitations do not change the confirmed notation rules above.
+Beat-count annotations and automatic source system-break handling are not yet implemented. These limitations do not change the confirmed notation rules above.
 
 ### Tallis repeat transcription
 
@@ -445,3 +447,23 @@ The user requested writing out the repeat rather than displaying repeat signs. T
 ### Fermatas — confirmed
 
 A large fermata appears above the capsule it applies to, centered horizontally on that capsule. Store `fermata: true` on the sung event; the hold does not change its notated duration. For a capsule continuing across systems, the mark belongs to the segment containing the annotated event. The renderer draws one black vector arch and dot per marked capsule segment, independent of note color mode. Current size (two capsule heights wide), clearance (7 SVG units), and translucent white backing are provisional rendering choices. The final “truth.” in the working score carries this marking. Native MuseScore fermata import remains future work.
+
+### Divided voices — updated scope
+
+The user requests Tenor 1 and Tenor 2 together on one pitch grid, using simultaneous capsules, rather than separate staffs or separate scores. Independent voice rhythms must be preserved. The Rachmaninov example uses English lyrics, eighth-note ACN beats, a four-dot incomplete opening measure, 4/4 through measure 19, 6/4 in measures 20–25, and 4/4 again from measure 26. The shared-grid prototype aligns beat positions across voices, merges coincident unisons, and aligns matching lyrics below both voices. Source meters remain unchanged: their dotted examples now contain 8, 12, and 8 dots respectively. Dense divisi engraving remains subject to visual review.
+
+### Slur and tie placement — confirmed
+
+Slurs and ties retain their traditional curved appearance. In unison and upper voices they appear above the notes. In divisi, lower-voice arcs appear below their capsules and above the lyrics. This supersedes the earlier always-above rule. Both ties and slurs extend from the first dot of their starting event to the last dot of their ending event, covering all dots represented by the connected notes. Render the explicit semantic spans; do not infer extra arcs from lyric syllables or shared capsules. The prototype uses black tapered curves above the covered capsules, with enclosing slurs above shorter arcs. Arc endpoints follow the pitches of their respective notes with equal vertical clearance above the capsules. Different endpoint pitches therefore produce a sloped arc; its arch clears the full capsule envelopes, including padded leading and trailing edges, as well as intervening notes. Arcs occupy the closest position to the notes on their assigned side. Dynamics, hairpins, fermatas, and other markings belong above the arcs; overlapping symbols and their backgrounds move upward together. Spans continue across systems/pages. Exact arch height and clearance remain rendering choices for review.
+
+Time-signature change capsules span the full width of their measure. Their two vertical end lines align with the beginning and ending barlines, retaining the small white gaps between the capsule and its end lines. This applies to every score.
+
+Time-signature change capsules include their ACN beat count in black at the start, inside the capsule, with space reserved before the dots. Pitch-index beat examples retain dots only.
+
+### Twelve-beat measure subdivision
+
+Display full twelve-ACN-beat measures as two six-beat groups separated by a light gray vertical barline. Preserve the original measure number, source meter, duration, and event times. At the change into this grouping, show one six-dot capsule with a bold `6` below the first half, aligning its end lines with the opening barline and subdivision barline. Pitch-index examples in this meter also show the six-beat group. This supersedes the full-width twelve-dot change indicator; other meter-change indicators retain their existing behavior.
+
+Lower-voice arc placement is determined by overlapping sounding pitches, not voice numbering. Shared lyrics move below the lower arcs as needed; all syllables of a word retain a shared baseline. Arc clearance participates in pagination, including spans crossing systems or pages.
+
+For a sustained syllable, use text clearance at its lyric-bearing note and continuation-stroke clearance at later notes. Lower continuation notes need not reserve the full height of text that does not appear beneath them. Keep the word and its extension on one baseline, below all capsules with the configured clearance. Lower divisi arcs still take precedence over lyric placement.

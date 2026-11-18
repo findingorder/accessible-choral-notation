@@ -22,7 +22,7 @@ export interface PageScene {
 
 export const blankPageDefaults = defaultLayout;
 
-export interface SystemPlan { measures: { number: number; width: number }[] }
+export interface SystemPlan { top?: number; measures: { number: number; width: number }[] }
 
 export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 1, plans?: SystemPlan[]): PageScene {
   if (!Number.isInteger(pageNumber) || pageNumber < 1 || pageNumber > p.pages) throw new Error('Page number is outside the configured page range.');
@@ -45,7 +45,7 @@ export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 
   }
   const staffHeight = (tenorRange.high - tenorRange.low) * p.semitoneStep;
   for (let system = 0; system < (plans?.length ?? p.systems); system++) {
-    const top = pageTop + system * p.systemStep;
+    const top = plans?.[system].top ?? pageTop + system * p.systemStep;
     if (system === 0 && hasPitchIndex) {
       shapes.push({ kind: 'rect', x: p.margin, y: top, width: p.guideWidth, height: staffHeight, fill: '#bfbfbf' });
     }

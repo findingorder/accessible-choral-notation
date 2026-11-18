@@ -16,7 +16,7 @@ export type NoteColorMode = 'monochrome' | 'pitch-based';
 
 // User-supplied chromatic palette, ordered C through B and repeated by octave.
 const pitchColors = [
-  '#B22222', '#FF8000', '#CCA400', '#89BC21', '#008000', '#008B8B',
+  '#B22222', '#FF8000', '#A38300', '#89BC21', '#008000', '#008B8B',
   '#20B2AA', '#6495ED', '#0000FF', '#7F00FF', '#BA55D3', '#FF1493',
 ];
 

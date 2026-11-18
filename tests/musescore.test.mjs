@@ -8,7 +8,7 @@ import { zipSync, strToU8 } from 'fflate';
 import { readMuseScore, importMuseScore, importMuseScoreTitles } from '../dist/musescore.js';
 import { rational, addTime, equalTime } from '../dist/score.js';
 
-const sourcePath = 'docs/examples/If Ye Love Me - Tallis - Original.mscz';
+const sourcePath = 'scores/Tallis - If Ye Love Me/input/If Ye Love Me - Tallis - Original.mscz';
 const native = await readMuseScore(sourcePath);
 const tenor = importMuseScore(native, 'Tenor');
 

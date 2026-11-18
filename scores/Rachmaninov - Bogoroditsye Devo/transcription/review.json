@@ -1,0 +1,290 @@
+{
+  "status": "Transcription draft: pitches, rhythms, English underlay, dynamics, hairpins, phrasing, breath, and fermata entered; tenuto pending",
+  "source": "../input/Rachmaninov - Bogorodyitse Devo.pdf",
+  "score": "../output/bogoroditsye-devo-tenors.acn.json",
+  "selectedLyrics": "English singing translation",
+  "voicePresentation": "Both Tenor voices on one shared pitch grid with simultaneous capsules",
+  "sourcePages": [
+    {
+      "page": 1,
+      "measures": [
+        1,
+        5
+      ]
+    },
+    {
+      "page": 2,
+      "measures": [
+        6,
+        11
+      ]
+    },
+    {
+      "page": 3,
+      "measures": [
+        12,
+        16
+      ]
+    },
+    {
+      "page": 4,
+      "measures": [
+        17,
+        19
+      ]
+    },
+    {
+      "page": 5,
+      "measures": [
+        20,
+        21
+      ]
+    },
+    {
+      "page": 6,
+      "measures": [
+        22,
+        23
+      ]
+    },
+    {
+      "page": 7,
+      "measures": [
+        24,
+        28
+      ]
+    }
+  ],
+  "checks": [
+    "28 measures in each voice, with consecutive measure numbers matching the source",
+    "122 quarter-note beats in each voice: two in measure 1, six in measures 20-25, four in all others",
+    "Treble octave-down clef interpreted at sounding pitch; one-flat key signature applied",
+    "Tenor 1 reaches G4 in measure 21; both voices reach C3 in measure 27",
+    "Different voice rhythms preserved in measures 23 and 25",
+    "Breath after the half note in measure 5; fermata in measure 28",
+    "English text and syllable attacks retained independently of the Slavonic underlay"
+  ],
+  "remainingSourceMarkings": [
+    {
+      "page": 1,
+      "measure": 2,
+      "description": "Tenuto over the first Tenor note; not yet encoded."
+    }
+  ],
+  "reviewCautions": [
+    "Same-pitch arcs with different English syllables are represented as slurs rather than suppressing the second syllable as a tie.",
+    "Independent human review of the transcription is still appropriate; mathematical measure totals alone cannot establish note-reading accuracy.",
+    "Combined SVG/PDF draft now renders both voices on one pitch grid, with shared beat positions and merged unisons. ACN beat unit is an eighth note (8/12 dots); audit beat positions below retain source quarter-note units.",
+    "The source appears to spell the last Savior in measure 24 as Sav-vior; that printed spelling is preserved for review.",
+    "Re and joice in measure 15 are treated as two syllables of Rejoice despite the missing printed English hyphen."
+  ],
+  "dynamicAudit": {
+    "status": "All letter dynamics on the source Tenor staff visually checked and matched in both ACN voices",
+    "beatUnit": "quarter note; beats numbered from 1",
+    "marks": [
+      {
+        "measure": 1,
+        "beat": 1,
+        "text": "p",
+        "sourcePage": 1
+      },
+      {
+        "measure": 4,
+        "beat": 1,
+        "text": "mp",
+        "sourcePage": 1
+      },
+      {
+        "measure": 5,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 1
+      },
+      {
+        "measure": 9,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 2
+      },
+      {
+        "measure": 13,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 3
+      },
+      {
+        "measure": 15,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 3
+      },
+      {
+        "measure": 18,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 4
+      },
+      {
+        "measure": 19,
+        "beat": 1,
+        "text": "p",
+        "sourcePage": 4
+      },
+      {
+        "measure": 21,
+        "beat": 1,
+        "text": "ff",
+        "sourcePage": 5
+      },
+      {
+        "measure": 23,
+        "beat": 1,
+        "text": "p",
+        "sourcePage": 6
+      },
+      {
+        "measure": 25,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 7
+      },
+      {
+        "measure": 25,
+        "beat": 3,
+        "text": "p",
+        "sourcePage": 7
+      },
+      {
+        "measure": 27,
+        "beat": 1,
+        "text": "pp",
+        "sourcePage": 7
+      },
+      {
+        "measure": 28,
+        "beat": 1,
+        "text": "ppp",
+        "sourcePage": 7
+      }
+    ],
+    "note": "Letter dynamics are complete. Fourteen crescendo/diminuendo hairpins are now encoded separately; see hairpinAudit for inferred endpoints."
+  },
+  "hairpinAudit": {
+    "status": "14 visible Tenor hairpins transcribed in each voice; musical endpoints inferred from graphical placement, requiring transcriber review",
+    "beatNumbering": "Quarter-note beats, numbered from 1; a measure-end position is shown as the beat after the final beat",
+    "marks": [
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 4,
+        "fromBeat": 1,
+        "toMeasure": 5,
+        "toBeat": 1,
+        "sourcePage": 1
+      },
+      {
+        "kind": "crescendo",
+        "fromMeasure": 5,
+        "fromBeat": 3,
+        "toMeasure": 5,
+        "toBeat": 5,
+        "sourcePage": 1
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 6,
+        "fromBeat": 1,
+        "toMeasure": 6,
+        "toBeat": 5,
+        "sourcePage": 2
+      },
+      {
+        "kind": "crescendo",
+        "fromMeasure": 7,
+        "fromBeat": 4,
+        "toMeasure": 7,
+        "toBeat": 5,
+        "sourcePage": 2
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 8,
+        "fromBeat": 2.5,
+        "toMeasure": 9,
+        "toBeat": 1,
+        "sourcePage": 2
+      },
+      {
+        "kind": "crescendo",
+        "fromMeasure": 9,
+        "fromBeat": 3,
+        "toMeasure": 9,
+        "toBeat": 5,
+        "sourcePage": 2
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 10,
+        "fromBeat": 4,
+        "toMeasure": 10,
+        "toBeat": 5,
+        "sourcePage": 2
+      },
+      {
+        "kind": "crescendo",
+        "fromMeasure": 12,
+        "fromBeat": 1,
+        "toMeasure": 12,
+        "toBeat": 3,
+        "sourcePage": 3
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 12,
+        "fromBeat": 3.5,
+        "toMeasure": 13,
+        "toBeat": 1,
+        "sourcePage": 3
+      },
+      {
+        "kind": "crescendo",
+        "fromMeasure": 16,
+        "fromBeat": 1,
+        "toMeasure": 16,
+        "toBeat": 2,
+        "sourcePage": 3
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 16,
+        "fromBeat": 4,
+        "toMeasure": 16,
+        "toBeat": 5,
+        "sourcePage": 3
+      },
+      {
+        "kind": "crescendo",
+        "fromMeasure": 20,
+        "fromBeat": 2,
+        "toMeasure": 21,
+        "toBeat": 1,
+        "sourcePage": 5
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 22,
+        "fromBeat": 4,
+        "toMeasure": 23,
+        "toBeat": 1,
+        "sourcePage": 6
+      },
+      {
+        "kind": "diminuendo",
+        "fromMeasure": 24,
+        "fromBeat": 5,
+        "toMeasure": 25,
+        "toBeat": 1,
+        "sourcePage": 7
+      }
+    ]
+  }
+}

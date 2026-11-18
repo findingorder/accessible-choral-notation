@@ -51,6 +51,10 @@ export function parseScore(value: unknown): AcnScore {
     requireValue(Array.isArray(m.directions), `measure ${m.number} directions`);
     for (const d of m.directions) {
       requireValue(d && ['rehearsal', 'tempo', 'expression', 'dynamic'].includes(d.kind) && typeof d.text === 'string', `measure ${m.number} direction`);
+      if (d.metronome !== undefined) {
+        requireValue(d.kind === 'tempo' && d.metronome && Number.isFinite(d.metronome.bpm) && d.metronome.bpm > 0, 'invalid metronome tempo');
+        fraction(d.metronome.unit, 'metronome unit', true);
+      }
       fraction(d.onset, 'direction onset');
       requireValue(compareTime(d.onset, m.duration) <= 0, 'direction outside its measure');
     }
@@ -74,6 +78,41 @@ export function parseScore(value: unknown): AcnScore {
       requireValue(compareTime(position.onset, measure.duration) <= 0, 'repeat ending outside measure');
     }
     requireValue(ending.from.measure < ending.to.measure || (ending.from.measure === ending.to.measure && compareTime(ending.from.onset, ending.to.onset) < 0), 'repeat ending must move forward');
+  }
+  if (score.part.hairpins !== undefined) {
+    requireValue(Array.isArray(score.part.hairpins), 'hairpins must be an array');
+    const absolute = (position: { measure: number; onset: Rational }): Rational => {
+      requireValue(position, 'hairpin position');
+      const index = score.part.measures.findIndex(m => m.number === position.measure);
+      requireValue(index >= 0, 'hairpin measure does not exist');
+      fraction(position.onset, 'hairpin onset');
+      requireValue(compareTime(position.onset, score.part.measures[index].duration) <= 0, 'hairpin outside its measure');
+      return score.part.measures.slice(0, index).reduce((time, m) => addTime(time, m.duration), position.onset);
+    };
+    for (const h of score.part.hairpins) {
+      requireValue(h && ['crescendo', 'diminuendo'].includes(h.kind), 'invalid hairpin kind');
+      requireValue(compareTime(absolute(h.from), absolute(h.to)) < 0, 'hairpin must have positive duration');
+    }
+  }
+  if (score.part.additionalVoices !== undefined) {
+    requireValue(Array.isArray(score.part.additionalVoices), 'additionalVoices must be an array');
+    const voices = new Set([score.part.voice]);
+    for (const voice of score.part.additionalVoices) {
+      requireValue(voice && Number.isSafeInteger(voice.voice) && voice.voice > 0 && !voices.has(voice.voice) && typeof voice.name === 'string', 'additional voice identity');
+      voices.add(voice.voice);
+      parseScore({ ...score, part: { ...score.part, ...voice, hairpins: voice.hairpins, additionalVoices: undefined } });
+      requireValue(voice.measures.length === score.part.measures.length, 'voices must share the same measures');
+      for (const [i, m] of voice.measures.entries()) {
+        const primary = score.part.measures[i];
+        requireValue(m.number === primary.number && equalTime(m.duration, primary.duration) &&
+          m.meter.numerator === primary.meter.numerator && m.meter.denominator === primary.meter.denominator,
+          'voices must share measure numbers, durations, and meters');
+        for (const e of m.events) {
+          requireValue(!ids.has(e.id), 'event IDs must be unique across voices');
+          ids.add(e.id);
+        }
+      }
+    }
   }
   return score;
 }

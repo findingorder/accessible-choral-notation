@@ -33,12 +33,17 @@ export interface ScoreEvent {
   lyrics: Lyric[];
 }
 export interface ScorePosition { measure: number; onset: Rational }
+export interface Hairpin {
+  kind: 'crescendo' | 'diminuendo';
+  from: ScorePosition;
+  to: ScorePosition;
+}
 export interface ScoreSpan {
   kind: 'tie' | 'slur';
   from: string;
   to: string;
 }
-export interface Direction { kind: 'rehearsal' | 'tempo' | 'expression' | 'dynamic'; onset: Rational; text: string }
+export interface Direction { kind: 'rehearsal' | 'tempo' | 'expression' | 'dynamic'; onset: Rational; text: string; metronome?: { unit: Rational; bpm: number } }
 export interface ScoreMeasure {
   number: number;
   /** Original score number for display after repeats are written out. */
@@ -57,8 +62,12 @@ export interface ScoreMeasure {
 export interface AcnScore {
   formatVersion: '0.1';
   metadata: { copyright: string };
-  source: { file: string; sha256: string; format: 'MuseScore'; version: string; programVersion: string; archiveEntry?: string };
-  part: { id: string; name: string; staffId: string; voice: number; measures: ScoreMeasure[]; spans: ScoreSpan[] };
+  source: { file: string; sha256: string; format: 'MuseScore' | 'PDF'; version: string; programVersion?: string; archiveEntry?: string };
+  part: { id: string; name: string; staffId: string; voice: number; measures: ScoreMeasure[]; spans: ScoreSpan[];
+    hairpins?: Hairpin[];
+    /** Independent additional lines of the same part, sharing measure timelines. */
+    additionalVoices?: { voice: number; name: string; measures: ScoreMeasure[]; spans: ScoreSpan[]; hairpins?: Hairpin[] }[];
+  };
   repeatEndings: { numbers: number[]; text: string; from: ScorePosition; to: ScorePosition }[];
   transcription: { beatUnit: Rational | null; staffRange: { low: number; high: number } | null };
   importNotes: string[];

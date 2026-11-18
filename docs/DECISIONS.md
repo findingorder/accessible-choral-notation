@@ -131,3 +131,31 @@ This file records decisions already made so future work does not repeatedly reop
 **Decision:** Draw a large fermata above its capsule, centered horizontally on the capsule.
 
 **Consequence:** Store a semantic `fermata` flag on the sung event. Derive position from capsule geometry using common rules, without changing musical time or adding score-specific renderer conditions.
+
+## D-023 — Divided Tenors on a shared pitch grid
+
+**Decision:** For the Rachmaninov PDF transcription, use the English singing translation and include Tenor 1 and Tenor 2 together on one pitch grid, with simultaneous capsules where they divide. This explicitly supersedes D-007's separate-score restriction for divided voices of the selected part.
+
+**Consequence:** Preserve independent voice timelines, including differing rhythms. The primary voice remains in `part.measures`/`part.spans`; `part.additionalVoices` stores the other named, numbered voices with their own measures and spans. All voices share measure numbers, durations, and meters; event IDs are unique across voices. Shared-grid rendering remains to be implemented and must fail explicitly rather than omit a voice.
+
+## D-024 — Assisted PDF transcription
+
+**Decision:** Begin PDF-to-ACN work with an agent-assisted, visually checked transcription. Do not describe it as an automatic optical music recognition importer.
+
+**Consequence:** PDF provenance uses `source.format: "PDF"`, the file hash, and PDF version. Keep a review record of source ambiguities and unsupported markings. The first example has changing meters and divided voices; these are preserved as data even though the current renderer cannot display them.
+
+## D-025 — Dotted time signatures at meter changes
+
+**Decision:** Keep the opening dotted time signature beneath the first pitch index. Whenever the meter changes, place a new dotted time signature beneath its first measure. Rachmaninov uses four, six, then four dots.
+
+**Consequence:** Derive dot count from the meter and chosen ACN beat unit, including for pickup measures. Keep the marker clear of lyrics and reserve its vertical space in pagination.
+
+## D-026 — Traditional slurs and ties above notes
+
+**Decision:** Slurs and ties look like traditional curved notation but always appear above the notes because lyrics occupy the space below.
+
+**Consequence:** Render saved tie/slur spans as upper arcs, preserving their musical endpoints and continuation across systems/pages.
+
+## D-027 — Eighth-note ACN beats for Rachmaninov
+
+**Decision:** Use `transcription.beatUnit = 1/8` for this score. Its 4/4 measures have eight ACN beats and its 6/4 measures twelve. Preserve all original durations, onsets, and meters. The incomplete opening still has its actual duration, while its index displays the full eight-dot signature. This supersedes the earlier four/six-dot choice for this transcription.

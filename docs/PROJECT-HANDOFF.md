@@ -136,3 +136,29 @@ Breaths render as large black commas to the right of the preceding capsule in ei
 ### Fermata rendering
 
 The final “truth.” (measure 39) now has `fermata: true`. The common renderer centers a large black vector arch and dot above the containing capsule segment, with translucent white backing. Saved-score validation accepts the optional boolean on sung notes. Native MuseScore fermata import remains future work.
+
+### D-note contrast
+
+The pitch-based D color is now dark gold `#A38300` (formerly `#CCA400`) to improve contrast against light gray capsules. The shared palette also updates D labels in the pitch index in every octave.
+
+### First PDF transcription: Rachmaninov
+
+The user reorganized score files into `scores/<piece>/input` and `scores/<piece>/output`. The Tallis test fixture paths now follow that organization; do not restore the old source/output copies.
+
+`scores/Rachmaninov - Bogoroditsye Devo/output/bogoroditsye-devo-tenors.acn.json` is a visually transcribed draft from the seven-page PDF, with a required title companion. The user selected English lyrics and explicitly requested both Tenors on one shared pitch grid. This supersedes the old separate-score constraint. There are 28 measures and 122 quarter beats per voice; primary Tenor 1 has 109 events, Tenor 2 has 110. Differing rhythms in measures 23 and 25 are retained.
+
+`transcription/pdf-reading.json` contains the source reading and both underlays; `transcription/review.json` records checks, ambiguities, and remaining markings. Fourteen hairpins per voice are now encoded; their endpoints are visually inferred and recorded in `hairpinAudit` for review. The measure-2 tenuto is not yet encoded. The English source appears to print “Sav-vior” in measure 24; preserve it for review rather than silently correcting the source. A three-page combined SVG/PDF draft has now been generated and visually checked. Both timelines share beat positions; matching unisons and lyrics merge. Saved-score validation checks both timelines. This is assisted transcription, not a general automatic PDF importer.
+
+### Meter-change rendering
+
+Dotted time-signature capsules now appear under the first measure of each new meter, centered below the measure and clear of its lyrics. Opening and later pitch-index examples use the local meter, not an incomplete measure duration. Rachmaninov now uses eighth-note ACN beats: eight dots at the initial index, twelve below measure 20, and eight below measure 26. Marker height participates in pagination and pushes later staffs down when needed. This is included in the combined-voice rendering.
+
+### Hairpin dynamics
+
+Optional `hairpins` arrays on the primary and additional voices store crescendo/diminuendo spans with rational measure/onset endpoints. Validation rejects missing measures, out-of-measure endpoints, and nonpositive spans (including equivalent positions across a barline). Rendering places wedges above the highest pitch in the span, on translucent white backing, with continuous opening across systems/pages and clearance from dynamic/fermata backgrounds. Rachmaninov has 14 spans per voice, transcribed from the Tenor staff; endpoint interpretation remains recorded for review. The combined-voice PDF has also been visually checked.
+
+### Upper slur/tie arcs
+
+Explicit tie/slur spans now render as black tapered curves above the covered capsules. Both ties and slurs cover the full dot groups of their endpoint events: from the first dot of the starting event through the last dot of the ending event. Arcs continue across systems/pages, clear dynamic/fermata/hairpin backgrounds, and place enclosing arcs above shorter arcs. This is a common rendering rule; no source-specific layout exceptions were added. Arcs are also included in the combined-voice draft.
+
+Divisi arc placement: lower voices now curve below their capsules, between notes and lyrics. Unison/upper arcs remain above. Classification uses simultaneous pitches; iterative layout reserves lower-arc clearance for shared lyrics and pagination. This supersedes the earlier always-above arc rule.

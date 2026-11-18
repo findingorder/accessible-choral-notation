@@ -37,15 +37,143 @@ function halfDot(x: number, y: number, r: number, edge: Edge): string {
   return `M ${x} ${y - r} A ${r} ${r} 0 0 ${edge === 'left' ? 1 : 0} ${x} ${y + r} Z`;
 }
 
-/** First monophonic tenor renderer. Heuristics are documented separately from notation rules. */
+interface VoicePlan { measures: MeasureLayout[]; lyrics: LyricSpan[] }
+interface SharedMeasure { positions: Map<number, number>; start: number; end: number; content: number; minimum: number; lyricOffset: number; pitches: { start: number; end: number; pitch: number }[] }
+interface LayoutPass { prepare?: (plan: VoicePlan) => void; shared?: SharedMeasure[]; lyricOffsets?: Map<string, number>; lowerSpans?: Set<string>; lowerClearance?: Map<string, number> }
+const lyricKey = (e: EventLayout): string => `${e.measure.source.number}:${value(e.event.onset)}:${JSON.stringify(e.event.lyrics)}`;
+
+/** Independent voices use one spacing ruler, then contribute to one scene. */
 export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: MeasureText): PageScene[] {
+  const score = parseScore(input);
+  if (!score.part.additionalVoices?.length) return layoutVoice(score, p, measureText);
+  const voices = [score.part, ...score.part.additionalVoices].map(v => ({
+    ...score, part: { ...score.part, ...v, additionalVoices: undefined }
+  }));
+  const plans: VoicePlan[] = [];
+  for (const voice of voices) layoutVoice(voice, p, measureText, { prepare: plan => plans.push(plan) });
+  // Each voice contributes minimum distances between consecutive beat anchors.
+  // The longest-path solution satisfies every voice without shifting simultaneous notes.
+  const shared: SharedMeasure[] = plans[0].measures.map((_, i) => {
+    const ms = plans.map(plan => plan.measures[i]);
+    const constraints: { from: number; to: number; distance: number }[] = [];
+    const times = new Set<number>();
+    for (const m of ms) {
+      let x = 0;
+      const dots: { beat: number; x: number }[] = [];
+      for (const e of m.events) {
+        x += e.gap;
+        const step = (e.width - e.trailingSpace) / Math.max(value(e.event.duration) / value(score.transcription.beatUnit!), 1);
+        e.dots.forEach((dot, j) => dots.push({ beat: dot.beat, x: x + j * (e.dots.length === 2 ? Math.min(step, p.beatSpacing) : step) }));
+        x += e.width;
+      }
+      dots.forEach(dot => times.add(dot.beat));
+      for (let j = 1; j < dots.length; j++) constraints.push({ from: dots[j - 1].beat, to: dots[j].beat, distance: dots[j].x - dots[j - 1].x });
+    }
+    const ordered = [...times].sort((a, b) => a - b), positions = new Map<number, number>();
+    for (const [j, time] of ordered.entries()) {
+      let x = j ? positions.get(ordered[j - 1])! + Math.max(2 * p.dotRadius + 4, (time - ordered[j - 1]) * p.beatSpacing) : 0;
+      for (const c of constraints) if (c.to === time) x = Math.max(x, positions.get(c.from)! + c.distance);
+      positions.set(time, x);
+    }
+    const start = Math.max(...ms.map(m => m.startPadding)), end = Math.max(...ms.map(m => m.endPadding));
+    const content = positions.get(ordered.at(-1)!)!;
+    return { positions, start, end, content, minimum: Math.max(start + content + end, ...ms.map(m => m.minWidth)), lyricOffset: 0, pitches: ms.flatMap(m => m.events.map(e => ({ start: value(e.event.onset), end: value(e.event.onset) + value(e.event.duration), pitch: e.pitch }))) };
+  });
+  // Classify by simultaneous sounding pitch, not by voice number or score name.
+  const lowerSpans = plans.map((plan, voice) => {
+    const flat = plan.measures.flatMap(m => m.events);
+    return new Set(voices[voice].part.spans.filter(span => {
+      const from = flat.findIndex(e => e.event.id === span.from), to = flat.findIndex(e => e.event.id === span.to);
+      return flat.slice(from, to + 1).some(e => e.event.kind === 'note' && plans.some((other, index) => index !== voice &&
+        other.measures[plan.measures.indexOf(e.measure)].events.some(candidate => candidate.event.kind === 'note' && candidate.pitch > e.pitch &&
+          value(candidate.event.onset) < value(e.event.onset) + value(e.event.duration) &&
+          value(candidate.event.onset) + value(candidate.event.duration) > value(e.event.onset))));
+    }).map(span => `${span.kind}:${span.from}:${span.to}`));
+  });
+  // Align matching syllables below both voices; propagate each word's baseline.
+  const lyricOffsets = new Map<string, number>();
+  for (const plan of plans) for (const span of plan.lyrics) lyricOffsets.set(lyricKey(span.first), Math.max(lyricOffsets.get(lyricKey(span.first)) ?? 0, span.lyricOffset));
+  const alignLyrics = (): void => {
+  for (let pass = 0; pass < plans.length + 1; pass++) for (const plan of plans) {
+    let word: LyricSpan[] = [];
+    const flush = (): void => {
+      const offset = Math.max(...word.map(span => lyricOffsets.get(lyricKey(span.first))!));
+      for (const span of word) lyricOffsets.set(lyricKey(span.first), offset);
+      word = [];
+    };
+    for (const span of plan.lyrics) {
+      if (['single', 'begin'].includes(span.first.event.lyrics[0].syllabic)) flush();
+      word.push(span);
+      if (['single', 'end'].includes(span.first.event.lyrics[0].syllabic)) flush();
+    }
+    flush();
+  }
+  for (const plan of plans) for (const span of plan.lyrics) for (const e of span.events) {
+    const m = shared[plan.measures.indexOf(e.measure)];
+    m.lyricOffset = Math.max(m.lyricOffset, lyricOffsets.get(lyricKey(span.first))!);
+  }
+  };
+  alignLyrics();
+  // Shared dynamics/hairpins belong above the highest simultaneous voice.
+  // Their engraving uses all pitches; coincident marks merge with the scene.
+  let rendered: PageScene[][] = [];
+  for (let attempt = 0; attempt < 6; attempt++) {
+    const lowerClearance = new Map<string, number>();
+    rendered = voices.map((voice, index) => layoutVoice(voice, p, measureText, { shared, lyricOffsets, lowerSpans: lowerSpans[index], lowerClearance }));
+    let changed = false;
+    for (const [key, offset] of lowerClearance) if (offset > (lyricOffsets.get(key) ?? 0) + 0.01) {
+      lyricOffsets.set(key, offset); changed = true;
+    }
+    if (!changed) break;
+    if (attempt === 5) throw new Error('Divisi arc/lyric spacing did not converge.');
+    alignLyrics();
+  }
+  const primary = rendered[0];
+  const lyricOwners = new Map<string, number>();
+  plans.forEach((plan, i) => plan.lyrics.forEach(span => { if (!lyricOwners.has(lyricKey(span.first))) lyricOwners.set(lyricKey(span.first), i); }));
+  const ownedLyrics = plans.map((plan, i) => new Set(plan.lyrics.filter(span => lyricOwners.get(lyricKey(span.first)) === i).map(span => span.first.event.id)));
+  const musical = (shape: Shape): boolean => !!shape.role && /^(capsule|sung-|rest-|word-divider|breath-mark|fermata-|slur$|tie$|lyric|dynamic|hairpin|crescendo$|diminuendo$|tempo$|expression$|rehearsal$)/.test(shape.role);
+  for (const [pageIndex, page] of primary.entries()) {
+    const all = rendered.flatMap((pages, voice) => pages[pageIndex].shapes.filter(shape =>
+      (voice === 0 || musical(shape)) && (!shape.role?.startsWith('lyric') || !shape.eventId || ownedLyrics[voice].has(shape.eventId))));
+    // A shared dynamic must clear the arcs of every voice. Reconcile its
+    // vertical position before merging identical drawing primitives.
+    for (const mark of all) {
+      if (mark.kind !== 'text' || mark.role !== 'dynamic') continue;
+      const peers = all.filter((shape): shape is Extract<Shape, {kind: 'text'}> =>
+        shape.kind === 'text' && shape.role === 'dynamic' && shape.x === mark.x && shape.text === mark.text);
+      const highest = Math.min(...peers.map(shape => shape.y));
+      for (const peer of peers) {
+        const oldY = peer.y;
+        for (const box of all) if (box.kind === 'rect' && box.role === 'dynamic-background' &&
+            Math.abs(box.x + box.width / 2 - peer.x) < 1e-6 && Math.abs(box.y + box.height / 2 - oldY) < 1e-6) box.y += highest - oldY;
+        peer.y = highest;
+      }
+    }
+    const seen = new Set<string>();
+    const unique = all.filter(shape => {
+      const { eventId, ...visual } = shape;
+      const key = JSON.stringify(visual);
+      if (seen.has(key)) return false;
+      seen.add(key); return true;
+    });
+    // Paint all capsules before any voice's dots and markings.
+    const capsules = unique.filter(shape => shape.role?.startsWith('capsule'));
+    const others = unique.filter(shape => !shape.role?.startsWith('capsule'));
+    const firstMusic = others.findIndex(shape => musical(shape));
+    others.splice(firstMusic < 0 ? others.length : firstMusic, 0, ...capsules);
+    page.shapes = others;
+  }
+  return primary;
+}
+
+function layoutVoice(input: AcnScore, p: LayoutSettings, measureText: MeasureText, pass: LayoutPass = {}): PageScene[] {
   const score = parseScore(input);
   const beatUnit = value(score.transcription.beatUnit!);
   const beats = (time: Rational): number => value(time) / beatUnit;
-  const meter = score.part.measures[0].meter;
-  const beatsPerMeasure = meter.numerator / meter.denominator / beatUnit;
-  if (!Number.isInteger(beatsPerMeasure) || beatsPerMeasure < 1 || beatsPerMeasure > 16) throw new Error('The beat example currently requires 1–16 whole ACN beats per measure.');
-  if (score.part.measures.some(m => m.meter.numerator !== meter.numerator || m.meter.denominator !== meter.denominator)) throw new Error('Meter changes are not yet supported by music rendering.');
+  const meterBeats = (m: ScoreMeasure): number => m.meter.numerator / m.meter.denominator / beatUnit;
+  for (const m of score.part.measures) if (!Number.isInteger(meterBeats(m)) || meterBeats(m) < 1 || meterBeats(m) > 16) throw new Error('The beat example currently requires 1–16 whole ACN beats per measure.');
+  const changes = new Set(score.part.measures.filter((m, i, all) => i > 0 && (m.meter.numerator !== all[i - 1].meter.numerator || m.meter.denominator !== all[i - 1].meter.denominator)));
   const staffHeight = 20 * p.semitoneStep;
   const capsuleInset = Math.max(p.capsuleHeight / 2, p.dotRadius + p.capsuleEndPadding);
   const capsuleFill = p.noteColorMode === 'pitch-based' ? '#d9d9d9' : '#bfbfbf';
@@ -166,7 +294,10 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   // Store this per lyric so lowering a word need not lower unrelated neighbors.
   const words: LyricSpan[][] = [];
   for (const [i, span] of lyrics.entries()) {
-    span.lyricOffset = Math.max(...span.events.map(e => lyricPosition(e)));
+    // Later notes in a sustained syllable carry only the underscore. Its
+    // thin stroke needs clearance below the capsule, not a full text box.
+    span.lyricOffset = Math.max(...span.events.map((e, index) =>
+      lyricPosition(e) - (index === 0 ? 0 : p.lyricSize * 0.95)));
     const previous = lyrics[i - 1];
     const joinsWord = previous && ['begin', 'middle'].includes(previous.first.event.lyrics[0].syllabic) &&
       ['middle', 'end'].includes(span.first.event.lyrics[0].syllabic) &&
@@ -198,13 +329,25 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     const lastStep = dotStep(last);
     m.contentWidth = m.events.reduce((sum, e) => sum + e.width + e.gap, 0) - last.width + (last.dots.length - 1) * lastStep;
     m.minWidth = m.startPadding + m.contentWidth + m.endPadding;
+    if (changes.has(m.source)) m.minWidth = Math.max(m.minWidth, 2 * (capsuleInset + 4) + (meterBeats(m.source) - 1) * (2 * p.dotRadius + 4) + 12);
   }
+  if (pass.prepare) { pass.prepare({ measures, lyrics }); return []; }
+  if (pass.shared) {
+    for (const [i, m] of measures.entries()) {
+      const shared = pass.shared[i];
+      m.minWidth = shared.minimum; m.startPadding = shared.start; m.endPadding = shared.end;
+      m.contentWidth = shared.content; m.lyricOffset = shared.lyricOffset;
+    }
+    for (const span of lyrics) span.lyricOffset = pass.lyricOffsets!.get(lyricKey(span.first))!;
+  }
+  const meterY = (m: MeasureLayout): number => Math.max(staffHeight + 20, m.lyricOffset + p.lyricSize / 2 + 2 + 8 + p.capsuleHeight / 2);
   const measureLimit = p.musicMeasuresPerSystem === 'auto' ? Infinity : p.musicMeasuresPerSystem;
   const systems: SystemLayout[] = [];
-  let page = 1, row = 0, cursor = 0;
+  let page = 1, row = 0, cursor = 0, nextTop = 0;
   const hasTitles = [p.leftTitle, p.centerTitle, p.rightTitle, p.centerSubtitle].some(Boolean);
   while (cursor < measures.length) {
-    const top = (page === 1 && hasTitles ? p.firstPageTop : p.top) + row * p.systemStep;
+    const openingDirections = page === 1 && row === 0 ? measures[0].source.directions.filter(d => d.kind !== 'dynamic').length : 0;
+    const top = row === 0 ? (page === 1 && hasTitles ? p.firstPageTop : p.top) + openingDirections * 20 : nextTop;
     const hasIndex = row === 0 && (p.pitchIndexPages === 'every' || (p.pitchIndexPages === 'odd' ? page % 2 === 1 : page % 2 === 0));
     const left = p.margin + (hasIndex ? p.guideWidth : 0), right = p.width - p.margin;
     const system: SystemLayout = { page, row, top, left, right, measures: [] };
@@ -214,7 +357,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       minimum += m.minWidth; system.measures.push(m);
     }
     if (!system.measures.length) throw new Error(`Measure ${measures[cursor].source.number} does not fit. Increase page width or reduce lyricSize/beatSpacing.`);
-    const bottom = top + Math.max(staffHeight + (hasIndex ? 28 : 7), ...system.measures.map(m => m.lyricOffset + p.lyricSize / 2 + 3));
+    const bottom = top + Math.max(staffHeight + (hasIndex ? 28 : 7), ...system.measures.map(m => Math.max(m.lyricOffset + p.lyricSize / 2 + 3, changes.has(m.source) ? meterY(m) + Math.max(9, p.capsuleHeight / 2) : 0)));
     if (bottom > p.height - p.margin) {
       cursor -= system.measures.length;
       if (row === 0) throw new Error('Music does not fit vertically within the page margins.');
@@ -240,12 +383,21 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
         for (const [j, dot] of e.dots.entries()) dot.x = eventX + j * step + stretch * (dot.beat - firstBeat);
         eventX += e.width;
       }
+      if (pass.shared) {
+        const shared = pass.shared[measures.indexOf(m)];
+        const lastBeat = Math.max(...shared.positions.keys());
+        const surplus = m.width - shared.start - shared.end - shared.content;
+        for (const e of m.events) {
+          for (const dot of e.dots) dot.x = m.x + shared.start + shared.positions.get(dot.beat)! + (lastBeat ? surplus * dot.beat / lastBeat : surplus / 2);
+          e.x = e.dots[0].x;
+        }
+      }
       x += m.width;
     }
     // Tighten two-dot capsules crossing an ordinary barline after justification.
     // Move only the pair inward, preserving room to neighboring capsules and
     // enough space for the lyrics and any syllable-separating hyphen.
-    for (let i = 1; i < system.measures.length; i++) {
+    for (let i = 1; !pass.shared && i < system.measures.length; i++) {
       const previous = system.measures[i - 1], current = system.measures[i];
       const last = previous.events.at(-1)!, first = current.events[0];
       if (last.group !== first.group || previous.source.endBarline !== 'normal') continue;
@@ -270,6 +422,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       current.x = boundary;
       current.width = right - boundary;
     }
+    nextTop = Math.max(top + p.systemStep, ...system.measures.filter(m => changes.has(m.source)).map(m => top + meterY(m) + Math.max(9, p.capsuleHeight / 2) + 40));
     systems.push(system);
     row++;
     if (row === p.systems) { page++; row = 0; }
@@ -278,16 +431,17 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   const pages: PageScene[] = [];
   for (let n = 1; n <= pageCount; n++) {
     const onPage = systems.filter(s => s.page === n);
-    const plans: SystemPlan[] = onPage.map(s => ({ measures: s.measures.map(m => ({ number: m.source.sourceNumber ?? m.source.number, width: m.width })) }));
+    const plans: SystemPlan[] = onPage.map(s => ({ top: s.top, measures: s.measures.map(m => ({ number: m.source.sourceNumber ?? m.source.number, width: m.width })) }));
     const scene = layoutBlankPage({ ...p, pages: pageCount }, n, plans);
     scene.title = [p.centerTitle, p.centerSubtitle].filter(Boolean).join(' — ') || 'Accessible Choral Notation';
     const pageFirst = onPage[0].measures[0].source, pageLast = onPage.at(-1)!.measures.at(-1)!.source;
-    scene.description = `Accessible Choral Notation, ${score.part.name}, measures ${pageFirst.sourceNumber ?? pageFirst.number}–${pageLast.sourceNumber ?? pageLast.number}. ${p.noteColorMode === 'pitch-based' ? 'Pitch-colored' : 'Black'} dots are sung; white dots are rests. Full dots are whole beats and semicircles half beats. ${beatsPerMeasure} ACN beats per measure. Pitch increases vertically from C3 to G+4.`;
+    scene.description = `Accessible Choral Notation, ${score.part.name}, measures ${pageFirst.sourceNumber ?? pageFirst.number}–${pageLast.sourceNumber ?? pageLast.number}. ${p.noteColorMode === 'pitch-based' ? 'Pitch-colored' : 'Black'} dots are sung; white dots are rests. Full dots are whole beats and semicircles half beats. ${[...new Set(onPage.flatMap(s => s.measures.map(m => meterBeats(m.source))))].join(' or ')} ACN beats per measure. Pitch increases vertically from C3 to G+4.`;
     // Bars are painted after the capsules so measure boundaries remain visible.
     scene.shapes = scene.shapes.filter(s => s.role !== 'barline');
     pages.push(scene);
   }
   const shapes = (s: SystemLayout): Shape[] => pages[s.page - 1].shapes;
+  const highPitch = (e: EventLayout): number => Math.max(e.pitch, ...(pass.shared?.[measures.indexOf(e.measure)].pitches.filter(other => other.start < value(e.event.onset) + value(e.event.duration) && other.end > value(e.event.onset)).map(other => other.pitch) ?? []));
   const y = (e: EventLayout): number => e.measure.system.top + (68 - e.pitch) * p.semitoneStep;
   for (const g of groups) {
     const segments = new Map<SystemLayout, EventLayout[]>();
@@ -331,7 +485,8 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     }
   }
   // White rest dividers align to measure beat groups, never to capsule-relative counts.
-  if (beatsPerMeasure % 4 === 0) for (const m of measures) {
+  for (const m of measures) {
+    if (meterBeats(m.source) % 4 !== 0) continue;
     const dots = m.events.flatMap(e => e.dots.map(dot => ({ e, dot })));
     for (let i = 1; i < dots.length; i++) {
       const a = dots[i - 1], b = dots[i];
@@ -343,7 +498,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   }
   const lyricText = (target: Shape[], text: string, x: number, y: number, eventId: string, role: string): void => {
     const width = measureText(text, p.lyricSize, p.sansSerifFont, p.lyricFontWeight);
-    target.push({ kind: 'rect', x: x - 2, y: y - p.lyricSize / 2 - 2, width: width + 4, height: p.lyricSize + 4, fill: '#ffffff', opacity: p.lyricBackgroundOpacity, role: 'lyric-background' });
+    target.push({ kind: 'rect', x: x - 2, y: y - p.lyricSize / 2 - 2, width: width + 4, height: p.lyricSize + 4, fill: '#ffffff', opacity: p.lyricBackgroundOpacity, role: 'lyric-background', eventId });
     target.push({ kind: 'text', text, x, y, size: p.lyricSize, fontWeight: p.lyricFontWeight, fontFamily: weightedFamily(p.sansSerifFont, p.lyricFontWeight), anchor: 'start', role, eventId });
   };
   const lyricX = (e: EventLayout): number => {
@@ -384,7 +539,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       // A trailing extension signals continuation onto the next system even
       // when it is shorter than the usual threshold for optional underscores.
       if (sustained && underscoreEnd > start && (continues || availableEnd - start >= p.lyricContinuationMinLength)) {
-        target.push({ kind: 'rect', x: start, y: baseline - p.lyricSize / 2 - 2, width: Math.min(system.right, underscoreEnd + 2) - start, height: p.lyricSize + 4, fill: '#ffffff', opacity: p.lyricBackgroundOpacity, role: 'lyric-background' });
+        target.push({ kind: 'rect', x: start, y: baseline - p.lyricSize / 2 - 2, width: Math.min(system.right, underscoreEnd + 2) - start, height: p.lyricSize + 4, fill: '#ffffff', opacity: p.lyricBackgroundOpacity, role: 'lyric-background', eventId: first.event.id });
         const underscoreY = baseline + p.lyricSize * 0.45;
         target.push({ ...line(start, underscoreY, underscoreEnd, underscoreY, '#202020', 1, 'lyric-continuation'), eventId: first.event.id });
       }
@@ -395,9 +550,29 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     const time = beats(onset);
     if (time <= 0) return m.x;
     if (time >= beats(m.source.duration)) return m.x + m.width;
+    if (pass.shared) {
+      const shared = pass.shared[measures.indexOf(m)], times = [...shared.positions.keys()];
+      const last = Math.max(...times), surplus = m.width - shared.start - shared.end - shared.content;
+      const anchor = (beat: number): number => m.x + shared.start + shared.positions.get(beat)! + (last ? surplus * beat / last : surplus / 2);
+      const before = Math.max(...times.filter(beat => beat <= time));
+      const after = Math.min(...times.filter(beat => beat > time));
+      const endTime = Number.isFinite(after) ? after : beats(m.source.duration);
+      const endX = Number.isFinite(after) ? anchor(after) : m.x + m.width;
+      return anchor(before) + (time - before) / (endTime - before) * (endX - anchor(before));
+    }
     const e = [...m.events].reverse().find(e => beats(e.event.onset) <= time)!;
     const next = m.events[m.events.indexOf(e) + 1];
     return e.x + (time - beats(e.event.onset)) / beats(e.event.duration) * ((next?.x ?? m.x + m.width - m.endPadding) - e.x);
+  };
+  // Twelve ACN beats are displayed as two six-beat groups within the
+  // original numbered measure. Put the divider between dot columns.
+  const subdivided = (m: MeasureLayout): boolean => meterBeats(m.source) === 12 && beats(m.source.duration) === 12;
+  const subdivisionX = (m: MeasureLayout): number => {
+    const dots = m.events.flatMap(e => e.dots);
+    const before = dots.filter(dot => dot.beat < 6), after = dots.filter(dot => dot.beat >= 6);
+    return before.length && after.length
+      ? (Math.max(...before.map(dot => dot.x)) + Math.min(...after.map(dot => dot.x))) / 2
+      : m.x + m.width / 2;
   };
   for (const system of systems) {
     const target = shapes(system), top = system.top, bottom = top + staffHeight;
@@ -405,6 +580,7 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
     bar(system.left);
     for (const [index, m] of system.measures.entries()) {
       const right = m.x + m.width;
+      if (subdivided(m)) target.push({ ...line(subdivisionX(m), top, subdivisionX(m), bottom, '#999999', p.barLineWidth, 'subdivision-barline'), measureNumber: m.source.number });
       if (m.source.endBarline !== 'end' || m.source.repeatCount) bar(right);
       if (m.source.startRepeat) {
         bar(m.x + 1, 2.5); bar(m.x + 5);
@@ -426,9 +602,22 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
           const x = positionX(m, d.onset) || m.events[0].x;
           const event = [...m.events].reverse().find(e => beats(e.event.onset) <= beats(d.onset)) ?? m.events[0];
           const dynamicX = beats(d.onset) === beats(event.event.onset) ? event.x : x;
-          const size = 18, side = Math.max(size + 4, measureText(d.text, size, p.serifFont) + 6), centerY = y(event) - p.capsuleHeight / 2 - side / 2 - 3;
+          const size = 18, side = Math.max(size + 4, measureText(d.text, size, p.serifFont) + 6), centerY = event.measure.system.top + (68 - highPitch(event)) * p.semitoneStep - p.capsuleHeight / 2 - side / 2 - 7;
           target.push({ kind: 'rect', x: dynamicX - side / 2, y: centerY - side / 2, width: side, height: side, fill: '#ffffff', role: 'dynamic-background' });
-          target.push({ kind: 'text', x: dynamicX, y: centerY, text: d.text, size, fontFamily: p.serifFont, italic: true, role: 'dynamic' });
+          target.push({ kind: 'text', x: dynamicX, y: centerY, text: d.text, size, fontFamily: p.serifFont, italic: true, bold: true, role: 'dynamic' });
+        } else if (d.kind === 'tempo' && d.metronome) {
+          const count = value(d.metronome.unit) / beatUnit;
+          if (!Number.isInteger(count) || count < 1 || count > 16) throw new Error('Metronome capsules require 1–16 whole ACN beats per tempo unit.');
+          const opening = m === measures[0] && beats(d.onset) === 0;
+          const indexed = opening && pages[0].hasPitchIndex;
+          const size = 16, label = `= ${d.metronome.bpm}`;
+          const width = 2 * capsuleInset + (count - 1) * p.beatSpacing;
+          const totalWidth = width + 8 + measureText(label, size, p.serifFont);
+          const left = indexed ? p.margin + (p.guideWidth - totalWidth) / 2 : m.x + 8;
+          const centerY = top - 20 - (indexed ? 0 : directionRow++ * 20);
+          target.push({ kind: 'path', d: capsule(left, left + width, centerY, p.capsuleHeight, false, false), fill: capsuleFill, role: 'tempo-capsule' });
+          for (let i = 0; i < count; i++) target.push(circle(left + capsuleInset + i * p.beatSpacing, centerY, p.dotRadius, '#000000', 'tempo-dot'));
+          target.push({ kind: 'text', x: left + width + 8, y: centerY, text: label, size, fontFamily: p.serifFont, anchor: 'start', role: 'tempo-value' });
         } else {
           const rehearsal = d.kind === 'rehearsal';
           const text = rehearsal && m.source.repeatOf !== undefined ? d.text + "'" : d.text;
@@ -436,19 +625,31 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
         }
       }
     }
-    if (system.row === 0 && pages[system.page - 1].hasPitchIndex) {
-      const left = p.margin, right = p.margin + p.guideWidth, y = bottom + 20;
-      const barGap = 4; // White clearance between the capsule and its end bars.
-      const dotSpan = p.guideWidth - 2 * (capsuleInset + barGap);
-      if (dotSpan <= 0) throw new Error('Capsule end padding is too large for the pitch-index beat example. Increase guideWidth.');
-      const compactSpan = dotSpan * 0.9;
-      const step = compactSpan / Math.max(1, beatsPerMeasure - 1);
-      target.push({ kind: 'path', d: capsule(left + barGap, right - barGap, y, p.capsuleHeight, false, false), fill: capsuleFill, role: 'beat-example' });
-      target.push(line(left, y - 9, left, y + 9), line(right, y - 9, right, y + 9));
-      for (let i = 0; i < beatsPerMeasure; i++) {
-        const x = beatsPerMeasure === 1 ? (left + right) / 2 : (left + right - compactSpan) / 2 + step * i;
-        target.push(circle(x, y, Math.min(p.dotRadius, step / 3), '#000000', 'example-dot'));
+    const drawMeter = (left: number, right: number, centerY: number, count: number, change?: ScoreMeasure): void => {
+      const barGap = change ? 7 : 4;
+      const countSize = Math.min(11, p.capsuleHeight * 0.8);
+      const countWidth = change ? measureText(String(count), countSize, p.sansSerifFont, 700) : 0;
+      const countSpace = change ? countWidth + 13 : 0;
+      const dotSpan = right - left - 2 * (capsuleInset + barGap) - countSpace;
+      if (dotSpan <= 0) throw new Error('Capsule end padding is too large for the time signature. Increase its available width.');
+      const compactSpan = dotSpan * (count === 8 ? 1 : 0.9), step = compactSpan / Math.max(1, count - 1);
+      const mark = (shape: Shape): void => { target.push({ ...shape, ...(change ? { measureNumber: change.number } : {}) }); };
+      mark({ kind: 'path', d: capsule(left + barGap, right - barGap, centerY, p.capsuleHeight, false, false), fill: capsuleFill, role: change ? 'meter-change' : 'beat-example' });
+      if (change) mark({ kind: 'text', x: left + barGap + p.capsuleHeight / 2 + 5,
+        y: centerY, text: String(count), size: countSize, fontFamily: weightedFamily(p.sansSerifFont, 700), fontWeight: 700,
+        anchor: 'start', fill: '#000000', role: 'meter-change-count' });
+      mark(line(left, centerY - 9, left, centerY + 9));
+      mark(line(right, centerY - 9, right, centerY + 9));
+      for (let i = 0; i < count; i++) {
+        const x = count === 1 ? (left + right + countSpace) / 2 : (left + right + countSpace - compactSpan) / 2 + step * i;
+        mark(circle(x, centerY, Math.min(p.dotRadius, step / 3), '#000000', change ? 'meter-change-dot' : 'example-dot'));
       }
+    };
+    if (system.row === 0 && pages[system.page - 1].hasPitchIndex) {
+      drawMeter(p.margin, p.margin + p.guideWidth, bottom + 20, meterBeats(system.measures[0].source) === 12 ? 6 : meterBeats(system.measures[0].source));
+    }
+    for (const m of system.measures.filter(m => changes.has(m.source))) {
+      drawMeter(m.x, subdivided(m) ? subdivisionX(m) : m.x + m.width, top + meterY(m), subdivided(m) ? 6 : meterBeats(m.source), m.source);
     }
   }
   const absoluteTime = (position: ScorePosition): number => {
@@ -474,6 +675,212 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
       if (from >= sysStart) target.push(line(left, y, left, y + 7));
       if (to <= sysEnd) target.push(line(endX, y, endX, y + 7));
       target.push({ kind: 'text', x: left + 5, y: y + 10, text: ending.text || ending.numbers.join(', '), size: 12, anchor: 'start', fontFamily: p.serifFont, role: 'ending-label' });
+    }
+  }
+  const connectedDynamics: { labels: Extract<Shape, {kind: 'text'}>[]; boxes: Extract<Shape, {kind: 'rect'}>[]; wedge: Shape[] }[] = [];
+  for (const h of score.part.hairpins ?? []) {
+    const from = absoluteTime(h.from), to = absoluteTime(h.to);
+    const affected = flat.filter(e => {
+      const start = startTimes.get(e.measure)! + beats(e.event.onset);
+      return start <= to && start + beats(e.event.duration) > from;
+    });
+    const highest = Math.max(...affected.map(highPitch));
+    for (const system of systems) {
+      const first = system.measures[0], last = system.measures.at(-1)!;
+      const sysStart = startTimes.get(first)!, sysEnd = startTimes.get(last)! + beats(last.source.duration);
+      if (from >= sysEnd || to <= sysStart) continue;
+      const segmentStart = Math.max(from, sysStart), segmentEnd = Math.min(to, sysEnd);
+      const anchor = (position: ScorePosition): number => {
+        const m = measures.find(m => m.source.number === position.measure)!;
+        if (beats(position.onset) === 0) return m.events[0].dots[0].x;
+        if (beats(position.onset) === beats(m.source.duration)) return m.events.at(-1)!.dots.at(-1)!.x + capsuleInset;
+        return positionX(m, position.onset);
+      };
+      const target = shapes(system);
+      let left = from < sysStart ? system.left : anchor(h.from);
+      let right = to >= sysEnd ? system.right : anchor(h.to);
+      const endpointDynamic = (x: number): Extract<Shape, {kind: 'text'}> | undefined =>
+        target.find((shape): shape is Extract<Shape, {kind: 'text'}> => shape.kind === 'text' && shape.role === 'dynamic' && Math.abs(shape.x - x) < 1e-6);
+      const startDynamic = from >= sysStart ? endpointDynamic(left) : undefined;
+      const endDynamic = to < sysEnd ? endpointDynamic(right) : undefined;
+      const labels = startDynamic && endDynamic ? [startDynamic, endDynamic] : [];
+      const boxes = labels.map(label => target.find((shape): shape is Extract<Shape, {kind: 'rect'}> =>
+        shape.kind === 'rect' && shape.role === 'dynamic-background' &&
+        Math.abs(shape.x + shape.width / 2 - label.x) < 1e-6 && Math.abs(shape.y + shape.height / 2 - label.y) < 1e-6)!);
+      if (boxes.length === 2) { left = boxes[0].x + boxes[0].width + 4; right = boxes[1].x - 4; }
+      if (right <= left) continue;
+      const opening = (time: number): number => {
+        const progress = (time - from) / (to - from);
+        return 4 * (h.kind === 'crescendo' ? progress : 1 - progress);
+      };
+      const a = opening(segmentStart), b = opening(segmentEnd);
+      let center = system.top + (68 - highest) * p.semitoneStep - p.capsuleHeight / 2 - 12;
+      if (labels.length) center = Math.min(center, ...labels.map(label => label.y));
+      // Keep the wedge above overlapping dynamics, fermatas, and other wedges.
+      for (const shape of target) {
+        if (shape.kind !== 'rect' || !['dynamic-background', 'fermata-background', 'hairpin-background'].includes(shape.role ?? '')) continue;
+        if (shape.x < right + 2 && shape.x + shape.width > left - 2 &&
+            shape.y < center + 6 && shape.y + shape.height > center - 6) center = shape.y - 8;
+      }
+      target.push({ kind: 'rect', x: left - 2, y: center - 6, width: right - left + 4, height: 12,
+        fill: '#ffffff', opacity: p.lyricBackgroundOpacity, role: 'hairpin-background' });
+      target.push(line(left, center - a, right, center - b, '#000000', 1.2, h.kind));
+      target.push(line(left, center + a, right, center + b, '#000000', 1.2, h.kind));
+      if (labels.length) connectedDynamics.push({ labels, boxes, wedge: target.slice(-3) });
+    }
+  }
+  // Traditional tapered arcs; lower divisi voices curve below. Short spans
+  // are placed first so enclosing slurs can clear them.
+  const eventIndex = new Map(flat.map((e, i) => [e.event.id, i]));
+  const arcBounds = new Map<SystemLayout, { left: number; right: number; top: number; bottom: number }[]>();
+  const lowerBounds: { system: SystemLayout; left: number; right: number; bottom: number }[] = [];
+  const lowerArcBounds = new Map<SystemLayout, { left: number; right: number; top: number; bottom: number }[]>();
+  const spans = [...score.part.spans].sort((a, b) =>
+    (eventIndex.get(a.to)! - eventIndex.get(a.from)!) - (eventIndex.get(b.to)! - eventIndex.get(b.from)!));
+  for (const span of spans) {
+    const covered = flat.slice(eventIndex.get(span.from)!, eventIndex.get(span.to)! + 1);
+    const from = covered[0], to = covered.at(-1)!;
+    const below = pass.lowerSpans?.has(`${span.kind}:${span.from}:${span.to}`) ?? false;
+    const direction = below ? -1 : 1;
+    const sideBounds = below ? lowerArcBounds : arcBounds;
+    const arcY = (e: EventLayout): number => direction * y(e);
+    for (const system of systems) {
+      const local = covered.filter(e => e.measure.system === system);
+      if (!local.length) continue;
+      const starts = from.measure.system === system, ends = to.measure.system === system;
+      const left = starts ? from.dots[0].x : system.left;
+      const right = ends ? to.dots.at(-1)!.x : system.right;
+      if (right <= left) continue;
+      const startY = arcY(local[0]) - p.capsuleHeight / 2 - 5;
+      const endY = arcY(local.at(-1)!) - p.capsuleHeight / 2 - 5;
+      let rise = Math.min(22, Math.max(7, (right - left) * 0.12));
+      // Clear the full capsule envelope, including its padded ends, rather
+      // than testing only dot centers. Endpoints remain attached to their notes.
+      for (const e of local) for (const x of [
+        ...e.dots.map(dot => dot.x),
+        e.dots[0].x - capsuleInset,
+        e.dots.at(-1)!.x + capsuleInset,
+      ]) {
+        const t = (x - left) / (right - left);
+        if (t <= 0 || t >= 1) continue;
+        const straightY = startY + (endY - startY) * t;
+        rise = Math.max(rise, (straightY - (arcY(e) - p.capsuleHeight / 2 - 5)) / (3 * t * (1 - t)));
+      }
+      const lowOffset = Math.max(startY, endY) - Math.min(startY, endY);
+      let baseline = Math.min(startY, endY);
+      const initialBaseline = baseline;
+      const target = shapes(system);
+      const obstacles = sideBounds.get(system) ?? [];
+      // Only other arcs can displace an arc from the notes.
+      let moved: boolean;
+      do {
+        moved = false;
+        for (const box of obstacles) if (box.left < right && box.right > left && box.top < baseline + lowOffset + 2 && box.bottom > baseline - rise - 2) {
+          baseline = box.top - lowOffset - 5; moved = true;
+        }
+      } while (moved);
+      // All other above-note symbols yield to the arc. Move each symbol
+      // together with its backing, preserving its internal geometry.
+      const markings = target.filter((shape): shape is Extract<Shape, {kind: 'rect'}> =>
+        shape.kind === 'rect' && ['dynamic-background', 'hairpin-background', 'fermata-background'].includes(shape.role ?? ''));
+      for (const box of below ? [] : markings) {
+        if (box.x >= right + 2 || box.x + box.width <= left - 2 ||
+            box.y >= baseline + lowOffset + 2 || box.y + box.height <= baseline - rise - 2) continue;
+        const centerX = box.x + box.width / 2, centerY = box.y + box.height / 2;
+        const members = target.filter(shape => {
+          if (box.role === 'dynamic-background') return shape.kind === 'text' && shape.role === 'dynamic' &&
+            Math.abs(shape.x - centerX) < 1e-6 && Math.abs(shape.y - centerY) < 1e-6;
+          if (box.role === 'fermata-background') return shape !== box && shape.eventId === box.eventId &&
+            ['fermata-arch', 'fermata-dot'].includes(shape.role ?? '');
+          return shape.kind === 'line' && ['crescendo', 'diminuendo'].includes(shape.role ?? '') &&
+            shape.x1 >= box.x && shape.x2 <= box.x + box.width &&
+            Math.min(shape.y1, shape.y2) >= box.y && Math.max(shape.y1, shape.y2) <= box.y + box.height;
+        });
+        let newY = baseline - rise - 4 - box.height;
+        let collision: boolean;
+        do {
+          collision = false;
+          for (const other of markings) if (other !== box && other.x < box.x + box.width && other.x + other.width > box.x &&
+              other.y < newY + box.height + 3 && other.y + other.height > newY - 3) {
+            newY = other.y - box.height - 4; collision = true;
+          }
+        } while (collision);
+        const shift = newY - box.y;
+        for (const member of members) {
+          if (member.kind === 'line') { member.y1 += shift; member.y2 += shift; }
+          else if (member.kind === 'text' || member.kind === 'ellipse') member.y += shift;
+          else if (member.kind === 'path') {
+            // Fermata arches use absolute M/L/A commands; their final operand
+            // is the endpoint y. Arc radii and flags must remain unchanged.
+            member.d = member.d.replace(/([MLA])([^MLAZ]+)/g, (_, command: string, args: string) => {
+              const values = args.trim().split(/\s+/).map(Number);
+              values[values.length - 1] += shift;
+              return command + ' ' + values.join(' ') + ' ';
+            });
+          }
+        }
+        box.y = newY;
+      }
+      const c1 = left + (right - left) / 3, c2 = right - (right - left) / 3;
+      const thickness = 1.8;
+      const leftY = startY + baseline - initialBaseline, rightY = endY + baseline - initialBaseline;
+      const control1Y = leftY + (rightY - leftY) / 3 - rise;
+      const control2Y = leftY + (rightY - leftY) * 2 / 3 - rise;
+      target.push({ kind: 'path', d: `M ${left} ${direction * leftY} C ${c1} ${direction * control1Y} ${c2} ${direction * control2Y} ${right} ${direction * rightY} C ${c2} ${direction * (control2Y + thickness)} ${c1} ${direction * (control1Y + thickness)} ${left} ${direction * leftY} Z`,
+        fill: '#000000', role: span.kind, eventId: span.from });
+      if (!sideBounds.has(system)) sideBounds.set(system, []);
+      sideBounds.get(system)!.push({ left, right, top: baseline - rise, bottom: baseline + lowOffset });
+      if (below) lowerBounds.push({ system, left, right, bottom: -Math.min(leftY, rightY, control1Y, control2Y) });
+    }
+  }
+  // Feed exact lower-arc bounds back into lyric placement and pagination.
+  for (const box of lowerBounds) for (const span of lyrics) {
+    const here = span.events.filter(e => e.measure.system === box.system);
+    if (!here.length) continue;
+    const textWidth = measureText(span.first.event.lyrics[0].text, p.lyricSize, p.sansSerifFont, p.lyricFontWeight);
+    const left = span.first.measure.system === box.system ? lyricX(span.first) : box.system.left;
+    const right = Math.max(left + textWidth, here.at(-1)!.dots.at(-1)!.x + capsuleInset);
+    if (left > box.right + 4 || right < box.left - 4) continue;
+    const offset = box.bottom - box.system.top + p.lyricSize / 2 + 7;
+    const key = lyricKey(span.first);
+    pass.lowerClearance?.set(key, Math.max(pass.lowerClearance.get(key) ?? 0, offset));
+  }
+  // A hairpin joining two dynamics is one horizontal row. Arcs may have
+  // raised any member; raise the rest to match the highest required position.
+  for (const group of connectedDynamics) {
+    const backing = group.wedge[0] as Extract<Shape, {kind: 'rect'}>;
+    const center = Math.min(backing.y + backing.height / 2, ...group.labels.map(label => label.y));
+    for (const [i, label] of group.labels.entries()) {
+      const shift = center - label.y;
+      label.y += shift; group.boxes[i].y += shift;
+    }
+    const shift = center - (backing.y + backing.height / 2);
+    backing.y += shift;
+    for (const shape of group.wedge) if (shape.kind === 'line') { shape.y1 += shift; shape.y2 += shift; }
+  }
+  // Lift a system's measure number clear of nearby dynamics and upper arcs.
+  for (const page of pages) for (const number of page.shapes) {
+    if (number.kind !== 'text' || number.role !== 'measure-number') continue;
+    const numberWidth = measureText(number.text, number.size, number.fontFamily ?? p.serifFont);
+    for (let iteration = 0; iteration < page.shapes.length; iteration++) {
+      let moved = false;
+      for (const shape of page.shapes) {
+        let box: { left: number; right: number; top: number; bottom: number } | undefined;
+        if (shape.kind === 'rect' && ['dynamic-background', 'hairpin-background', 'fermata-background'].includes(shape.role ?? ''))
+          box = { left: shape.x, right: shape.x + shape.width, top: shape.y, bottom: shape.y + shape.height };
+        if (shape.kind === 'path' && ['slur', 'tie'].includes(shape.role ?? '')) {
+          const coordinates = shape.d.match(/-?\d+(?:\.\d+)?(?:e[+-]?\d+)?/g)!.map(Number);
+          const xs = coordinates.filter((_, i) => i % 2 === 0), ys = coordinates.filter((_, i) => i % 2 === 1);
+          box = { left: Math.min(...xs), right: Math.max(...xs), top: Math.min(...ys), bottom: Math.max(...ys) };
+        }
+        if (box && box.left < number.x + numberWidth + 2 && box.right > number.x - 2 && box.top < number.y + number.size / 2 && box.bottom > number.y - number.size / 2) {
+          const left = box.left - numberWidth - 4;
+          if (left >= p.margin - 24) number.x = left;
+          else number.y = box.top - number.size / 2 - 4;
+          moved = true;
+        }
+      }
+      if (!moved) break;
     }
   }
   return pages;
