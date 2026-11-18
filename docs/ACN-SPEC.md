@@ -467,3 +467,7 @@ Display full twelve-ACN-beat measures as two six-beat groups separated by a ligh
 Lower-voice arc placement is determined by overlapping sounding pitches, not voice numbering. Shared lyrics move below the lower arcs as needed; all syllables of a word retain a shared baseline. Arc clearance participates in pagination, including spans crossing systems or pages.
 
 For a sustained syllable, use text clearance at its lyric-bearing note and continuation-stroke clearance at later notes. Lower continuation notes need not reserve the full height of text that does not appear beneath them. Keep the word and its extension on one baseline, below all capsules with the configured clearance. Lower divisi arcs still take precedence over lyric placement.
+
+With automatic measure packing, a lone final measure uses the typical (median) width of earlier measures with the same ACN beat count and duration, bounded below by its content requirements. Its pitch lines end at the final barline rather than continuing across unused page width.
+
+Automatic system packing avoids a lone final measure by moving the preceding measure onto the final system when both fit, without measure-specific breaks or renumbering.

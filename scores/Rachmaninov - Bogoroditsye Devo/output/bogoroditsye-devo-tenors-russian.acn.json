@@ -1,0 +1,6643 @@
+{
+  "formatVersion": "0.1",
+  "metadata": {
+    "copyright": "Public Domain (as marked in source PDF)"
+  },
+  "source": {
+    "file": "Rachmaninov - Bogorodyitse Devo.pdf",
+    "sha256": "349ee8b3215b04642e81a07910634636e3f533d0f73ee0cc0820478f8ae00ae0",
+    "format": "PDF",
+    "version": "1.4",
+    "programVersion": "MuseScore 3.6.2 (PDF creator metadata)"
+  },
+  "part": {
+    "id": "tenor",
+    "name": "Tenor 1 and Tenor 2",
+    "staffId": "tenor",
+    "voice": 1,
+    "measures": [
+      {
+        "number": 1,
+        "duration": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m1-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Bo",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m1-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "go",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "p"
+          },
+          {
+            "kind": "tempo",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "",
+            "metronome": {
+              "unit": {
+                "numerator": 1,
+                "denominator": 4
+              },
+              "bpm": 70
+            }
+          },
+          {
+            "kind": "expression",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "Separated, easy, very gentle"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 2,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m2-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ro",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m2-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m2-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m2-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "di",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 3,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m3-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "tse",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m3-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "De",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m3-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 4,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m4-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ra",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m4-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m4-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m4-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m4-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m4-e6",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "duy",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "mp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 5,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m5-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sta,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            },
+            "breathAfter": true
+          },
+          {
+            "id": "tenor1-m5-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Bla",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m5-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "go",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 6,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m6-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "dat",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m6-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m6-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m6-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "na",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 7,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m7-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ya",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m7-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m7-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m7-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m7-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Ma",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 8,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m8-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ri",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m8-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m8-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m8-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m8-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 9,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m9-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ye,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m9-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Gho",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 10,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m10-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "spod",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m10-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "s To",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 11,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m11-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "bo",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 52,
+              "name": "E",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m11-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m11-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 52,
+              "name": "E",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m11-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 50,
+              "name": "D",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 12,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m12-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 52,
+              "name": "E",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m12-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m12-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m12-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m12-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 13,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m13-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m13-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m13-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m13-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m13-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m13-e6",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 14,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m14-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "yu.",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 15,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m15-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Bo",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m15-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "go",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m15-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 7,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          },
+          {
+            "kind": "expression",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "very gently"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 16,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m16-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ro",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m16-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m16-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "di",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 17,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m17-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "tse",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m17-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m17-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 18,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m18-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 19,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m19-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "De",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m19-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "vo,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m19-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m19-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 7,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "p"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 20,
+        "duration": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 6,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m20-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ra",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m20-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m20-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "duy",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m20-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sta,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m20-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 9,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m20-e6",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 21,
+        "duration": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 6,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m21-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ra",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 67,
+              "name": "G",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m21-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "duy",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m21-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "ff"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 22,
+        "duration": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 6,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m22-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sta,",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m22-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m22-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ya",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m22-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m22-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m22-e6",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ko",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 23,
+        "duration": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 6,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m23-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Spa",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 65,
+              "name": "F",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m23-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 64,
+              "name": "E",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m23-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sa",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 62,
+              "name": "D",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m23-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m23-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ro",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m23-e6",
+            "kind": "note",
+            "onset": {
+              "numerator": 9,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m23-e7",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "di",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "p"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 24,
+        "duration": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 6,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m24-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "la",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m24-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ya",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m24-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ko",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m24-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "Spa",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m24-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m24-e6",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "sa",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m24-e7",
+            "kind": "note",
+            "onset": {
+              "numerator": 7,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m24-e8",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ro",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m24-e9",
+            "kind": "note",
+            "onset": {
+              "numerator": 9,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m24-e10",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "di",
+                "syllabic": "middle"
+              }
+            ],
+            "pitch": {
+              "midi": 58,
+              "name": "A+",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 25,
+        "duration": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "meter": {
+          "numerator": 6,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m25-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "la",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m25-e2",
+            "kind": "rest",
+            "onset": {
+              "numerator": 3,
+              "denominator": 8
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 8
+            },
+            "lyrics": []
+          },
+          {
+            "id": "tenor1-m25-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "ye",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 60,
+              "name": "C",
+              "octave": 4
+            }
+          },
+          {
+            "id": "tenor1-m25-e4",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "si",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m25-e5",
+            "kind": "note",
+            "onset": {
+              "numerator": 5,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 57,
+              "name": "A",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          },
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "text": "p"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 26,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m26-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "dush",
+                "syllabic": "single"
+              }
+            ],
+            "pitch": {
+              "midi": 55,
+              "name": "G",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m26-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m26-e3",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 52,
+              "name": "E",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 27,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m27-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "na",
+                "syllabic": "begin"
+              }
+            ],
+            "pitch": {
+              "midi": 50,
+              "name": "D",
+              "octave": 3
+            }
+          },
+          {
+            "id": "tenor1-m27-e2",
+            "kind": "note",
+            "onset": {
+              "numerator": 3,
+              "denominator": 4
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 4
+            },
+            "lyrics": [],
+            "pitch": {
+              "midi": 48,
+              "name": "C",
+              "octave": 3
+            }
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "pp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "normal"
+      },
+      {
+        "number": 28,
+        "duration": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "meter": {
+          "numerator": 4,
+          "denominator": 4
+        },
+        "keySignature": -1,
+        "events": [
+          {
+            "id": "tenor1-m28-e1",
+            "kind": "note",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "lyrics": [
+              {
+                "verse": 1,
+                "text": "shih.",
+                "syllabic": "end"
+              }
+            ],
+            "pitch": {
+              "midi": 53,
+              "name": "F",
+              "octave": 3
+            },
+            "fermata": true
+          }
+        ],
+        "directions": [
+          {
+            "kind": "dynamic",
+            "onset": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "text": "ppp"
+          }
+        ],
+        "startRepeat": false,
+        "endBarline": "end"
+      }
+    ],
+    "spans": [
+      {
+        "kind": "slur",
+        "from": "tenor1-m1-e1",
+        "to": "tenor1-m1-e2"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m3-e1",
+        "to": "tenor1-m3-e2"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m4-e2",
+        "to": "tenor1-m4-e3"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m6-e1",
+        "to": "tenor1-m6-e3"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m7-e1",
+        "to": "tenor1-m7-e4"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m8-e3",
+        "to": "tenor1-m8-e4"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m11-e1",
+        "to": "tenor1-m11-e4"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m12-e1",
+        "to": "tenor1-m12-e4"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m13-e2",
+        "to": "tenor1-m13-e3"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m13-e4",
+        "to": "tenor1-m13-e6"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m16-e1",
+        "to": "tenor1-m16-e2"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m19-e3",
+        "to": "tenor1-m19-e4"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m20-e1",
+        "to": "tenor1-m20-e2"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m20-e4",
+        "to": "tenor1-m20-e6"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m21-e2",
+        "to": "tenor1-m21-e3"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m23-e1",
+        "to": "tenor1-m23-e2"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m23-e3",
+        "to": "tenor1-m23-e4"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m23-e5",
+        "to": "tenor1-m23-e6"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m24-e2",
+        "to": "tenor1-m24-e3"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m24-e4",
+        "to": "tenor1-m24-e5"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m24-e6",
+        "to": "tenor1-m24-e7"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m24-e8",
+        "to": "tenor1-m24-e9"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m26-e1",
+        "to": "tenor1-m26-e3"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m27-e1",
+        "to": "tenor1-m27-e2"
+      },
+      {
+        "kind": "slur",
+        "from": "tenor1-m17-e1",
+        "to": "tenor1-m18-e1"
+      },
+      {
+        "kind": "tie",
+        "from": "tenor1-m25-e4",
+        "to": "tenor1-m25-e5"
+      }
+    ],
+    "additionalVoices": [
+      {
+        "voice": 2,
+        "name": "Tenor 2",
+        "measures": [
+          {
+            "number": 1,
+            "duration": {
+              "numerator": 1,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m1-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Bo",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m1-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "go",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "p"
+              },
+              {
+                "kind": "tempo",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "",
+                "metronome": {
+                  "unit": {
+                    "numerator": 1,
+                    "denominator": 4
+                  },
+                  "bpm": 70
+                }
+              },
+              {
+                "kind": "expression",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "Separated, easy, very gentle"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 2,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m2-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ro",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m2-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m2-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m2-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "di",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 3,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m3-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "tse",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m3-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "De",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m3-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 4,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m4-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ra",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m4-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m4-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m4-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m4-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m4-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "duy",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "mp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 5,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m5-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "sta,",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                },
+                "breathAfter": true
+              },
+              {
+                "id": "tenor2-m5-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Bla",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m5-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "go",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 6,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m6-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "dat",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m6-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m6-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m6-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "na",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 7,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m7-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ya",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m7-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m7-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 55,
+                  "name": "G",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m7-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m7-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Ma",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 8,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m8-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ri",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m8-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m8-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m8-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m8-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 9,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m9-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ye,",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m9-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Gho",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 10,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m10-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "spod",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m10-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "s To",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 55,
+                  "name": "G",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 11,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m11-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "bo",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 52,
+                  "name": "E",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m11-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 53,
+                  "name": "F",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m11-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 52,
+                  "name": "E",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m11-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 50,
+                  "name": "D",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 12,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m12-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 52,
+                  "name": "E",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m12-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 53,
+                  "name": "F",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m12-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 55,
+                  "name": "G",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m12-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m12-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 13,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m13-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m13-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m13-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m13-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m13-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m13-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 14,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m14-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "yu.",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 15,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m15-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Bo",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m15-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "go",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m15-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 7,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              },
+              {
+                "kind": "expression",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "very gently"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 16,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m16-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ro",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m16-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m16-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "di",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 17,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m17-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "tse",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m17-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m17-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 64,
+                  "name": "E",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 18,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m18-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 19,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m19-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "De",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m19-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "vo,",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m19-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m19-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 7,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "p"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 20,
+            "duration": {
+              "numerator": 3,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 6,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m20-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ra",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m20-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m20-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "duy",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m20-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "sta,",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m20-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 9,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 64,
+                  "name": "E",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m20-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 21,
+            "duration": {
+              "numerator": 3,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 6,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m21-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ra",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 64,
+                  "name": "E",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m21-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "duy",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m21-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "ff"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 22,
+            "duration": {
+              "numerator": 3,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 6,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m22-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "sta,",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m22-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m22-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ya",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m22-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 65,
+                  "name": "F",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m22-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m22-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ko",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 62,
+                  "name": "D",
+                  "octave": 4
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 23,
+            "duration": {
+              "numerator": 3,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 6,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m23-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Spa",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m23-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "sa",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m23-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m23-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m23-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ro",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m23-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 9,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m23-e7",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "di",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "p"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 24,
+            "duration": {
+              "numerator": 3,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 6,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m24-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "la",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m24-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ya",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m24-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ko",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m24-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "Spa",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m24-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m24-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "sa",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m24-e7",
+                "kind": "note",
+                "onset": {
+                  "numerator": 7,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m24-e8",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ro",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m24-e9",
+                "kind": "note",
+                "onset": {
+                  "numerator": 9,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m24-e10",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "di",
+                    "syllabic": "middle"
+                  }
+                ],
+                "pitch": {
+                  "midi": 58,
+                  "name": "A+",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 25,
+            "duration": {
+              "numerator": 3,
+              "denominator": 2
+            },
+            "meter": {
+              "numerator": 6,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m25-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "la",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 60,
+                  "name": "C",
+                  "octave": 4
+                }
+              },
+              {
+                "id": "tenor2-m25-e2",
+                "kind": "rest",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 8
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "lyrics": []
+              },
+              {
+                "id": "tenor2-m25-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "ye",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m25-e4",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 55,
+                  "name": "G",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m25-e5",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "si",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m25-e6",
+                "kind": "note",
+                "onset": {
+                  "numerator": 5,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 57,
+                  "name": "A",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              },
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "text": "p"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 26,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m26-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "dush",
+                    "syllabic": "single"
+                  }
+                ],
+                "pitch": {
+                  "midi": 55,
+                  "name": "G",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m26-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 53,
+                  "name": "F",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m26-e3",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 52,
+                  "name": "E",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 27,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m27-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "na",
+                    "syllabic": "begin"
+                  }
+                ],
+                "pitch": {
+                  "midi": 50,
+                  "name": "D",
+                  "octave": 3
+                }
+              },
+              {
+                "id": "tenor2-m27-e2",
+                "kind": "note",
+                "onset": {
+                  "numerator": 3,
+                  "denominator": 4
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "lyrics": [],
+                "pitch": {
+                  "midi": 48,
+                  "name": "C",
+                  "octave": 3
+                }
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "pp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "normal"
+          },
+          {
+            "number": 28,
+            "duration": {
+              "numerator": 1,
+              "denominator": 1
+            },
+            "meter": {
+              "numerator": 4,
+              "denominator": 4
+            },
+            "keySignature": -1,
+            "events": [
+              {
+                "id": "tenor2-m28-e1",
+                "kind": "note",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "duration": {
+                  "numerator": 1,
+                  "denominator": 1
+                },
+                "lyrics": [
+                  {
+                    "verse": 1,
+                    "text": "shih.",
+                    "syllabic": "end"
+                  }
+                ],
+                "pitch": {
+                  "midi": 53,
+                  "name": "F",
+                  "octave": 3
+                },
+                "fermata": true
+              }
+            ],
+            "directions": [
+              {
+                "kind": "dynamic",
+                "onset": {
+                  "numerator": 0,
+                  "denominator": 1
+                },
+                "text": "ppp"
+              }
+            ],
+            "startRepeat": false,
+            "endBarline": "end"
+          }
+        ],
+        "spans": [
+          {
+            "kind": "slur",
+            "from": "tenor2-m1-e1",
+            "to": "tenor2-m1-e2"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m3-e1",
+            "to": "tenor2-m3-e2"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m4-e2",
+            "to": "tenor2-m4-e3"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m6-e1",
+            "to": "tenor2-m6-e3"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m7-e1",
+            "to": "tenor2-m7-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m8-e3",
+            "to": "tenor2-m8-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m11-e1",
+            "to": "tenor2-m11-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m12-e1",
+            "to": "tenor2-m12-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m13-e2",
+            "to": "tenor2-m13-e3"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m13-e4",
+            "to": "tenor2-m13-e6"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m16-e1",
+            "to": "tenor2-m16-e2"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m19-e3",
+            "to": "tenor2-m19-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m20-e1",
+            "to": "tenor2-m20-e2"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m20-e4",
+            "to": "tenor2-m20-e6"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m21-e2",
+            "to": "tenor2-m21-e3"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m23-e2",
+            "to": "tenor2-m23-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m23-e5",
+            "to": "tenor2-m23-e6"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m24-e2",
+            "to": "tenor2-m24-e3"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m24-e4",
+            "to": "tenor2-m24-e5"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m24-e6",
+            "to": "tenor2-m24-e7"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m24-e8",
+            "to": "tenor2-m24-e9"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m25-e3",
+            "to": "tenor2-m25-e4"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m26-e1",
+            "to": "tenor2-m26-e3"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m27-e1",
+            "to": "tenor2-m27-e2"
+          },
+          {
+            "kind": "slur",
+            "from": "tenor2-m17-e1",
+            "to": "tenor2-m18-e1"
+          },
+          {
+            "kind": "tie",
+            "from": "tenor2-m25-e5",
+            "to": "tenor2-m25-e6"
+          }
+        ],
+        "hairpins": [
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 4,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            },
+            "to": {
+              "measure": 5,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "crescendo",
+            "from": {
+              "measure": 5,
+              "onset": {
+                "numerator": 1,
+                "denominator": 2
+              }
+            },
+            "to": {
+              "measure": 5,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 6,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            },
+            "to": {
+              "measure": 6,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "crescendo",
+            "from": {
+              "measure": 7,
+              "onset": {
+                "numerator": 3,
+                "denominator": 4
+              }
+            },
+            "to": {
+              "measure": 7,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 8,
+              "onset": {
+                "numerator": 3,
+                "denominator": 8
+              }
+            },
+            "to": {
+              "measure": 9,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "crescendo",
+            "from": {
+              "measure": 9,
+              "onset": {
+                "numerator": 1,
+                "denominator": 2
+              }
+            },
+            "to": {
+              "measure": 9,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 10,
+              "onset": {
+                "numerator": 3,
+                "denominator": 4
+              }
+            },
+            "to": {
+              "measure": 10,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "crescendo",
+            "from": {
+              "measure": 12,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            },
+            "to": {
+              "measure": 12,
+              "onset": {
+                "numerator": 1,
+                "denominator": 2
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 12,
+              "onset": {
+                "numerator": 5,
+                "denominator": 8
+              }
+            },
+            "to": {
+              "measure": 13,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "crescendo",
+            "from": {
+              "measure": 16,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            },
+            "to": {
+              "measure": 16,
+              "onset": {
+                "numerator": 1,
+                "denominator": 4
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 16,
+              "onset": {
+                "numerator": 3,
+                "denominator": 4
+              }
+            },
+            "to": {
+              "measure": 16,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "crescendo",
+            "from": {
+              "measure": 20,
+              "onset": {
+                "numerator": 1,
+                "denominator": 4
+              }
+            },
+            "to": {
+              "measure": 21,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 22,
+              "onset": {
+                "numerator": 3,
+                "denominator": 4
+              }
+            },
+            "to": {
+              "measure": 23,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            }
+          },
+          {
+            "kind": "diminuendo",
+            "from": {
+              "measure": 24,
+              "onset": {
+                "numerator": 1,
+                "denominator": 1
+              }
+            },
+            "to": {
+              "measure": 25,
+              "onset": {
+                "numerator": 0,
+                "denominator": 1
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "hairpins": [
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 4,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        },
+        "to": {
+          "measure": 5,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "crescendo",
+        "from": {
+          "measure": 5,
+          "onset": {
+            "numerator": 1,
+            "denominator": 2
+          }
+        },
+        "to": {
+          "measure": 5,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 6,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        },
+        "to": {
+          "measure": 6,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "crescendo",
+        "from": {
+          "measure": 7,
+          "onset": {
+            "numerator": 3,
+            "denominator": 4
+          }
+        },
+        "to": {
+          "measure": 7,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 8,
+          "onset": {
+            "numerator": 3,
+            "denominator": 8
+          }
+        },
+        "to": {
+          "measure": 9,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "crescendo",
+        "from": {
+          "measure": 9,
+          "onset": {
+            "numerator": 1,
+            "denominator": 2
+          }
+        },
+        "to": {
+          "measure": 9,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 10,
+          "onset": {
+            "numerator": 3,
+            "denominator": 4
+          }
+        },
+        "to": {
+          "measure": 10,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "crescendo",
+        "from": {
+          "measure": 12,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        },
+        "to": {
+          "measure": 12,
+          "onset": {
+            "numerator": 1,
+            "denominator": 2
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 12,
+          "onset": {
+            "numerator": 5,
+            "denominator": 8
+          }
+        },
+        "to": {
+          "measure": 13,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "crescendo",
+        "from": {
+          "measure": 16,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        },
+        "to": {
+          "measure": 16,
+          "onset": {
+            "numerator": 1,
+            "denominator": 4
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 16,
+          "onset": {
+            "numerator": 3,
+            "denominator": 4
+          }
+        },
+        "to": {
+          "measure": 16,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "crescendo",
+        "from": {
+          "measure": 20,
+          "onset": {
+            "numerator": 1,
+            "denominator": 4
+          }
+        },
+        "to": {
+          "measure": 21,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 22,
+          "onset": {
+            "numerator": 3,
+            "denominator": 4
+          }
+        },
+        "to": {
+          "measure": 23,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "kind": "diminuendo",
+        "from": {
+          "measure": 24,
+          "onset": {
+            "numerator": 1,
+            "denominator": 1
+          }
+        },
+        "to": {
+          "measure": 25,
+          "onset": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      }
+    ]
+  },
+  "repeatEndings": [],
+  "transcription": {
+    "beatUnit": {
+      "numerator": 1,
+      "denominator": 8
+    },
+    "staffRange": {
+      "low": 48,
+      "high": 68
+    }
+  },
+  "importNotes": [
+    "Agent-assisted visual PDF transcription. Alternate original-language underlay: Latin transliteration of Church Slavonic as printed on the Tenor staff, checked across all seven source pages.",
+    "All 28 measures and both independent Tenor lines are stored. Primary timeline is Tenor 1; additionalVoices contains Tenor 2. Display intent: simultaneous capsules on one shared pitch grid, not separate staffs.",
+    "The opening measure contains two quarter-note beats; meters are 4/4 through measure 19, 6/4 in measures 20-25, then 4/4.",
+    "Pitch and rhythm were checked visually against all seven source pages; measure totals are validated independently for each voice.",
+    "Fourteen hairpins per voice are encoded with endpoints inferred from the printed Tenor staff. The tenuto mark in measure 2 is not yet encoded. See transcription/review.json. This is a transcription draft, not a complete engraving import.",
+    "Same-pitch arcs with a new original-language syllable are slurs; same-pitch continuations without a new syllable are ties.",
+    "Visible title is used instead of incorrect PDF metadata title Khvalitye imya Gospodie.",
+    "ACN beat unit is an eighth note: 8 dots for 4/4 and 12 for 6/4. Original onsets, durations, and meters are unchanged.",
+    "Printed Tenor underlay places di in measure 2, then tse and De in measure 3, omitting vo. Preserved as printed rather than silently repaired. Source spelling, including sta and Gho, is retained."
+  ]
+}

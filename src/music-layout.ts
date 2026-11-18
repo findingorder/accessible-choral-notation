@@ -134,8 +134,25 @@ export function layoutMusic(input: AcnScore, p: LayoutSettings, measureText: Mea
   const ownedLyrics = plans.map((plan, i) => new Set(plan.lyrics.filter(span => lyricOwners.get(lyricKey(span.first)) === i).map(span => span.first.event.id)));
   const musical = (shape: Shape): boolean => !!shape.role && /^(capsule|sung-|rest-|word-divider|breath-mark|fermata-|slur$|tie$|lyric|dynamic|hairpin|crescendo$|diminuendo$|tempo$|expression$|rehearsal$)/.test(shape.role);
   for (const [pageIndex, page] of primary.entries()) {
-    const all = rendered.flatMap((pages, voice) => pages[pageIndex].shapes.filter(shape =>
+    let all = rendered.flatMap((pages, voice) => pages[pageIndex].shapes.filter(shape =>
       (voice === 0 || musical(shape)) && (!shape.role?.startsWith('lyric') || !shape.eventId || ownedLyrics[voice].has(shape.eventId))));
+    // Merge a shared hairpin as a complete symbol, not as independent lines.
+    // Voice-specific arc clearance can place copies at different heights.
+    const sharedHairpins = new Map<string, Shape[]>();
+    for (const pages of rendered) {
+      const groups = new Map<string, Shape[]>();
+      for (const shape of pages[pageIndex].shapes) if (shape.hairpinId) {
+        if (!groups.has(shape.hairpinId)) groups.set(shape.hairpinId, []);
+        groups.get(shape.hairpinId)!.push(shape);
+      }
+      for (const [id, group] of groups) {
+        const top = (items: Shape[]): number => Math.min(...items.filter((shape): shape is Extract<Shape, {kind: 'rect'}> => shape.kind === 'rect').map(shape => shape.y));
+        const previous = sharedHairpins.get(id);
+        if (!previous || top(group) < top(previous)) sharedHairpins.set(id, group);
+      }
+    }
+    const retainedHairpins = new Set([...sharedHairpins.values()].flat());
+    all = all.filter(shape => !shape.hairpinId || retainedHairpins.has(shape));
     // A shared dynamic must clear the arcs of every voice. Reconcile its
     // vertical position before merging identical drawing primitives.
     for (const mark of all) {
@@ -356,6 +373,13 @@ function layoutVoice(input: AcnScore, p: LayoutSettings, measureText: MeasureTex
       const m = measures[cursor++];
       minimum += m.minWidth; system.measures.push(m);
     }
+    // Avoid a lone final measure when the preceding measure can join it.
+    // Use the narrower indexed width so this also fits after a page break.
+    if (p.musicMeasuresPerSystem === 'auto' && cursor === measures.length - 1 && system.measures.length > 1 &&
+        system.measures.at(-1)!.minWidth + measures[cursor].minWidth <= p.width - 2 * p.margin - p.guideWidth) {
+      minimum -= system.measures.pop()!.minWidth;
+      cursor--;
+    }
     if (!system.measures.length) throw new Error(`Measure ${measures[cursor].source.number} does not fit. Increase page width or reduce lyricSize/beatSpacing.`);
     const bottom = top + Math.max(staffHeight + (hasIndex ? 28 : 7), ...system.measures.map(m => Math.max(m.lyricOffset + p.lyricSize / 2 + 3, changes.has(m.source) ? meterY(m) + Math.max(9, p.capsuleHeight / 2) : 0)));
     if (bottom > p.height - p.margin) {
@@ -366,7 +390,15 @@ function layoutVoice(input: AcnScore, p: LayoutSettings, measureText: MeasureTex
     // Minimum widths already pay for lyrics, capsules, and barlines. Share
     // the remaining space by duration so word-heavy measures do not also
     // monopolize the stretch that gives sustained notes room to breathe.
-    const extra = right - left - minimum;
+    if (cursor === measures.length && system.measures.length === 1 && systems.length && p.musicMeasuresPerSystem === 'auto') {
+      const final = system.measures[0];
+      const comparable = systems.flatMap(s => s.measures).filter(m =>
+        meterBeats(m.source) === meterBeats(final.source) && beats(m.source.duration) === beats(final.source.duration))
+        .map(m => m.width).sort((a, b) => a - b);
+      const typical = comparable.length ? comparable[Math.floor(comparable.length / 2)] : final.minWidth;
+      system.right = left + Math.min(right - left, Math.max(final.minWidth, typical));
+    }
+    const extra = system.right - left - minimum;
     const duration = system.measures.reduce((sum, m) => sum + beats(m.source.duration), 0);
     let x = left;
     for (const m of system.measures) {
@@ -431,7 +463,7 @@ function layoutVoice(input: AcnScore, p: LayoutSettings, measureText: MeasureTex
   const pages: PageScene[] = [];
   for (let n = 1; n <= pageCount; n++) {
     const onPage = systems.filter(s => s.page === n);
-    const plans: SystemPlan[] = onPage.map(s => ({ top: s.top, measures: s.measures.map(m => ({ number: m.source.sourceNumber ?? m.source.number, width: m.width })) }));
+    const plans: SystemPlan[] = onPage.map(s => ({ top: s.top, right: s.right, measures: s.measures.map(m => ({ number: m.source.sourceNumber ?? m.source.number, width: m.width })) }));
     const scene = layoutBlankPage({ ...p, pages: pageCount }, n, plans);
     scene.title = [p.centerTitle, p.centerSubtitle].filter(Boolean).join(' — ') || 'Accessible Choral Notation';
     const pageFirst = onPage[0].measures[0].source, pageLast = onPage.at(-1)!.measures.at(-1)!.source;
@@ -726,6 +758,7 @@ function layoutVoice(input: AcnScore, p: LayoutSettings, measureText: MeasureTex
         fill: '#ffffff', opacity: p.lyricBackgroundOpacity, role: 'hairpin-background' });
       target.push(line(left, center - a, right, center - b, '#000000', 1.2, h.kind));
       target.push(line(left, center + a, right, center + b, '#000000', 1.2, h.kind));
+      for (const shape of target.slice(-3)) shape.hairpinId = `${h.kind}:${from}:${to}`;
       if (labels.length) connectedDynamics.push({ labels, boxes, wedge: target.slice(-3) });
     }
   }

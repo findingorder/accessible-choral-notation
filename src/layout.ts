@@ -7,7 +7,7 @@ export type Shape = (
   | { kind: 'ellipse'; x: number; y: number; rx: number; ry: number; fill?: string; stroke?: string }
   | { kind: 'text'; x: number; y: number; text: string; size: number; fontFamily?: string; anchor?: 'start' | 'middle' | 'end'; italic?: boolean; bold?: boolean; fontWeight?: number; fill?: string }
   | { kind: 'path'; d: string; fill: string }
-) & { role?: string; eventId?: string; measureNumber?: number };
+) & { role?: string; eventId?: string; hairpinId?: string; measureNumber?: number };
 
 export interface PageScene {
   width: number;
@@ -22,7 +22,7 @@ export interface PageScene {
 
 export const blankPageDefaults = defaultLayout;
 
-export interface SystemPlan { top?: number; measures: { number: number; width: number }[] }
+export interface SystemPlan { top?: number; right?: number; measures: { number: number; width: number }[] }
 
 export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 1, plans?: SystemPlan[]): PageScene {
   if (!Number.isInteger(pageNumber) || pageNumber < 1 || pageNumber > p.pages) throw new Error('Page number is outside the configured page range.');
@@ -52,7 +52,7 @@ export function layoutBlankPage(p: LayoutSettings = defaultLayout, pageNumber = 
     for (let pitch = tenorRange.low; pitch <= tenorRange.high; pitch++) {
       const y = top + (tenorRange.high - pitch) * p.semitoneStep;
       const color = lineColor(pitch, p.lineColorMode, p.noteColorMode);
-      if (color) shapes.push({ kind: 'line', x1: p.margin, y1: y, x2: p.width - p.margin, y2: y, color, width: p.staffLineWidth });
+      if (color) shapes.push({ kind: 'line', x1: p.margin, y1: y, x2: plans?.[system].right ?? p.width - p.margin, y2: y, color, width: p.staffLineWidth });
     }
     const musicLeft = p.margin + (system === 0 && hasPitchIndex ? p.guideWidth : 0);
     const measureWidth = (p.width - p.margin - musicLeft) / p.measuresPerSystem;

@@ -90,7 +90,7 @@
     <line x1="48" y1="491" x2="768" y2="491" stroke="#999999" stroke-width="0.8"/>
     <line x1="48" y1="477" x2="768" y2="477" stroke="#d4d4d4" stroke-width="0.8"/>
     <line x1="48" y1="463" x2="768" y2="463" stroke="#999999" stroke-width="0.8"/>
-    <g data-role="measure-number"><text x="60" y="457.2" font-size="12" text-anchor="middle" font-family="Times New Roman, Times, serif">28</text></g>
+    <g data-role="measure-number"><text x="60" y="457.2" font-size="12" text-anchor="middle" font-family="Times New Roman, Times, serif">27</text></g>
     <g data-role="capsule" data-event-id="tenor1-m24-e1"><path d="M 195 113 H 394.8153764204546 A 7 7 0 0 1 394.8153764204546 127 H 195 A 7 7 0 0 1 195 113 Z" fill="#d9d9d9"/></g>
     <g data-role="capsule" data-event-id="tenor1-m24-e5"><path d="M 432.7456853693182 127 H 446.34568536931823 A 7 7 0 0 1 446.34568536931823 141 H 432.7456853693182 A 7 7 0 0 1 432.7456853693182 127 Z" fill="#d9d9d9"/></g>
     <g data-role="capsule" data-event-id="tenor1-m24-e6"><path d="M 484.27599431818186 134 H 497.8759943181819 A 7 7 0 0 1 497.8759943181819 148 H 484.27599431818186 A 7 7 0 0 1 484.27599431818186 134 Z" fill="#d9d9d9"/></g>
@@ -98,23 +98,23 @@
     <g data-role="capsule" data-event-id="tenor1-m24-e8"><path d="M 591.1428622159092 127 H 604.7428622159091 A 7 7 0 0 1 604.7428622159091 141 H 591.1428622159092 A 7 7 0 0 1 591.1428622159092 127 Z" fill="#d9d9d9"/></g>
     <g data-role="capsule" data-event-id="tenor1-m24-e9"><path d="M 645.9393821022728 134 H 659.5393821022727 A 7 7 0 0 1 659.5393821022727 148 H 645.9393821022728 A 7 7 0 0 1 645.9393821022728 134 Z" fill="#d9d9d9"/></g>
     <g data-role="capsule" data-event-id="tenor1-m24-e10"><path d="M 697.4696910511365 127 H 749.0000000000001 A 7 7 0 0 1 749.0000000000001 141 H 697.4696910511365 A 7 7 0 0 1 697.4696910511365 127 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m25-e1"><path d="M 67 303 H 247.9454545454545 A 7 7 0 0 1 247.9454545454545 317 H 67 A 7 7 0 0 1 67 303 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m25-e4"><path d="M 266.0233766233766 324 H 351.85714285714283 A 7 7 0 0 1 351.85714285714283 338 H 266.0233766233766 A 7 7 0 0 1 266.0233766233766 324 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m26-e1"><path d="M 389.85714285714283 338 H 457.70204081632653 A 7 7 0 0 1 457.70204081632653 352 H 389.85714285714283 A 7 7 0 0 1 389.85714285714283 338 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m26-e2"><path d="M 475.78367346938774 352 H 507.46530612244896 A 7 7 0 0 1 507.46530612244896 366 H 475.78367346938774 A 7 7 0 0 1 475.78367346938774 352 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m26-e3"><path d="M 525.5469387755103 359 H 557.2285714285714 A 7 7 0 0 1 557.2285714285714 373 H 525.5469387755103 A 7 7 0 0 1 525.5469387755103 359 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m27-e1"><path d="M 595.2285714285714 373 H 699.2367346938775 A 7 7 0 0 1 699.2367346938775 387 H 595.2285714285714 A 7 7 0 0 1 595.2285714285714 373 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m27-e2"><path d="M 717.3183673469388 387 H 748.9999999999999 A 7 7 0 0 1 748.9999999999999 401 H 717.3183673469388 A 7 7 0 0 1 717.3183673469388 387 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor1-m28-e1"><path d="M 67 561 H 739 A 7 7 0 0 1 739 575 H 67 A 7 7 0 0 1 67 561 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor2-m25-e1"><path d="M 67 303 H 116.75584415584414 A 7 7 0 0 1 116.75584415584414 317 H 67 A 7 7 0 0 1 67 303 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor2-m25-e2"><path d="M 134.8337662337662 303 H 148.43376623376622 A 7 7 0 0 1 148.43376623376622 317 H 134.8337662337662 A 7 7 0 0 1 134.8337662337662 303 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor2-m25-e3"><path d="M 166.5116883116883 324 H 198.18961038961038 A 7 7 0 0 1 198.18961038961038 338 H 166.5116883116883 A 7 7 0 0 1 166.5116883116883 324 Z" fill="#d9d9d9"/></g>
-    <g data-role="capsule" data-event-id="tenor2-m25-e4"><path d="M 216.26753246753242 338 H 247.9454545454545 A 7 7 0 0 1 247.9454545454545 352 H 216.26753246753242 A 7 7 0 0 1 216.26753246753242 338 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m25-e1"><path d="M 67 303 H 321.1672727272727 A 7 7 0 0 1 321.1672727272727 317 H 67 A 7 7 0 0 1 67 303 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m25-e4"><path d="M 349.70545454545453 324 H 466.92 A 7 7 0 0 1 466.92 338 H 349.70545454545453 A 7 7 0 0 1 349.70545454545453 324 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m26-e1"><path d="M 504.92 338 H 605.64 A 7 7 0 0 1 605.64 352 H 504.92 A 7 7 0 0 1 504.92 338 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m26-e2"><path d="M 634.6800000000001 352 H 677.32 A 7 7 0 0 1 677.32 366 H 634.6800000000001 A 7 7 0 0 1 634.6800000000001 352 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m26-e3"><path d="M 706.3600000000001 359 H 749.0000000000001 A 7 7 0 0 1 749.0000000000001 373 H 706.3600000000001 A 7 7 0 0 1 706.3600000000001 359 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m27-e1"><path d="M 67 582 H 292.45714285714286 A 7 7 0 0 1 292.45714285714286 596 H 67 A 7 7 0 0 1 67 582 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m27-e2"><path d="M 334.82857142857137 596 H 390.7999999999999 A 7 7 0 0 1 390.7999999999999 610 H 334.82857142857137 A 7 7 0 0 1 334.82857142857137 596 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor1-m28-e1"><path d="M 428.79999999999995 561 H 738.9999999999998 A 7 7 0 0 1 738.9999999999998 575 H 428.79999999999995 A 7 7 0 0 1 428.79999999999995 561 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor2-m25-e1"><path d="M 67 303 H 137.67636363636365 A 7 7 0 0 1 137.67636363636365 317 H 67 A 7 7 0 0 1 67 303 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor2-m25-e2"><path d="M 166.21454545454543 303 H 179.81454545454545 A 7 7 0 0 1 179.81454545454545 317 H 166.21454545454543 A 7 7 0 0 1 166.21454545454543 303 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor2-m25-e3"><path d="M 208.35272727272726 324 H 250.4909090909091 A 7 7 0 0 1 250.4909090909091 338 H 208.35272727272726 A 7 7 0 0 1 208.35272727272726 324 Z" fill="#d9d9d9"/></g>
+    <g data-role="capsule" data-event-id="tenor2-m25-e4"><path d="M 279.0290909090909 338 H 321.1672727272727 A 7 7 0 0 1 321.1672727272727 352 H 279.0290909090909 A 7 7 0 0 1 279.0290909090909 338 Z" fill="#d9d9d9"/></g>
     <g data-role="word-divider"><line x1="264.9723188920455" y1="113" x2="264.9723188920455" y2="127" stroke="#999999" stroke-width="1.4"/></g>
     <g data-role="word-divider"><line x1="365.05022194602276" y1="113" x2="365.05022194602276" y2="127" stroke="#999999" stroke-width="1.4"/></g>
-    <g data-role="fermata-background" data-event-id="tenor1-m28-e1"><rect x="387" y="538" width="32" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="fermata-arch" data-event-id="tenor1-m28-e1"><path d="M 389 554 A 14 14 0 0 1 417 554 L 416.02 554 A 13.020000000000001 10.64 0 0 0 389.98 554 Z" fill="#000000"/></g>
-    <g data-role="fermata-dot" data-event-id="tenor1-m28-e1"><ellipse cx="403" cy="551.2" rx="2.8000000000000003" ry="2.8000000000000003" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="fermata-background" data-event-id="tenor1-m28-e1"><rect x="567.8999999999999" y="538" width="32" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="fermata-arch" data-event-id="tenor1-m28-e1"><path d="M 569.8999999999999 554 A 14 14 0 0 1 597.8999999999999 554 L 596.9199999999998 554 A 13.020000000000001 10.64 0 0 0 570.8799999999999 554 Z" fill="#000000"/></g>
+    <g data-role="fermata-dot" data-event-id="tenor1-m28-e1"><ellipse cx="583.8999999999999" cy="551.2" rx="2.8000000000000003" ry="2.8000000000000003" fill="#000000" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor1-m24-e1"><ellipse cx="201.8" cy="120" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor1-m24-e1"><ellipse cx="239.73030894886367" cy="120" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor1-m24-e2"><ellipse cx="290.2143288352273" cy="120" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
@@ -128,41 +128,41 @@
     <g data-role="sung-dot" data-event-id="tenor1-m24-e10"><ellipse cx="704.2696910511364" cy="134" rx="3.8" ry="3.8" fill="#BA55D3" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor1-m24-e10"><ellipse cx="742.2000000000002" cy="134" rx="3.8" ry="3.8" fill="#BA55D3" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor1-m25-e1"><ellipse cx="73.8" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e1"><ellipse cx="91.87792207792208" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e1"><ellipse cx="109.95584415584415" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="rest-dot" data-event-id="tenor1-m25-e2"><ellipse cx="141.6337662337662" cy="310" rx="3.8" ry="3.8" fill="#ffffff" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="173.3116883116883" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="191.38961038961037" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="223.06753246753243" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="241.1454545454545" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e4"><ellipse cx="272.8233766233766" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e4"><ellipse cx="290.9012987012987" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e5"><ellipse cx="326.9792207792207" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m25-e5"><ellipse cx="345.0571428571428" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="396.65714285714284" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="414.73877551020405" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="432.8204081632653" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="450.9020408163265" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e2"><ellipse cx="482.58367346938775" cy="359" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e2"><ellipse cx="500.665306122449" cy="359" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e3"><ellipse cx="532.3469387755102" cy="366" rx="3.8" ry="3.8" fill="#008000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m26-e3"><ellipse cx="550.4285714285714" cy="366" rx="3.8" ry="3.8" fill="#008000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="602.0285714285714" cy="380" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="620.1102040816326" cy="380" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="638.1918367346938" cy="380" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="656.2734693877551" cy="380" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="674.3551020408163" cy="380" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="692.4367346938775" cy="380" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e2"><ellipse cx="724.1183673469387" cy="394" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m27-e2"><ellipse cx="742.1999999999999" cy="394" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="73.8" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="167.85714285714286" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="261.9142857142857" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="355.9714285714286" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="450.02857142857147" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="544.0857142857144" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="638.1428571428572" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="732.2" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e1"><ellipse cx="102.33818181818182" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e1"><ellipse cx="130.87636363636364" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="rest-dot" data-event-id="tenor1-m25-e2"><ellipse cx="173.01454545454544" cy="310" rx="3.8" ry="3.8" fill="#ffffff" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="215.15272727272728" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="243.6909090909091" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="285.8290909090909" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e3"><ellipse cx="314.3672727272727" cy="310" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e4"><ellipse cx="356.50545454545454" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e4"><ellipse cx="385.0436363636364" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e5"><ellipse cx="431.5818181818182" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m25-e5"><ellipse cx="460.12" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="511.72" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="540.76" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="569.8000000000001" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e1"><ellipse cx="598.84" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e2"><ellipse cx="641.48" cy="359" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e2"><ellipse cx="670.5200000000001" cy="359" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e3"><ellipse cx="713.1600000000001" cy="366" rx="3.8" ry="3.8" fill="#008000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m26-e3"><ellipse cx="742.2000000000002" cy="366" rx="3.8" ry="3.8" fill="#008000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="73.8" cy="589" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="116.17142857142856" cy="589" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="158.54285714285712" cy="589" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="200.91428571428568" cy="589" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="243.28571428571428" cy="589" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e1"><ellipse cx="285.65714285714284" cy="589" rx="3.8" ry="3.8" fill="#A38300" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e2"><ellipse cx="341.6285714285714" cy="603" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m27-e2"><ellipse cx="383.9999999999999" cy="603" rx="3.8" ry="3.8" fill="#B22222" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="435.59999999999997" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="477.97142857142853" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="520.3428571428572" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="562.7142857142857" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="605.0857142857142" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="647.4571428571427" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="689.8285714285713" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor1-m28-e1"><ellipse cx="732.1999999999998" cy="568" rx="3.8" ry="3.8" fill="#008B8B" stroke="none" stroke-width="0.7"/></g>
     <g data-role="lyric-background" data-event-id="tenor1-m24-e1"><rect x="204.48829900568182" y="139" width="32.5537109375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
     <g data-role="lyric" data-event-id="tenor1-m24-e1"><text x="206.48829900568182" y="152.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">born</text></g>
     <g data-role="lyric-background" data-event-id="tenor1-m24-e1"><rect x="235.04200994318182" y="139" width="63.13747336647731" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
@@ -191,32 +191,34 @@
     <g data-role="lyric" data-event-id="tenor1-m24-e10"><text x="711.5317205255683" y="166.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">vior</text></g>
     <g data-role="lyric-background" data-event-id="tenor1-m25-e1"><rect x="53.14814453125" y="329" width="41.3037109375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
     <g data-role="lyric" data-event-id="tenor1-m25-e1"><text x="55.14814453125" y="342.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">Christ</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e1"><rect x="92.45185546875" y="329" width="41.18191076501621" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e1"><line x1="92.45185546875" y1="344.3" x2="131.6337662337662" y2="344.3" stroke="#202020" stroke-width="1"/></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e3"><rect x="159.4069031554383" y="366.1373979628693" width="27.8095703125" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric" data-event-id="tenor1-m25-e3"><text x="161.4069031554383" y="380.03739796286925" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">The</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e3"><rect x="185.2164734679383" y="366.1373979628693" width="71.72898107751618" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e3"><line x1="185.2164734679383" y1="381.4373979628693" x2="254.9454545454545" y2="381.4373979628693" stroke="#202020" stroke-width="1"/></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e4"><rect x="268.4292321935876" y="350" width="26.8662109375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric" data-event-id="tenor1-m25-e4"><text x="270.4292321935876" y="363.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">Sav</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e4"><rect x="310.7877130681818" y="350" width="8.7578125" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-hyphen" data-event-id="tenor1-m25-e4"><text x="312.7877130681818" y="363.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">-</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e5"><rect x="325.7877130681818" y="350" width="20.4609375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric" data-event-id="tenor1-m25-e5"><text x="327.7877130681818" y="363.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">ior</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m25-e5"><rect x="344.2486505681818" y="350" width="16.60849228896103" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e5"><line x1="344.2486505681818" y1="365.3" x2="358.85714285714283" y2="365.3" stroke="#202020" stroke-width="1"/></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m26-e1"><rect x="388.21427176339284" y="371.7" width="16.8857421875" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric" data-event-id="tenor1-m26-e1"><text x="390.21427176339284" y="385.59999999999997" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">of</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m26-e1"><rect x="403.10001395089284" y="371.7" width="163.12855747767856" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-continuation" data-event-id="tenor1-m26-e1"><line x1="403.10001395089284" y1="387" x2="564.2285714285714" y2="387" stroke="#202020" stroke-width="1"/></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m27-e1"><rect x="589.6892159598214" y="399.7" width="24.6787109375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric" data-event-id="tenor1-m27-e1"><text x="591.6892159598214" y="413.59999999999997" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">our</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m27-e1"><rect x="612.3679268973214" y="399.7" width="145.63207310267853" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-continuation" data-event-id="tenor1-m27-e1"><line x1="612.3679268973214" y1="415" x2="755.9999999999999" y2="415" stroke="#202020" stroke-width="1"/></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m28-e1"><rect x="53.001171875" y="587" width="41.59765625" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric" data-event-id="tenor1-m28-e1"><text x="55.001171875" y="600.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">souls.</text></g>
-    <g data-role="lyric-background" data-event-id="tenor1-m28-e1"><rect x="92.598828125" y="587" width="655.401171875" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="lyric-continuation" data-event-id="tenor1-m28-e1"><line x1="92.598828125" y1="602.3" x2="746" y2="602.3" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e1"><rect x="92.45185546875" y="329" width="72.56268998579544" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e1"><line x1="92.45185546875" y1="344.3" x2="163.01454545454544" y2="344.3" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e3"><rect x="201.24794211647728" y="369.2390787878788" width="27.8095703125" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric" data-event-id="tenor1-m25-e3"><text x="203.24794211647728" y="383.13907878787876" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">The</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e3"><rect x="227.05751242897728" y="369.2390787878788" width="103.10976029829541" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e3"><line x1="227.05751242897728" y1="384.5390787878788" x2="328.1672727272727" y2="384.5390787878788" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e4"><rect x="357.34143998579543" y="350" width="26.8662109375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric" data-event-id="tenor1-m25-e4"><text x="359.34143998579543" y="363.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">Sav</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e4"><rect x="382.20765092329543" y="350" width="35.41278941761368" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e4"><line x1="382.20765092329543" y1="365.3" x2="415.6204403409091" y2="365.3" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e4"><rect x="420.6204403409091" y="350" width="8.7578125" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-hyphen" data-event-id="tenor1-m25-e4"><text x="422.6204403409091" y="363.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">-</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e5"><rect x="435.6204403409091" y="350" width="20.4609375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric" data-event-id="tenor1-m25-e5"><text x="437.6204403409091" y="363.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">ior</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m25-e5"><rect x="454.0813778409091" y="350" width="21.838622159090903" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m25-e5"><line x1="454.0813778409091" y1="365.3" x2="473.92" y2="365.3" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m26-e1"><rect x="503.27712890625" y="371.7" width="16.8857421875" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric" data-event-id="tenor1-m26-e1"><text x="505.27712890625" y="385.59999999999997" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">of</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m26-e1"><rect x="518.16287109375" y="371.7" width="239.8371289062501" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m26-e1"><line x1="518.16287109375" y1="387" x2="756.0000000000001" y2="387" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m27-e1"><rect x="61.46064453125" y="608.7" width="24.6787109375" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric" data-event-id="tenor1-m27-e1"><text x="63.46064453125" y="622.6" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">our</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m27-e1"><rect x="84.13935546875" y="608.7" width="315.6606445312499" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m27-e1"><line x1="84.13935546875" y1="624" x2="397.7999999999999" y2="624" stroke="#202020" stroke-width="1"/></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m28-e1"><rect x="414.80117187499997" y="587" width="41.59765625" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric" data-event-id="tenor1-m28-e1"><text x="416.80117187499997" y="600.9" font-size="14" text-anchor="start" font-weight="500" font-family="ACN Roboto Medium">souls.</text></g>
+    <g data-role="lyric-background" data-event-id="tenor1-m28-e1"><rect x="454.39882812499997" y="587" width="293.6011718749998" height="18" fill="#ffffff" fill-opacity="0.85"/></g>
+    <g data-role="lyric-continuation" data-event-id="tenor1-m28-e1"><line x1="454.39882812499997" y1="602.3" x2="745.9999999999998" y2="602.3" stroke="#202020" stroke-width="1"/></g>
     <g data-role="barline"><line x1="176" y1="64" x2="176" y2="204" stroke="#000000" stroke-width="0.8"/></g>
     <g data-role="subdivision-barline"><line x1="465.31083984375005" y1="64" x2="465.31083984375005" y2="204" stroke="#999999" stroke-width="0.8"/></g>
     <g data-role="barline"><line x1="768" y1="64" x2="768" y2="204" stroke="#000000" stroke-width="0.8"/></g>
@@ -230,33 +232,31 @@
     <g data-role="example-dot"><ellipse cx="136.94799999999998" cy="224" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
     <g data-role="example-dot"><ellipse cx="153.57999999999998" cy="224" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
     <g data-role="barline"><line x1="48" y1="254" x2="48" y2="394" stroke="#000000" stroke-width="0.8"/></g>
-    <g data-role="subdivision-barline"><line x1="207.2285714285714" y1="254" x2="207.2285714285714" y2="394" stroke="#999999" stroke-width="0.8"/></g>
-    <g data-role="barline"><line x1="370.85714285714283" y1="254" x2="370.85714285714283" y2="394" stroke="#000000" stroke-width="0.8"/></g>
+    <g data-role="subdivision-barline"><line x1="264.76" y1="254" x2="264.76" y2="394" stroke="#999999" stroke-width="0.8"/></g>
+    <g data-role="barline"><line x1="485.92" y1="254" x2="485.92" y2="394" stroke="#000000" stroke-width="0.8"/></g>
     <g data-role="dynamic-background"><rect x="61.8" y="272" width="24" height="24" fill="#ffffff"/></g>
     <g data-role="dynamic"><text x="73.8" y="290.3" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" font-family="Times New Roman, Times, serif">pp</text></g>
-    <g data-role="dynamic-background"><rect x="162.3116883116883" y="274" width="22" height="22" fill="#ffffff"/></g>
-    <g data-role="dynamic"><text x="173.3116883116883" y="291.3" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" font-family="Times New Roman, Times, serif">p</text></g>
-    <g data-role="barline"><line x1="576.2285714285714" y1="254" x2="576.2285714285714" y2="394" stroke="#000000" stroke-width="0.8"/></g>
+    <g data-role="dynamic-background"><rect x="204.15272727272728" y="274" width="22" height="22" fill="#ffffff"/></g>
+    <g data-role="dynamic"><text x="215.15272727272728" y="291.3" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" font-family="Times New Roman, Times, serif">p</text></g>
     <g data-role="barline"><line x1="768" y1="254" x2="768" y2="394" stroke="#000000" stroke-width="0.8"/></g>
-    <g data-role="dynamic-background"><rect x="590.0285714285714" y="321.8110694964628" width="24" height="24" fill="#ffffff"/></g>
-    <g data-role="dynamic"><text x="602.0285714285714" y="340.1110694964628" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" font-family="Times New Roman, Times, serif">pp</text></g>
-    <g data-role="meter-change"><path d="M 384.85714285714283 407 H 562.2285714285714 A 7 7 0 0 1 562.2285714285714 421 H 384.85714285714283 A 7 7 0 0 1 384.85714285714283 407 Z" fill="#d9d9d9"/></g>
-    <g data-role="meter-change-count"><text x="389.85714285714283" y="417.85" font-size="11" text-anchor="start" fill="#000000" font-weight="700" font-family="ACN Roboto Bold">8</text></g>
-    <line x1="370.85714285714283" y1="405" x2="370.85714285714283" y2="423" stroke="#000000" stroke-width="1"/>
-    <line x1="576.2285714285714" y1="405" x2="576.2285714285714" y2="423" stroke="#000000" stroke-width="1"/>
-    <g data-role="meter-change-dot"><ellipse cx="410.9681780133928" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="431.605377072704" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="452.24257613201524" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="472.8797751913265" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="493.5169742506377" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="514.1541733099489" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="534.7913723692601" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="meter-change-dot"><ellipse cx="555.4285714285713" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change"><path d="M 499.92 407 H 754 A 7 7 0 0 1 754 421 H 499.92 A 7 7 0 0 1 499.92 407 Z" fill="#d9d9d9"/></g>
+    <g data-role="meter-change-count"><text x="504.92" y="417.85" font-size="11" text-anchor="start" fill="#000000" font-weight="700" font-family="ACN Roboto Bold">8</text></g>
+    <line x1="485.92" y1="405" x2="485.92" y2="423" stroke="#000000" stroke-width="1"/>
+    <line x1="768" y1="405" x2="768" y2="423" stroke="#000000" stroke-width="1"/>
+    <g data-role="meter-change-dot"><ellipse cx="526.03103515625" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="557.6266015625" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="589.22216796875" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="620.817734375" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="652.41330078125" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="684.0088671875001" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="715.60443359375" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="meter-change-dot"><ellipse cx="747.2" cy="414" rx="3.8" ry="3.8" fill="#000000" stroke="none" stroke-width="0.7"/></g>
     <g data-role="barline"><line x1="48" y1="463" x2="48" y2="603" stroke="#000000" stroke-width="0.8"/></g>
+    <g data-role="barline"><line x1="409.79999999999995" y1="463" x2="409.79999999999995" y2="603" stroke="#000000" stroke-width="0.8"/></g>
     <g data-role="barline"><line x1="765.6" y1="463" x2="765.6" y2="603" stroke="#000000" stroke-width="4.800000000000001"/></g>
     <g data-role="barline"><line x1="758.4" y1="463" x2="758.4" y2="603" stroke="#000000" stroke-width="0.8"/></g>
-    <g data-role="dynamic-background"><rect x="57.3" y="521" width="33" height="33" fill="#ffffff"/></g>
-    <g data-role="dynamic"><text x="73.8" y="543.8" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" font-family="Times New Roman, Times, serif">ppp</text></g>
+    <g data-role="dynamic-background"><rect x="419.09999999999997" y="521" width="33" height="33" fill="#ffffff"/></g>
+    <g data-role="dynamic"><text x="435.59999999999997" y="543.8" font-size="18" text-anchor="middle" font-style="italic" font-weight="bold" font-family="Times New Roman, Times, serif">ppp</text></g>
     <g data-role="hairpin-background"><rect x="595.9428622159091" y="95" width="174.05713778409086" height="12" fill="#ffffff" fill-opacity="0.85"/></g>
     <g data-role="diminuendo"><line x1="597.9428622159091" y1="97" x2="768" y2="101" stroke="#000000" stroke-width="1.2"/></g>
     <g data-role="diminuendo"><line x1="597.9428622159091" y1="105" x2="768" y2="101" stroke="#000000" stroke-width="1.2"/></g>
@@ -264,13 +264,13 @@
     <g data-role="slur" data-event-id="tenor1-m24-e4"><path d="M 388.0153764204546 108 C 405.1921460700758 105.66666666666667 422.368915719697 110.33333333333333 439.5456853693182 122 C 422.368915719697 112.13333333333333 405.1921460700758 107.46666666666667 388.0153764204546 108 Z" fill="#000000"/></g>
     <g data-role="slur" data-event-id="tenor1-m24-e6"><path d="M 491.07599431818187 129 C 509.52151396780306 112.67433792195146 527.9670336174242 105.67433792195146 546.4125532670455 108 C 527.9670336174242 107.47433792195146 509.52151396780306 114.47433792195146 491.07599431818187 129 Z" fill="#000000"/></g>
     <g data-role="slur" data-event-id="tenor1-m24-e8"><path d="M 597.9428622159091 122 C 616.208368844697 117.33333333333333 634.4738754734849 119.66666666666667 652.7393821022728 129 C 634.4738754734849 121.46666666666667 616.208368844697 119.13333333333333 597.9428622159091 122 Z" fill="#000000"/></g>
-    <g data-role="slur" data-event-id="tenor1-m27-e1"><path d="M 602.0285714285714 368 C 648.7523809523809 354.47773616312946 695.4761904761904 359.1444028297961 742.1999999999999 382 C 695.4761904761904 360.9444028297961 648.7523809523809 356.2777361631295 602.0285714285714 368 Z" fill="#000000"/></g>
-    <g data-role="slur" data-event-id="tenor1-m25-e4"><path d="M 272.8233766233766 319 C 296.9012987012987 310.3319480519481 320.9792207792207 310.3319480519481 345.0571428571428 319 C 320.9792207792207 312.1319480519481 296.9012987012987 312.1319480519481 272.8233766233766 319 Z" fill="#000000"/></g>
-    <g data-role="slur" data-event-id="tenor1-m26-e1"><path d="M 396.65714285714284 333 C 447.9142857142857 321.54742857142855 499.1714285714286 328.54742857142855 550.4285714285714 354 C 499.1714285714286 330.34742857142857 447.9142857142857 323.34742857142857 396.65714285714284 333 Z" fill="#000000"/></g>
-    <g data-role="sung-dot" data-event-id="tenor2-m25-e3"><ellipse cx="173.3116883116883" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor2-m25-e3"><ellipse cx="191.38961038961037" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor2-m25-e4"><ellipse cx="223.06753246753243" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="sung-dot" data-event-id="tenor2-m25-e4"><ellipse cx="241.1454545454545" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="slur" data-event-id="tenor2-m25-e3"><path d="M 173.3116883116883 343 C 195.9229437229437 356.47073129620264 218.5341991341991 361.1373979628693 241.1454545454545 357 C 218.5341991341991 359.33739796286926 195.9229437229437 354.67073129620263 173.3116883116883 343 Z" fill="#000000"/></g>
+    <g data-role="slur" data-event-id="tenor1-m27-e1"><path d="M 73.8 577 C 177.19999999999996 559.6666666666666 280.5999999999999 564.3333333333334 383.9999999999999 591 C 280.5999999999999 566.1333333333333 177.19999999999996 561.4666666666666 73.8 577 Z" fill="#000000"/></g>
+    <g data-role="slur" data-event-id="tenor1-m25-e4"><path d="M 356.50545454545454 319 C 391.0436363636364 306.56625454545457 425.58181818181816 306.56625454545457 460.12 319 C 425.58181818181816 308.3662545454546 391.0436363636364 308.3662545454546 356.50545454545454 319 Z" fill="#000000"/></g>
+    <g data-role="slur" data-event-id="tenor1-m26-e1"><path d="M 511.72 333 C 588.5466666666667 318 665.3733333333334 325 742.2000000000002 354 C 665.3733333333334 326.8 588.5466666666667 319.8 511.72 333 Z" fill="#000000"/></g>
+    <g data-role="sung-dot" data-event-id="tenor2-m25-e3"><ellipse cx="215.15272727272728" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor2-m25-e3"><ellipse cx="243.6909090909091" cy="331" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor2-m25-e4"><ellipse cx="285.8290909090909" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="sung-dot" data-event-id="tenor2-m25-e4"><ellipse cx="314.3672727272727" cy="345" rx="3.8" ry="3.8" fill="#6495ED" stroke="none" stroke-width="0.7"/></g>
+    <g data-role="slur" data-event-id="tenor2-m25-e3"><path d="M 215.15272727272728 343 C 248.22424242424242 359.57241212121215 281.29575757575753 364.2390787878788 314.3672727272727 357 C 281.29575757575753 362.43907878787877 248.22424242424242 357.77241212121214 215.15272727272728 343 Z" fill="#000000"/></g>
   </g>
 </svg>

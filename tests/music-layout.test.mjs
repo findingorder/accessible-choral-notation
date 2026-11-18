@@ -853,3 +853,21 @@ test('descending sustained syllables reserve stroke clearance at continuation no
   assert.ok(text.y + settings.lyricSize*0.45 >= last.y + settings.capsuleHeight/2 + settings.lyricGap - 1e-8);
   assert.ok(text.y < last.y + settings.capsuleHeight/2 + settings.lyricGap + settings.lyricSize/2);
 });
+
+test('shared divisi hairpins merge as complete wedges after independent arc clearance', () => {
+  const s = small([[[2, 64, 'one'], [2, 65, 'two']]]);
+  s.part.spans = [{kind:'slur',from:'m1e1',to:'m1e2'}];
+  s.part.hairpins = [{kind:'crescendo',from:{measure:1,onset:rational(0)},to:{measure:1,onset:rational(1)}}];
+  const lower = small([[[2, 55, 'one'], [2, 57, 'two']]]).part;
+  lower.measures[0].events.forEach(e => { e.id = 'lower-' + e.id; });
+  s.part.additionalVoices = [{voice:2,name:'Lower',measures:lower.measures,spans:[],hairpins:structuredClone(s.part.hairpins)}];
+  const original = JSON.stringify(s);
+  const all = shapes(draw(s));
+  const lines = all.filter(shape => shape.role === 'crescendo');
+  assert.equal(lines.length, 2);
+  const boxes = all.filter(shape => shape.role === 'hairpin-background');
+  assert.equal(boxes.length, 1);
+  assert.equal((lines[0].y1 + lines[1].y1)/2, boxes[0].y + boxes[0].height/2);
+  assert.equal((lines[0].y2 + lines[1].y2)/2, boxes[0].y + boxes[0].height/2);
+  assert.equal(JSON.stringify(s), original);
+});

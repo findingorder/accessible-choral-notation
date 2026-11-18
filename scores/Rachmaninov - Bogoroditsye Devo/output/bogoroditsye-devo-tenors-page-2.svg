@@ -437,9 +437,6 @@
     <g data-role="sung-dot" data-event-id="tenor2-m23-e3"><ellipse cx="379.62159090909097" cy="913" rx="3.8" ry="3.8" fill="#BA55D3" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor2-m23-e4"><ellipse cx="444.5846590909091" cy="920" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
     <g data-role="sung-dot" data-event-id="tenor2-m23-e4"><ellipse cx="495.9477272727273" cy="920" rx="3.8" ry="3.8" fill="#7F00FF" stroke="none" stroke-width="0.7"/></g>
-    <g data-role="hairpin-background"><rect x="427.52897017045456" y="426" width="342.47102982954544" height="12" fill="#ffffff" fill-opacity="0.85"/></g>
-    <g data-role="crescendo"><line x1="429.52897017045456" y1="432" x2="768" y2="428" stroke="#000000" stroke-width="1.2"/></g>
-    <g data-role="crescendo"><line x1="429.52897017045456" y1="432" x2="768" y2="436" stroke="#000000" stroke-width="1.2"/></g>
     <g data-role="slur" data-event-id="tenor2-m21-e2"><path d="M 270.9474786931818 707 C 298.42424686316286 721.5583032078598 325.9010150331439 726.2249698745266 353.377783203125 721 C 325.9010150331439 724.4249698745266 298.42424686316286 719.7583032078599 270.9474786931818 707 Z" fill="#000000"/></g>
     <g data-role="slur" data-event-id="tenor2-m20-e4"><path d="M 623.4404509943182 498 C 663.0269673295455 512.2511458806819 702.6134836647727 512.2511458806819 742.2 498 C 702.6134836647727 510.45114588068185 663.0269673295455 510.45114588068185 623.4404509943182 498 Z" fill="#000000"/></g>
     <g data-role="slur" data-event-id="tenor2-m23-e2"><path d="M 310.85227272727275 911 C 372.5507575757576 940 434.2492424242425 947 495.9477272727273 932 C 434.2492424242425 945.2 372.5507575757576 938.2 310.85227272727275 911 Z" fill="#000000"/></g>
